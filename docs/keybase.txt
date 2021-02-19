@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/gonyyi
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://gonyyi.com
+  * I am gonyyi (https://keybase.io/gonyyi) on keybase.
+  * I have a public key with fingerprint 7223 D0B7 0458 1995 7AB4  3846 2BE0 7EC7 D839 A0B7
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200f60ef1a448b602d58fe5afc7766dad52ed1afd03f81d87f568325bb757023100a",
+      "fingerprint": "7223d0b7045819957ab438462be07ec7d839a0b7",
+      "host": "keybase.io",
+      "key_id": "2be07ec7d839a0b7",
+      "kid": "0101bc65d110bcac3a8f0c6001774d1b0b73db07590a87f5295866313ce663646b380a",
+      "uid": "5ead3abde04159318ff46fff185db219",
+      "username": "gonyyi"
+    },
+    "merkle_root": {
+      "ctime": 1513478704,
+      "hash_meta": "030e5afdade7154bf00ee827ae78271c41e75d1f52aa256aefab2b6490b2cce2",
+      "seqno": 1828160
+    },
+    "revoke": {
+      "sig_ids": [
+        "8be7a5f83a12d1925303afaef4189c1cfe6fee6e3cf58b967486b670710b61440f"
+      ]
+    },
+    "service": {
+      "hostname": "gonyyi.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1513478749,
+  "expire_in": 157680000,
+  "prev": "eb5c6059a55cc2617dfb929ddd1da1aff47b63910e686f221f063e39bfe88d43",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMP6AnicbZN7bBRFHMevQiUUwSIFBEuK2xhSr9SZ3Z3Z2aukvF+RIAhRWpvrzO5M
+Oa69rXfX0koLqSAJoCgErA9ArGhNy0telUeoLUixUBF8IWCQtiEpBXnUgCBtnG0k
+RuP+sZOd/c739/l9Z+Zo/16euBjvr4sbz5qba2NONBQUejLRuexFCnPsEsW3SAny
+noHn2TwS9QcDtuJTAFQBEBhwAamuE4aBaiMiOKLCMgyMbWojlduQChtogkCbGAJh
+oqmIMQMZQNUgAFRJVUQglMvDBeFAKCptDVXVbMAMoCMCTRMZlOka0bHKODC4ZdhE
+M6n8LxfOdyLuCgnHaISnBRw5Jz/8PXj/o3/ADSCzMLIhBMyilkaJABYGABqGbkMm
+tZrNgIFMQF1k1UQEYw1qFpcD1jHTSA93YY8d4tTWKLM50CEyNUiE0LEQAhJkMxWa
+rjDCwyGaz6U61wmVlASUslQln4eDedwfdpyoG60VDbgCiKCmG0R2L9ujkfn+fB6l
+LrQG3GBlptyASGcCAM6JalBuyDe0dMgN2ZGkpVRFmHJBmcqwbgKmWhZXJUWEvxJy
+ZAWiEoiBJAjzIifI3eKRQK4MLaL4shTCuEGRIBqFqg1NFWlAo0L66ZCYFrQEx4Jz
+zDVLIMJMbOgEM2wAQ4aJoa4DoWSXucXCRQGrx9zdpX91n2Y5+ZKnIOxEHcvJk/Pz
+o9ECnxtKtKTA1S3kzP+3g58FQrY8IHJBEQ9HAk5ItiCV/8lLN1MVXlwQCHN/wFUg
+AxMgH7cML5KWnCG5x8ikCFmWiqFhC2aqpm3b0KbyjArdYFgzIeCYYKGqUACscc1k
+ghNi69o/ARKJSXOlpUwtRKOFYa6UNdS/3NsTE+d5OPYh9+J44vrGP7hONRfjPVtS
+Br6Zrg56F50ZNG3prEN3t8JDP034omUoS+zb1N+bs6Lb8e6onn35VGnrNi1Yqw9Y
+9ln1rmN/5tU0zkytzEy5e/xKzW3h7VydmWJ+eSl0d3/7uomVSZ1xC9onfUeDG6+/
+2p3U5l2Y0Ai7xu7GFU81b1j8yKfhqvaTN/YNeS/x3uzkr9r2Nh+u25i6oPhK+YC3
+tm6rTr6ujO49D35QNzySfkA7nnhix35SPOb0mZhLg3fZL9a1VAxrvjFyaM6KZzLj
+fZmdw6zeR7ef9I1bOfWl+uJD7yy5t1/9ZvqN9PpJaXNbEvqc75V1+PWyMRO7SisC
+j6Jfsk7NqDfLnt2jjbtqelMP1vwOb/XpN+Xx8Zsyyrye5NU/7Nuslz+59rG0quEn
+zsbO/vqCfqS0Ptg6eNaaqWuuh5ckfrSnT6i7at2FT9bss1LuX17Zq3NkG5lcdXr9
+7oQ7/enAnQcr8xe/MPDnzO0J6+fA1hHWwoYp/u7q3GM/dnW1t9Snx12uvJS8LRrf
+fWx64RO12fD2zY2jFo3S3qg4ELrYMT6radLYur0zVnb8dm2VL3h/hJjhyS8/1/R8
+jJj59tPLs6fF5uzEGbWJcaPLGxfcStrl3MtpXJV0Z0Ldt5vGDgm1bU07Mu+1Dd6m
+q61/fP/+MmduxtK+WR0f8+cmx978/MPJFQdv9uuYozYXrw0NXna/dG9D7rUryVvO
+t2dUTSlIWf4XCRsC+g==
+=oTGv
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gonyyi
+
+==================================================================
