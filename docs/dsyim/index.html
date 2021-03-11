@@ -9,8 +9,8 @@
   <meta property="og:url" content="https://gonyyi.com"/>
   <meta property="og:image" content="img/og-img.png"/>
   <meta property="og:site_name" content="gonyyi"/>
-  <meta property="og:title" content="Gon Y. Yi, A Pipe Dream Chaser"/>
-  <meta property="og:description" content="A pipe dream chaser Gon Y. Yi's homepage."/>
+  <meta property="og:title" content="gonyyi.dsyim"/>
+  <meta property="og:description" content="Portable DSYiM Designer"/>
   
   <base id="baseTarget" target="_self" href="https://gonyyi.com">
   <link rel="icon" href="/img/favicon.png" type="image/png"/>
@@ -66,7 +66,7 @@
           <path id="G" stroke-width="2" d="M35,57H43M35,63H43M50,55V65M45,60H55M59,56L57,64M63,56L65,64"/>
         </g>
       </svg>
-      <canvas id="canvas" style=""></canvas>
+      <canvas id="canvas" width="10px" height="10px"></canvas>
     </p>
   </ul>
 
@@ -80,35 +80,37 @@
     var btn = document.querySelector('#dn');
     var svg = document.querySelector('#DEOKSUYI');
     var canvas = document.querySelector('canvas');
+    
     var dsyim = svg.getElementById("DSYIM");
 
-    function triggerDownload (imgURI) {
-      var evt = new MouseEvent('click', {
-        view: window, bubbles: false, cancelable: true});
-      var a = document.createElement('a');
-      a.setAttribute('download', 'dsyim.png');
-      a.setAttribute('href', imgURI);
-      a.setAttribute('target', '_blank');
-      a.dispatchEvent(evt);
-    }
 
     btn.addEventListener('click', function () {
       var ctx = canvas.getContext('2d');
       var data = (new XMLSerializer()).serializeToString(svg);
-      var DOMURL = window.URL || window.webkitURL || window;
+      var win = window.URL || window.webkitURL || window;
       var img = new Image();
-      var svgBlob = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
-      var url = DOMURL.createObjectURL(svgBlob);
+      var blob = new Blob([data], { type: 'image/svg+xml' });
+      var url = win.createObjectURL(blob);
 
       img.onload = function () {
-        ctx.drawImage(img, 0, 0);
-        DOMURL.revokeObjectURL(url);
-        var imgURI = canvas
-          .toDataURL('image/png')
-          .replace('image/png', 'image/octet-stream');
+        canvas.getContext('2d').drawImage(img, 0, 0);
+        win.revokeObjectURL(url);
+        var uri = canvas.toDataURL('image/png').replace('image/png', 'octet/stream');
+        var a = document.createElement('a');
+        document.body.appendChild(a);
+        a.style = 'display: none';
+        a.href = uri
+        a.download = 'dsyim.png';
+        a.click();
+        window.URL.revokeObjectURL(uri);
+        document.body.removeChild(a);
+
         triggerDownload(imgURI);
       };
+
       img.src = url;
+
+      // img.onload();
     });
 
     function draw() {
@@ -121,25 +123,30 @@
       document.getElementById("G").style.strokeWidth = oLine2.value;
 
       // Resize canvas
-      var canvas = document.getElementById('canvas');
-      canvas.width = oSize.value;
-      canvas.height = oSize.value;
+      var c = document.getElementById('canvas');
+
+      c.width = oSize.value;
+      c.height = oSize.value;
 
       // Draw canvas
-      var ctx = canvas.getContext('2d');
+      var ctx = c.getContext('2d');
       var data = (new XMLSerializer()).serializeToString(svg);
-      var DOMURL = window.URL || window.webkitURL || window;
-
+      var win = window.URL || window.webkitURL || window;
       var img = new Image();
-      var svgBlob = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
-      var url = DOMURL.createObjectURL(svgBlob);
-
+      var blob = new Blob([data], { type: 'image/svg+xml' });
+      var url = win.createObjectURL(blob);
       img.onload = function () {
-        ctx.drawImage(img, 0, 0);
-        DOMURL.revokeObjectURL(url);
-        var imgURI = canvas
-          .toDataURL('image/png')
-          .replace('image/png', 'image/octet-stream');
+        canvas.getContext('2d').drawImage(img, 0, 0);
+      //   win.revokeObjectURL(url);
+      //   var uri = canvas.toDataURL('image/png').replace('image/png', 'octet/stream');
+      //   var a = document.createElement('a');
+      //   document.body.appendChild(a);
+      //   a.style = 'display: none';
+      //   a.href = uri
+      //   a.download = (svg.id || svg.svg.getAttribute('name') || svg.getAttribute('aria-label') || 'untitled') + '.png';
+      //   a.click();
+      //   window.URL.revokeObjectURL(uri);
+      //   document.body.removeChild(a);
       };
       img.src = url;
     }
