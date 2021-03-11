@@ -1,0 +1,220 @@
+<!DOCTYPE html> 
+<html lang="en">
+<!-- (c) gon y. yi -->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://gonyyi.com"/>
+  <meta property="og:image" content="img/og-img.png"/>
+  <meta property="og:site_name" content="gonyyi"/>
+  <meta property="og:title" content="Gon Y. Yi, A Pipe Dream Chaser"/>
+  <meta property="og:description" content="A pipe dream chaser Gon Y. Yi's homepage."/>
+  
+  <base id="baseTarget" target="_self" href="https://gonyyi.com">
+  <link rel="icon" href="/img/favicon.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
+    <style>
+      <!--
+      a {text-decoration:none; color:#0070ff;}
+      a:hover {background-color:#fff555;}
+      h1 a {color:#4a4a4a;}
+
+      h2 {font-weight: lighter; margin-bottom: 10px;}
+      ul {margin-top: 10px;}
+      li {margin-bottom: 5px;}
+      hr {margin-bottom: 5px;}
+      body{
+        margin:      20px;
+        font-size:   20px;
+        color:       #4a4a4a;
+        font-family: Georgia,Times,serif,Helvetica,Arial,sans-serif;
+        word-wrap: break-word;
+      }
+      p {max-width: 600px; line-height: 130%;}
+      i {color: #9e9e9e; font-style: italic;}
+
+      @media print {
+        body {margin: 50px;}
+      }
+      -->
+    </style>
+  <title>gonyyi</title>
+</head>
+<body>
+  <h1><a href="/">gonyyi</a><i>.dsyim</i></h1>
+  <h2>dsyim designer</h2>
+
+  <ul>
+    <p>
+      <input type="text" id="inSize"> Size<br/>
+      <input type="text" id="inBgColor"> BgColor<br/>
+      <input type="text" id="inColor"> Color<br/>
+      <input type="text" id="inLine1"> Line1<br/>
+      <input type="text" id="inLine2"> Line2<br/>
+
+      <br/><button id="dn">Download PNG</button><br/>
+    </p>
+
+    <p style="vertical-align: top;">
+      <svg id="DEOKSUYI" width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <g id="DSYIM" fill="transparent" stroke="#777" stroke-width="4">
+          <path id="M" d="M30,3C36,3 43,3 50,10C50,10 57,3 64,3H97V30C97,37 97,43 90,50C90,50 97,57 97,64V97H70C64,97 57,97 50,90C50,90 43,97 37,97H3V70C3,64 3,57 10,50C10,50 3,43 3,37V3H30"/>
+          <circle id="S" cx="50" cy="50" r="30"/>
+          <path id="Y" d="M30,50H70M43,50V37M57,50V37"/>
+          <path id="G" stroke-width="2" d="M35,57H43M35,63H43M50,55V65M45,60H55M59,56L57,64M63,56L65,64"/>
+        </g>
+      </svg>
+      <canvas id="canvas" style=""></canvas>
+    </p>
+  </ul>
+
+  <script type="text/javascript">
+
+    var oSize = document.getElementById("inSize");
+    var oBgColor = document.getElementById("inBgColor");
+    var oColor = document.getElementById("inColor");
+    var oLine1 = document.getElementById("inLine1");
+    var oLine2 = document.getElementById("inLine2");
+    var btn = document.querySelector('#dn');
+    var svg = document.querySelector('#DEOKSUYI');
+    var canvas = document.querySelector('canvas');
+    var dsyim = svg.getElementById("DSYIM");
+
+    function triggerDownload (imgURI) {
+      var evt = new MouseEvent('click', {
+        view: window, bubbles: false, cancelable: true});
+      var a = document.createElement('a');
+      a.setAttribute('download', 'dsyim.png');
+      a.setAttribute('href', imgURI);
+      a.setAttribute('target', '_blank');
+      a.dispatchEvent(evt);
+    }
+
+    btn.addEventListener('click', function () {
+      var ctx = canvas.getContext('2d');
+      var data = (new XMLSerializer()).serializeToString(svg);
+      var DOMURL = window.URL || window.webkitURL || window;
+      var img = new Image();
+      var svgBlob = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
+      var url = DOMURL.createObjectURL(svgBlob);
+
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0);
+        DOMURL.revokeObjectURL(url);
+        var imgURI = canvas
+          .toDataURL('image/png')
+          .replace('image/png', 'image/octet-stream');
+        triggerDownload(imgURI);
+      };
+      img.src = url;
+    });
+
+    function draw() {
+      // Update the size of image
+      svg.width.baseVal.value = oSize.value;
+      svg.height.baseVal.value = oSize.value;
+      dsyim.style.fill = oBgColor.value;
+      dsyim.style.stroke = oColor.value;
+      dsyim.style.strokeWidth = oLine1.value;
+      document.getElementById("G").style.strokeWidth = oLine2.value;
+
+      // Resize canvas
+      var canvas = document.getElementById('canvas');
+      canvas.width = oSize.value;
+      canvas.height = oSize.value;
+
+      // Draw canvas
+      var ctx = canvas.getContext('2d');
+      var data = (new XMLSerializer()).serializeToString(svg);
+      var DOMURL = window.URL || window.webkitURL || window;
+
+      var img = new Image();
+      var svgBlob = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
+      var url = DOMURL.createObjectURL(svgBlob);
+
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0);
+        DOMURL.revokeObjectURL(url);
+        var imgURI = canvas
+          .toDataURL('image/png')
+          .replace('image/png', 'image/octet-stream');
+      };
+      img.src = url;
+    }
+
+    function getInfoFromURL() {
+      var configs = window.location.search.replace("?","").split("&");
+      console.log("total hash item: "+configs.length);
+      for (var i=0; i < configs.length; i++) {
+        var item = configs[i].split("=");
+        if (item.length > 1) {
+          switch(item[0]) {
+            case "size":
+              svg.width.baseVal.value = parseInt(item[1]);
+              svg.height.baseVal.value = parseInt(item[1]);
+              oSize.value = item[1];
+              console.log("size: "+item[1]);
+              break;
+            case "bgcolor":
+              dsyim.style.fill = item[1];
+              oBgColor.value = item[1];
+              console.log("bgcolor: "+item[1]);
+              break;
+            case "color":
+              dsyim.style.stroke = item[1];
+              oColor.value = item[1];
+              console.log("color: "+item[1]);
+              break;
+            case "line1":
+              dsyim.style.strokeWidth = item[1];
+              oLine1.value = item[1];
+              console.log("line1: "+item[1]);
+              break;
+            case "line2":
+              document.getElementById("G").style.strokeWidth = item[1];
+              oLine2.value = item[1];
+              console.log("line2: "+item[1]);
+              break;
+          }
+        }
+      }
+    }
+
+    function getDefaultValues() {
+      if (oSize.value=="") {
+        oSize.value = svg.width.animVal.value; // svg.height.baseVal.value;
+      }
+      if (oBgColor.value=="") {
+        oBgColor.value = dsyim.getAttribute("fill"); // dsyim.style.fill;
+      }
+      if (oColor.value == "") {
+        oColor.value = dsyim.getAttribute("stroke"); // dsyim.style.stroke;  
+      }
+      if (oLine1.value == "") {
+        oLine1.value = dsyim.getAttribute("stroke-width"); // dsyim.style.strokeWidth;  
+      }
+      if (oLine2.value == "") {
+        oLine2.value = document.getElementById("G").getAttribute("stroke-width"); // dsyim.style.strokeWidth;  
+      }
+    }
+
+    getInfoFromURL();
+    getDefaultValues();
+
+    draw();
+    // drawCanvas();
+
+    oSize.addEventListener('change', draw);
+    oBgColor.addEventListener('change', draw);
+    oColor.addEventListener('change', draw);
+    oLine1.addEventListener('change', draw);
+    oLine2.addEventListener('change', draw);
+
+  </script>
+
+  <hr>
+  <footer>(c) gon-y-yi</footer>
+</body>
+</html>
