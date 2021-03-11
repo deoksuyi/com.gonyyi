@@ -73,24 +73,28 @@
 
         input, button {
             font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
-            border: 2px solid #aaa;
+            border: 3px solid #aaa;
             border-radius: 10px;
-            padding: 5px;
             margin: 5px 0;
-            padding: 10px;
+            padding: 10px 5px;
             font-size: 100%;
         }
-        input {width: 40%;}
-        button {width: 40%;}
+        input {width: 55%;}
+        button {width: 150px;}
 
         input:hover, input:focus {
-            border: 2px solid blue;
+            border: 3px solid #2786FF;
             background-color: #EBF5FB;
+            outline: none; /* disable browser's outline */
         }
 
-        button:focus, button:hover {
+        button:hover, button:focus {
+            border: 3px solid #2786FF;
             background-color: #AED6F1;
+            outline: none; /* disable browser's outline */
         }
+
+        label {font-size: 80%;}
 
         svg, canvas {
             /*background-color: antiquewhite;*/
@@ -105,11 +109,20 @@
 <h2>dsyim designer</h2>
 <ul>
     <p>
-        <input type="text" id="inSize" placeholder="size"> size<br/>
-        <input type="text" id="inBgColor" placeholder="bgColor"> bgColor<br/>
-        <input type="text" id="inColor" placeholder="lineColor"> lineColor<br/>
-        <input type="text" id="inLine1" placeholder="line1"> line1<br/>
-        <input type="text" id="inLine2" placeholder="line2"> line2<br/>
+        <input type="text" id="inSize" placeholder="size">
+        <label for="inSize">size</label><br/>
+        
+        <input type="text" id="inBgColor" placeholder="bgColor">
+        <label for="inBgColor">bgColor</label><br/>
+
+        <input type="text" id="inColor" placeholder="lineColor">
+        <label for="inColor">lineColor</label><br/>
+
+        <input type="text" id="inLine1" placeholder="line1">
+        <label for="inLine1">line1</label><br/>
+
+        <input type="text" id="inLine2" placeholder="line2">
+        <label for="inLine2">line2</label><br/>
 
         <button id="dn">Save</button>
         <br/>
