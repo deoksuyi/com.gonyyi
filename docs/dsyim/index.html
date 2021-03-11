@@ -85,6 +85,8 @@
 
 
     btn.addEventListener('click', function () {
+      canvas.width = oSize.value;
+      canvas.height = oSize.value;
       var ctx = canvas.getContext('2d');
       var data = (new XMLSerializer()).serializeToString(svg);
       var win = window.URL || window.webkitURL || window;
