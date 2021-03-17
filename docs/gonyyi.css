@@ -3,28 +3,37 @@
 a {text-decoration:none; color:#0070ff;}
 a:hover {background-color:#fff555;}
 h1 a {color:#4a4a4a;}
-
 h2 {font-weight: lighter; margin-bottom: 10px;}
+
+h1, h2, li {
+  list-style-type: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 ul {
   margin-top: 10px;
   padding-left: 25px;
 }
-li {
-  margin-bottom: 5px;
-  list-style-type: none;
-}
+
+li {margin-bottom: 5px;}
+
 li::before {
   content: "# ";
-  color: lightsalmon;
+  color: #ffa07a;
+  font-weight: bold;
 }
+
 hr {margin-bottom: 5px;}
+
 body{
   margin:      20px;
   font-size:   20px;
   color:       #4a4a4a;
   font-family: Georgia,Times,serif,Helvetica,Arial,sans-serif;
-  word-wrap: break-word;
 }
+
 p {max-width: 600px; line-height: 130%;}
 i {color: #9e9e9e; font-style: italic;}
 
@@ -39,6 +48,7 @@ i {color: #9e9e9e; font-style: italic;}
   ::selection {color: black;background: white;}
 }
 */
+
 @media print {
   body {margin: 50px;}
 }
