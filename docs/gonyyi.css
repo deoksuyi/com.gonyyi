@@ -5,8 +5,18 @@ a:hover {background-color:#fff555;}
 h1 a {color:#4a4a4a;}
 
 h2 {font-weight: lighter; margin-bottom: 10px;}
-ul {margin-top: 10px;}
-li {margin-bottom: 5px;}
+ul {
+  margin-top: 10px;
+  padding-left: 25px;
+}
+li {
+  margin-bottom: 5px;
+  list-style-type: none;
+}
+li::before {
+  content: "# ";
+  color: lightsalmon;
+}
 hr {margin-bottom: 5px;}
 body{
   margin:      20px;
