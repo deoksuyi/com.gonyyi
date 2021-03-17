@@ -25,7 +25,7 @@ li::before {
   font-weight: bold;
 }
 
-hr {margin-bottom: 5px;}
+hr {height: 1px; border-width: 0; background-color: gray;}
 
 body{
   margin:      20px;
