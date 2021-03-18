@@ -38,3 +38,5 @@ For each version, save at <https://web.archive.org/save/https://gonyyi.com>
 - 2.3.0 (2020.10.10a) simplified all
 - 2.3.1 (2020.10.19a) added dark mode again.
 - 2.3.2 (2020.10.20a) changed hyperlink color in dark mode to #81aaff
+- 3.0.0 (2021.03.18a) cleaned all css. dotted list became a line using left border with thickness 5px.
+- 3.0.1 (2021.03.18b) now unit of size is rem; based on 5px root size.
