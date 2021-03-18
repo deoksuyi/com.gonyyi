@@ -16,6 +16,7 @@ h2 {font-weight: lighter; margin-bottom: 10px;}
 h1,h2,li {word-wrap: break-word; hyphens: auto;}
 ul {margin-top: 10px;padding-left: 40px;}
 li {list-style-type: square; padding: 3px 0;}
+dt {padding: 2px 0;}
 hr {height: 1px; border-width: 0; background-color: gray;}
 
 /* CLASS */
