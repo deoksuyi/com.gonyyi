@@ -25,7 +25,12 @@
   <h2>page not found</h2>
   <ul>
     <script>
-      if(location.href!="") {document.write("<li><i>gonyyi.com</i>/"+location.pathname.substr(1)+"</li>");}
+      if(location.href.endsWith("/")) {
+        window.location.replace(location.href.slice(0,-1));
+        document.write("<li>retrying without slash suffix</li>");
+      } else if(location.href!="") {
+        document.write("<li><i>gonyyi.com</i>/"+location.pathname.substr(1)+"</li>");
+      }
     </script>
     <li>
       <a href='/'>back to main</a>
