@@ -24,14 +24,7 @@
 
   <h2>page not found</h2>
   <ul>
-    <script>
-      if(location.href.endsWith("/")) {
-        window.location.replace(location.href.slice(0,-1));
-        document.write("<li>retrying without slash suffix</li>");
-      } else if(location.href!="") {
-        document.write("<li>gonyyi.com/"+location.pathname.substr(1)+"</li>");
-      }
-    </script>
+    <li id="errorMsg">404 error</li>
     <li>
       <a href='/'>back to main</a>
     </li>
@@ -39,6 +32,15 @@
 
   <hr>
   <footer>(c) gon-y-yi</footer>
+
+  <script>
+    if(location.href.endsWith("/")) {
+      window.location.replace(location.href.slice(0,-1));
+      document.getElementById("errorMsg").innerHTML = "retrying without slash suffix";
+    } else if(location.href!="") {
+      document.getElementById("errorMsg").innerHTML = "gonyyi.com/" + window.location.pathname.substr(1);
+    }
+  </script>
 
 </body>
 </html>
