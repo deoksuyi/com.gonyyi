@@ -1,6 +1,6 @@
 /* (c) gon y. yi */
 html{padding: 0px;margin: 5px;font-size: 5px;}
-body{margin: 3rem;font-family: Georgia,Times,serif,Helvetica,Arial,sans-serif;
+body{max-width: 160rem;margin: 3rem;font-family: Georgia,Times,serif,Helvetica,Arial,sans-serif;
   word-wrap: break-word; hyphens: auto;font-size: 4rem;color: #4a4a4a;}
 
 a {text-decoration:none; color:#0070ff;}
