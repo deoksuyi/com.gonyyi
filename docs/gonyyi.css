@@ -27,15 +27,36 @@ h1 i, li i {padding-left: 1rem; font-size: 80%;}
 }
 
 .ft70  {font-size: 70%;}
+.ft80  {font-size: 80%;}
+.ft90  {font-size: 90%;}
 .ft100 {font-size: 100%;}
+.ft120 {font-size: 120%;}
 
 .white {color: #fff;}
 .black {color: #000;}
 .gray {color: #ccc;}
+.salmon {color: #FA8072;}
 
 .bgWhite {background-color: #fff;}
 .bgTrans {background-color: transparent;}
 .bgGray {background-color: #ccc;}
+.bgSalmon {background-color: #FA8072;}
+
+.pad0 {padding: 0;}
+.padBtm1 {padding-bottom: 1rem;}
+.padBtm2 {padding-bottom: 2rem;}
+.padBtm3 {padding-bottom: 3rem;}
+.padTop1 {padding-top: 1rem;}
+.padTop2 {padding-top: 2rem;}
+.padTop3 {padding-top: 3rem;}
+
+.marg0 {margin: 0;}
+.margBtm1 {margin-bottom: 1rem;}
+.margBtm2 {margin-bottom: 2rem;}
+.margBtm3 {margin-bottom: 3rem;}
+.margTop1 {margin-top: 1rem;}
+.margTop2 {margin-top: 2rem;}
+.margTop3 {margin-top: 3rem;}
 
 /* When overflow, instead of using next line, use ... */
 .allowOverflow {
