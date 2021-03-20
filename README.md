@@ -6,12 +6,42 @@ GONYYI.COM (c) by Gon Y. of Deoksu-Yi
 (c) Copyright 2016-2021 Gon Y. Yi of Deoksuyi. All rights reserved.  
 Detail copyright information can be found: <https://gonyyi.com/copyright.txt>
 
-Validation: <https://html5.validator.nu/?doc=https%3A%2F%2Fgonyyi.com>
+- Validation: <https://html5.validator.nu/?doc=https%3A%2F%2Fgonyyi.com>
+- Archiving: <https://web.archive.org/save/https://gonyyi.com>
+
+
+
+TODO for GIT ACTION
+-------------------
+
+Only the files in `/src` direction will be updated. Then, (1) `/build.py` script
+will run, creates the output to `/docs` directory. This step is supposed to be
+done by the Git Action. To do so, followings are required:
+
+- [ ] Decide what tags will be using to identify what needs to be updated/included.
+- [ ] Create templates for:
+- [ ] The program will:
+	- [ ] Open a config file `/config.json`
+		- [ ] Identify what is the CSS file. (eg. `/src/gonyyi.css`)
+		- [ ] What are available pages and keywords
+			- Later 404 can "suggest" the pages based on this..
+	- [ ] Open each files in `/src` directory, update:
+		- Header
+		- Footer
+		- inline CSS
+	- [ ] Maybe insert a build date in the footer with same color as background
+		  OR light gray color within parenthesis. 
+		  OR could be a hidden within the source code?
+- [ ] Goal
+	- [ ] Able to test and develop within `/src` direcotry and its files directly
+		  on a local machine.
+	- [ ] When built using `/build.py`, all CSS should be included in each file.
+		- Able to distingush "page specific" portion of CSS and files.
+
+
 
 VERSION HISTORY
 ---------------
-
-For each version, save at <https://web.archive.org/save/https://gonyyi.com>
 
 - 1.1.1 Default font to be Georiga, Serif
 - 1.1.2 Changed color and 404 layout (Sat, Feb 3, 2018)
