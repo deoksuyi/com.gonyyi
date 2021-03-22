@@ -68,6 +68,32 @@ ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2re
 .noOutline:focus {outline: none;}
 .overflow {white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 
+/* FORM */
+input, button {
+  font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
+  border: .5rem solid #dadada;
+  /*border-radius: 2rem;*/
+  /*margin: 1rem 0;*/
+  padding: 1rem 1rem;
+  /*font-size: 100%;*/
+}
+input {width: 30rem;}
+button {
+  width: 20rem;
+  background: #DADADA;
+}
+input:hover, input:focus {
+  border: .5rem solid #2786FF;
+  background-color: #EBF5FB;
+  outline: none; /* disable browser's outline */
+}
+button:hover, button:focus {
+  border: .5rem solid #2786FF;
+  background-color: #AED6F1;
+  outline: none; /* disable browser's outline */
+}
+label {font-size: 80%;}
+
 /* NOT USED FOR NOW */
 /* @media print {body {margin: 50px;}} */
 /* @media (prefers-color-scheme: dark) {
