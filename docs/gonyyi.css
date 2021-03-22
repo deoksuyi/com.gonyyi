@@ -25,7 +25,7 @@ ul.mlink {margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadad
 ul.mlink li {list-style-type: none;}
 ul.mlink li i {padding-left: 1rem; font-size: 80%;color: #9e9e9e;}
 ul.mlink li a,ul.mlink li span {display: block; outline: none; padding: 1rem;}
-ul.mlink li a:hover,ul.mlink li a:focus {background: #dde; border-radius: 2rem;}
+ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeef7; border-radius: 2rem;}
 
 /* COMMON ITEMS */
 .black {color: #4a4a4a;}
