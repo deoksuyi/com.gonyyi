@@ -73,7 +73,7 @@ input, button {
   font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
   border: .5rem solid #dadada;
   /*border-radius: 2rem;*/
-  /*margin: 1rem 0;*/
+  margin: .5rem 0;
   padding: 1rem 1rem;
   /*font-size: 100%;*/
 }
@@ -92,7 +92,7 @@ button:hover, button:focus {
   background-color: #AED6F1;
   outline: none; /* disable browser's outline */
 }
-label {font-size: 80%;}
+label {font-size: 3rem;}
 
 /* NOT USED FOR NOW */
 /* @media print {body {margin: 50px;}} */
