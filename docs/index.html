@@ -21,7 +21,22 @@
 
   <style>
     /* COMMON DEFINITION */
-    html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
+    html{padding:0px;margin:5px;font-size:5px;background:#ffffff;
+      animation: colorchange 2s;}
+    @keyframes colorchange {
+      0% {
+        background: white;
+        color: white;
+      }
+      1% {
+        background: black;
+        color: white;
+      }
+      100% {
+        background: white;
+        color: white;
+      }
+    }
     body{
       margin: 3rem; max-width: 160rem;
       font-family: Georgia,Times,serif,Helvetica,Arial,sans-serif;
