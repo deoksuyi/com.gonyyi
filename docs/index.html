@@ -23,12 +23,8 @@
     /* COMMON DEFINITION */
     html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
     @keyframes colorchange {
-      0% {
-        border-left: 1rem solid #fa8072;
-      }
-      100% {
-        border-left: 1rem solid #dadada;
-      }
+      0% {opacity: 0;}
+      100% {opacity: 1;}
     }
     body{
       margin: 3rem; max-width: 160rem;
@@ -50,11 +46,15 @@
     h2 {font-weight: lighter; margin: 0 0 1rem 0; font-size: 6rem;}
     
     /* MAIN MENU */
-    ul.mlink {margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada; animation: colorchange 1s;}
+    ul.mlink {margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada;}
     ul.mlink li {list-style-type: none;}
     ul.mlink li i {padding-left: 1rem; font-size: 80%;color: #7e7e7e;}
     ul.mlink li a,ul.mlink li span {display: block; outline: none; padding: 1rem;}
     ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2rem;}
+    
+    h2, h2 a, ul, ul li, li a, li i, hr, footer {
+      animation: colorchange 2s;
+    }    
   </style>
 </head>
 <body>
