@@ -1,7 +1,7 @@
 GONYYI.COM (c) by Gon Y. of Deoksu-Yi
 -------------------------------------
 
-![DSYIM](https://deoksuyi.com/sx/g.svg)
+![DSYIM](http://gonyyi.com/img/dsyim50.svg)
 
 (c) Copyright 2016-2021 Gon Y. Yi of Deoksuyi. All rights reserved.  
 Detail copyright information can be found: <https://gonyyi.com/copyright.txt>
