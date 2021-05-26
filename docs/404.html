@@ -35,12 +35,9 @@
   <footer>&copy; gon-y-yi</footer>
 
   <script>
-    // Not ending with /img, or /img/, but end with "/"
-    if(location.href.endsWith("/img") || location.href.endsWith("/img/")) {
-      document.getElementById("errorMsg").innerHTML = "gonyyi.com/" + window.location.pathname.substr(1);
-    } else if( location.href.endsWith("/") ) {
-      window.location.replace(location.href.slice(0,-1));
-      document.getElementById("errorMsg").innerHTML = "retrying without slash suffix";
+    if( location.href.endsWith("/") ) {
+      // window.location.replace(location.href.slice(0,-1));
+      document.getElementById("errorMsg").innerHTML = "retry without slash suffix: <a href=\""+location.href.slice(0,-1)+"\">"+location.href.slice(0,-1)+"</a>";
     } else if(location.href!="") {
       document.getElementById("errorMsg").innerHTML = "gonyyi.com/" + window.location.pathname.substr(1);
     }
