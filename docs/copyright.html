@@ -12,25 +12,41 @@
   <meta property="og:url" content="https://gonyyi.com"/>
   <meta property="og:image" content="https://gonyyi.com/img/og-img.png"/>
   <meta property="og:site_name" content="gonyyi"/>
-  <meta property="og:title" content="redirecting"/>
-
-  <meta http-equiv="refresh" content="0; url=https://gonyyi.com/copyright.txt"/>
-
+  <meta property="og:title" content="copyright"/>
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
   <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
   <link rel="alternate icon" href="/favicon.ico"/>
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
-
   <link rel="stylesheet" type="text/css" href="st-base.css"/>
+
+  <!--<meta http-equiv="refresh" content="0; url=https://gonyyi.com/copyright.txt"/>-->
+  <style>
+    #copyrighttxt {
+      background-color: #dadada;
+      border-radius: 3rem;
+      padding: 3rem;
+      white-space: pre-wrap;
+      font-size: 3rem;
+    }
+  </style>
 </head>
 <body>
-  <h1><a href="/">gonyyi</a><i>/move</i></h1>
+  <h1><a href="/">gonyyi</a><i>/copyright</i></h1>
 
-  <h2>redirecting to</h2>
+  <h2>generic copyright notice</h2>
+
   <ul class="mlink">
-    <li><a
-    href="https://gonyyi.com/copyright.txt">gonyyi.com/copyright.txt</a></li>
+    <li><a href="copyright.txt">download <i>https://gonyyi.com/copyright.txt</i></a></li>
+    <li><pre id="copyrighttxt"></pre></li>
   </ul>
+
+  <script>
+    <!--
+    fetch('copyright.txt').then(response => {if(response.status=="200") 
+    {return response.text();} return "See &lt;https://gonyyi.com/copyright.txt&gt;";})
+      .then(text => {document.getElementById("copyrighttxt").innerHTML = text;})
+    // -->
+  </script>
   
   <hr/>
   <footer>&copy; gon-y-yi</footer>
