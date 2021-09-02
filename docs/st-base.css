@@ -74,9 +74,7 @@ ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2re
 /* A-LINK AS A FORM BUTTON */
 .asButton {
   font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
-  border-width: 0.5rem;
-  border-style: solid;
-  border-color: #fff;
+  border-width: 0;
   border-radius: 3rem;
   margin: 5rem 0;
   padding: 1rem 2rem;
@@ -84,11 +82,9 @@ ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2re
   background: #2786FF;
 }
 .asButton:hover, .asButton:focus, .asButton:active {
-  /*border: .5rem solid red;*/
-  border-color: #dadada;
-  /*background-color: #4d9aff;*/
-  outline: none; /* disable browser's outline */
-}
+  background: #4d9aff;}
+.asButton:active {
+  background: #eee; color: #2786FF;}
 
 /* 
    GONYYI Form Definitions
