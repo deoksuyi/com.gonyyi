@@ -68,6 +68,22 @@ ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2re
 .noOutline:focus {outline: none;}
 .overflow {white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 
+/* A-LINK AS A FORM BUTTON */
+.asButton {
+  font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
+  border: .5rem solid #dadada;
+  border-radius: 2rem;
+  margin: 5rem 0;
+  padding: 1rem 1rem;
+  font-size: 4rem;
+  background: #DADADA;
+}
+.asButton:hover, .asButton:focus {
+  border: .5rem solid #2786FF;
+  background-color: #AED6F1;
+  outline: none; /* disable browser's outline */
+}
+
 /* FORM */
 input, button {
   font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
