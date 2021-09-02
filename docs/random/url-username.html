@@ -37,7 +37,7 @@ function getStatus() {
 <div id="theme"></div>
 <script>
   getStatus();
-  const url = new URL(window.location.href);
+  const url = new URL(document.URL);
   document.write("url:"+url.href +"  username:"+url.username +"  pwd:"+ url.password);
 
 
