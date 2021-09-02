@@ -39,10 +39,20 @@
         bnum[i] = bchar.charCodeAt(i);
       }
       const barray = new Uint8Array(bnum);
+      
       var a = document.createElement("a");
-      var file = new Blob([barray], {type: 'text/vcard'});
-      window.open(URL.createObjectURL(file));
-      window.location.replace(location.href.slice(0,-(k.length+1)));
+      document.body.appendChild(a);
+      a.style = 'display: none';
+      a.href = new Blob([barray], {type: 'text/vcard'});
+      a.download = 'dsyim.png';
+      a.click();
+      window.URL.revokeObjectURL(uri);
+      document.body.removeChild(a);
+
+      
+      
+      //window.open(URL.createObjectURL(file));
+      //window.location.replace(location.href.slice(0,-(k.length+1)));
     }
     if(location.href.endsWith("?"+k) ) {
       document.write('<button onClick="download();">Add Contact</button>');
