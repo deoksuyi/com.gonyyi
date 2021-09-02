@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="en">
+<!-- (c) gon y. yi -->
+<head>
+  <title>gonyyi/move</title>
+  <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://gonyyi.com"/>
+  <meta property="og:image" content="https://gonyyi.com/img/og-img.png"/>
+  <meta property="og:site_name" content="gonyyi"/>
+  <meta property="og:title" content="copyright"/>
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
+  <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
+  <link rel="alternate icon" href="/favicon.ico"/>
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
+  <link rel="stylesheet" type="text/css" href="st-base.css"/>
+
+  <!--<meta http-equiv="refresh" content="0; url=https://gonyyi.com/copyright.txt"/>-->
+  <style>
+    #copyrighttxt {
+      background-color: #dadada;
+      border-radius: 3rem;
+      padding: 3rem;
+      white-space: pre-wrap;
+      font-size: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <h1><a href="/">gonyyi</a><i>/copyright</i></h1>
+
+  <h2>generic copyright notice</h2>
+
+  <ul class="mlink">
+    <li><a href="copyright.txt">download <i>https://gonyyi.com/copyright.txt</i></a></li>
+    <li><pre id="copyrighttxt"></pre></li>
+  </ul>
+
+  <script>
+    <!--
+      try{
+        fetch('copyright.txt')
+        .then(response => {
+          if(response.status=="200") {return response.text();} 
+          return "See &lt;https://gonyyi.com/copyright.txt&gt;";})
+        .then(text => {
+          document.getElementById("copyrighttxt").innerHTML = text;})
+      } catch (err) {
+        document.getElementById("copyrighttxt").innerHTML = "oops! try again with a newer version of web browser. GYI-MSG-ERR-0A1";
+      }
+    
+    // -->
+  </script>
+  
+  <hr/>
+  <footer>&copy; gon-y-yi</footer>
+</body>
+</html>
