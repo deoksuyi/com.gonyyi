@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>gonyyi/test</title>
+    <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
+    <link rel="stylesheet" type="text/css" href="gonyyi.css"/>
+    <style>
+      .longInput {
+        width: 50rem;
+        margin-right: 1rem;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>gonyyi<i>/test</i></h1>
+    
+    <h2>parse url</h2>
+
+    <ul class="mlink">
+      <li><input id="url" class="longInput" disabled/><label for="url">URL</label></li>
+      <li><input id="username" class="longInput" disabled/><label for="username">Username</label></li>
+      <li><input id="passwd" class="longInput" disabled/><label for="passwd">Passwd</label></li>
+    </ul>
+
+    <script>
+      <!--
+      const url = new URL(document.URL);
+      document.getElementById("url").value = url.href;
+      document.getElementById("username").value = url.username;
+      document.getElementById("passwd").value = url.password;
+      // -->
+    </script>
+
+    <footer>&copy; gon-y-yi</footer>
+  </body>
+</html>
