@@ -18,4 +18,4 @@ Unless otherwise stated, this will serve as a generic copyright notice for any s
 
 ###
 
-URL: https://gonyyi.com/copyright.md
+URL: https://gonyyi.com/copyright.txt
