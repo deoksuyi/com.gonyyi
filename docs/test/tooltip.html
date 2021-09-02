@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>gonyyi/test</title>
+    <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
+    <link rel="stylesheet" type="text/css" href="gonyyi.css"/>
+    <style>
+      .longInput {
+        width: 50rem;
+        margin-right: 1rem;
+      }
+
+      /* 
+         GONYYI Definition Tag - BEGIN
+         Usage: <def desc="this is bull shit">gon-y-yi</def>
+         Note:  Optional "def:hover::after" can be removed if not needed for 
+                arrow from the tooltip.
+      */
+      def{
+        text-decoration: gray underline dotted;
+        position: relative; 
+      }
+      def:hover::before {
+        content: attr(desc);
+        position: absolute;
+        bottom: -7rem;
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        background: #333;
+        color: #fff;
+        font-size: 3rem;
+        font-family: sans-serif;
+        white-space: nowrap;        
+      }
+      def:hover::after {
+        content: ' ';
+        position: absolute;
+        bottom: -2rem;
+        left: 1rem;
+        display: inline-block;
+        color: #fff;
+        border: 8px solid transparent;  
+        border-bottom: 8px solid #333;
+      }
+      /* GONYYI Definition Tag - END */
+
+    </style>
+  </head>
+  
+  <body>
+    <h1>gonyyi<i>/test</i></h1>
+    
+    <h2>parse url</h2>
+
+    
+    <p>
+      <p>
+        url testing for <def desc="Gon's test">gonyyi blah blah</def>
+      </p>
+    </p>
+
+    <ul class="mlink">
+      <li><input id="url" class="longInput" disabled/><label for="url">URL</label></li>
+      <li><input id="username" class="longInput" disabled/><label for="username">Username</label></li>
+      <li><input id="passwd" class="longInput" disabled/><label for="passwd">Passwd</label></li>
+    </ul>
+
+
+    <hr/><footer>&copy; <def desc="this is bull shit">gon-y-yi</def></footer>
+  </body>
+</html>
