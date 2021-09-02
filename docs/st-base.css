@@ -1,5 +1,8 @@
-/* (c) gon y. yi */
-/* COMMON DEFINITION */
+/* (c) Gon Y. Yi <https://gonyyi.com/copyright> */
+
+/* 
+   GONYYI Common Definitions
+*/
 html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
 body{
   margin: 3rem; max-width: 160rem;
@@ -84,7 +87,9 @@ ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2re
   outline: none; /* disable browser's outline */
 }
 
-/* FORM */
+/* 
+   GONYYI Form Definitions
+*/
 input, button {
   font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
   border: .5rem solid #dadada;
@@ -110,6 +115,10 @@ button:hover, button:focus {
 }
 label {font-size: 3rem;}
 
+
+/* 
+   GONYYI Print Definitions
+*/
 /* NOT USED FOR NOW */
 /* @media print {body {margin: 50px;}} */
 /* @media (prefers-color-scheme: dark) {
