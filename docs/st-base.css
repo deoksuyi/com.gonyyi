@@ -79,9 +79,9 @@ ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2re
   padding: 1rem 2rem;
   background: #2786FF; color: #ffffff;
 }
-.asButton:hover, .asButton:focus {
+.asButton:hover{
   background: #4d9aff; color: #ffffff;}
-.asButton:active {
+.asButton:focus, .asButton:active {
   background: #eee; color: #2786FF;}
 
 /* 
