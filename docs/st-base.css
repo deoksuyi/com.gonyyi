@@ -73,16 +73,14 @@ ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2re
 
 /* A-LINK AS A FORM BUTTON */
 .asButton {
-  font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
   border-width: 0;
   border-radius: 3rem;
   margin: 5rem 0;
   padding: 1rem 2rem;
-  color: white;
-  background: #2786FF;
+  background: #2786FF; color: #ffffff;
 }
-.asButton:hover, .asButton:focus, .asButton:active {
-  background: #4d9aff;}
+.asButton:hover, .asButton:focus {
+  background: #4d9aff; color: #ffffff;}
 .asButton:active {
   background: #eee; color: #2786FF;}
 
