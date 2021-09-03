@@ -73,7 +73,9 @@ ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2re
 
 /* A-LINK AS A FORM BUTTON */
 .asButton {
-  border-width: 0;
+  border-width: .5rem;
+  border-style: solid;
+  border-color: #2786FF;
   border-radius: 3rem;
   margin: 5rem 0;
   padding: 1rem 2rem;
@@ -82,7 +84,8 @@ ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2re
 .asButton:hover{
   background: #4d9aff; color: #ffffff;}
 .asButton:focus, .asButton:active {
-  background: #eee; color: #2786FF;}
+  border-color: #ff511d; 
+  background: #fff; color: #ff511d;}
 
 /* 
    GONYYI Form Definitions
