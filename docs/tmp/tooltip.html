@@ -14,30 +14,20 @@
     <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
     <link rel="alternate icon" href="/favicon.ico"/>
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
-    <link rel="stylesheet" type="text/css" href="st-base.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/ext.css"/>
   </head>
   
   <body>
     <h1><a href="https://gonyyi.com">gonyyi</a><i>/test</i></h1>
     
-    <h2>parse url</h2>
+    <h2>custom tooltip</h2>
 
-    <ul class="mlink">
-      <li><input id="url" class="longInput" disabled/><label for="url">URL</label></li>
-      <li><input id="username" class="longInput" disabled/><label for="username">Username</label></li>
-      <li><input id="passwd" class="longInput" disabled/><label for="passwd">Passwd</label></li>
-    </ul>
+    <p>
+        url testing for <def desc="Gon's test">gonyyi blah blah</def>
+    </p>
 
-    <script>
-      <!--
-      const url = new URL(document.URL);
-      document.getElementById("url").value = url.href;
-      document.getElementById("username").value = url.username;
-      document.getElementById("passwd").value = url.password;
-      // -->
-    </script>
 
-    <hr/>
-    <footer>&copy; gon-y-yi</footer>
+    <hr/><footer>&copy; <def desc="this is bull shit">gon-y-yi</def></footer>
   </body>
 </html>
