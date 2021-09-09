@@ -19,19 +19,33 @@
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="any"/>
   
   <link rel="stylesheet" type="text/css" href="/css/base.css"/>
+
+  <!-- START: PAGE SPECIFIC -->
+  <script src="/tmp/sitemap.js" type="text/javascript"/>
+  <script>
+    keys = [
+      {name:"alog",   url: "abc.com",     desc:"blahblah"}, 
+      {name:"ztmp1",  url: "def.com1",    desc:"dahdah1"},
+      {name:"ztmp2",  url: "def.com1",    desc:"dahdah2"},
+      {name:"ztmp3",  url: "def.com1",    desc:"dahdah3"},
+      {name:"ztmp4",  url: "def.com1",    desc:"dahdah4"},
+      {name:"ztmp5",  url: "def.com1",    desc:"dahdah5"},
+      {name:"ztmp50", url: "def.com1",    desc:"dahdah50"},
+      {name:"zp",     url: "def.com2",    desc:"dahdah0"}             
+    ];
+  </script>
+  <!-- END: PAGE SPECIFIC -->
+
 </head>
-<body>
+<body onload="run('keyword', 'result', -1);">
   <h1><a href="https://gonyyi.com">gonyyi</a></h1>
 
-  <h2>sitemap</h2>
-  <p class="margTop1">
-    <input placeholder="filter sitemap" autofocus/> <i class="salmon">filtered by abc</i>
+  <h2>lookup</h2>
+  <p>
+    <input id="keyword" placeholder="search" onkeyup="search(this);" />
+    <button type="button" onclick="search();">Lookup</button>
   </p>
-  <ul class="mlink">
-    <li>
-      <a href="https://github.com/gonyyi/alog">alog <i>index</i></a>
-    </li>
-  </ul>
+  <ul class="mlink" id="result"></ul>
 
   <hr>
   <footer>&copy; gon-y-yi</footer>
