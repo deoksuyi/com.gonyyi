@@ -71,12 +71,12 @@
       tmpRes = [];
       keys.forEach(function(k){
         score=similarity(k.name, keyword);
-        console.log(k.name, keyword, score);
+        // console.log(k.name, keyword, score);
         if(score != 0) {
           tmpRes.push( {data:k, score:score} );
         }
       })
-      console.log(tmpRes);
+      // console.log(tmpRes);
       if(tmpRes.length>0) {
         tmpResIdx = Object.keys(tmpRes)
         .sort(function(item1,item2){
@@ -120,13 +120,17 @@
     // RESULT
     //
     function resultEmpty() {
-      try{result.innerHTML = '<li>not available</li>';}
-      catch(err){console.log(err);}  
+      if(result!=null) {
+        try{result.innerHTML = '<li>not available</li>';}
+        catch(err){console.log(err);}  
+      }
     }
 
     function resultReset() {
-      try{result.innerHTML = '';}
-      catch(err){console.log(err);}
+      if(result!=null) {
+        try{result.innerHTML = '';}
+        catch(err){console.log(err);}
+      }
     }
 
     function resultAdd(elm) {
