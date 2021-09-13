@@ -150,8 +150,9 @@
     // RUN
     //
     function run(idSuggestion, maxResult) {
-      tmpPath = window.location.pathname.split("/");
-      keyword = tmpPath[tmpPath.length-1].split(".")[0];
+      // tmpPath = window.location.pathname.split("/");
+      // keyword = tmpPath[tmpPath.length-1].split(".")[0];
+      keyword = window.location.pathname.replaceAll("/", "").trim();      
       sugg = document.getElementById(idSuggestion);
       maxRes = maxResult;
       search();
