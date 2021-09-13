@@ -57,6 +57,7 @@
   </ul>
 
   <script>
+    console.log("DSYiM Mater - (c) gon/y/yi");
     var oSize = document.getElementById("inSize");
     var oBgColor = document.getElementById("inBgColor");
     var oColor = document.getElementById("inColor");
@@ -134,7 +135,7 @@
 
     function getInfoFromURL() {
       var configs = window.location.search.replace("?", "").split("&");
-      console.log("total hash item: " + configs.length);
+      // console.log("total hash item: " + configs.length);
       for (var i = 0; i < configs.length; i++) {
         var item = configs[i].split("=");
         if (item.length > 1) {
@@ -201,6 +202,6 @@
   </script>
 
   <hr>
-  <footer>&copy; gon-y-yi</footer>
+  <footer>&copy; gon/y/yi</footer>
 </body>
 </html>
