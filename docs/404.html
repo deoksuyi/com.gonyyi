@@ -72,7 +72,7 @@
       keys.forEach(function(k){
         score=similarity(k.name, keyword);
         // console.log(k.name, keyword, score);
-        if(score != 0) {
+        if(score > 0.2) {
           tmpRes.push( {data:k, score:score} );
         }
       })
