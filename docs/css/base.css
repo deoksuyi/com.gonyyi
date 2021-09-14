@@ -18,7 +18,7 @@ hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;
 /* HEADING */
 h1 {margin: 3rem 0; font-size: 8rem;}
 h1.hasDesc {margin-bottom: 0;}
-h1 i,h2 i, h3 i {padding-left: 1rem; color: #cccccc; font-size: 80%; font-style: normal;}
+h1 i,h2 i, h3 i {padding-left: 1rem; color: #cccccc; font-size: 3rem; font-style: normal;}
 h1 a {color:#4a4a4a;}
 h1 a:hover {background: #eeeeee;border-radius: 2rem 0;}
 h2 {font-weight: lighter; margin: 0 0 1rem 0; font-size: 6rem;}
@@ -26,7 +26,7 @@ h2 {font-weight: lighter; margin: 0 0 1rem 0; font-size: 6rem;}
 /* MAIN MENU */
 ul.mlink {margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada;}
 ul.mlink li {list-style-type: none;}
-ul.mlink li i {padding-left: 1rem; font-size: 80%;color: #7e7e7e;}
+ul.mlink li i {padding-left: 1rem; font-size: 3rem;color: #7e7e7e;}
 ul.mlink li a,ul.mlink li div {display: block; outline: none; padding: 1rem;}
 ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2rem;}
 
