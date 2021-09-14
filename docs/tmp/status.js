@@ -1,6 +1,6 @@
 // gyyStatus.js
 // (c) gon/y/yi <https://gonyyi.com/copyright.txt>
-// 09/13/2021 - v1.0
+// 09/13/2021 - v1.0.1
 // Add script to the header, and call it from body tag's onLoad
 //    eg. <head><script src="gyyStatus.js"></script></head>
 //        <body onload="GYYStatus('gyyStatus',true);">
@@ -12,9 +12,9 @@ function gyyStatusCls() {
   var style = document.createElement('style');
   style.type = 'text/css';
   style.innerHTML = 
-    `.`+gyyStatusC1+` {padding: 1rem;margin: 1rem;border-radius: 3rem;width: 10rem;text-align: center;background-color:#D0D0D0;color: black;}`+
-    `.`+gyyStatusC1+`_fail {background-color:#FF4A31;color: white;}`+
-    `.`+gyyStatusC1+`_ok {background-color:#397EFF;color: white;}`;
+    `.`+gyyStatusC1+` {display: inline-block;border: .2rem solid gray;padding:0 .5rem;border-radius: 2rem;text-align: center;background-color:white;color: gray; font-size: 2rem;}`+
+    `.`+gyyStatusC1+`_fail {border-color: #FF4A31;color:#FF4A31;}`+
+    `.`+gyyStatusC1+`_ok {border-color: #397EFF;color:#397EFF;}`;
   document.getElementsByTagName('head')[0].appendChild(style);
 }
 function gyyStatusUpBtn(DST, addClass, content) {
@@ -31,13 +31,13 @@ async function gyyStatusChk(DST) {
   DST.innerHTML = "Unknown";
   await fetch(URL).then(res => {
       if(res.status==200|| res.ok) {
-        gyyStatusUpBtn(DST, 'ok', "OK");
+        gyyStatusUpBtn(DST, 'ok', res.status);
       } else {
-        gyyStatusUpBtn(DST, 'fail', "Err "+res.status);
+        gyyStatusUpBtn(DST, 'fail', res.status);
       }
   }).catch(err => {
     if (err instanceof TypeError) {
-        gyyStatusUpBtn(DST, '', "Err 503"); // 503 unreachable
+        gyyStatusUpBtn(DST, '', "503"); // 503 unreachable
     } else {
       console.error("WARN: fetch("+URL+"}) ==> "+err);
     }
