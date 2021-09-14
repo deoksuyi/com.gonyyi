@@ -10,6 +10,19 @@ Detail copyright information can be found: <https://gonyyi.com/copyright.txt>
 - Archiving: <https://web.archive.org/save/https://gonyyi.com>
 
 
+TODO for CLEAN UP
+-----------------
+
+- [ ] `/css` becomes `/asset`
+	- [ ] will contain common javascripts as well
+- [ ] `/dsyim` goes to `/tmp/dsyim`
+- [ ] `/ya.html` now has `/ya.json` as well in the root
+- [ ] `/copyright/index.html` now with `/copyright.html` in the root
+- [ ] remove `/README.md`
+- [ ] `/tmp` will have `index.html`
+- [ ] do not use basetag? 
+
+
 
 TODO for GIT ACTION
 -------------------
