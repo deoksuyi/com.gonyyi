@@ -22,14 +22,14 @@ function gyyStatusUpBtn(DST, addClass, content) {
   if (addClass!="") DST.classList.add(gyyStatusC1+"_"+addClass); // add class
   DST.innerHTML = content; // update content like (Running, Error,...)
 }
-async function gyyStatusChk(DST) {
+function gyyStatusChk(DST) {
   URL=DST.getAttribute("url")
   if(URL=="") {
     gyyStatusUpBtn(DST, '', "Bad URL");
     return 
   }
   DST.innerHTML = "Unknown";
-  await fetch(URL).then(res => {
+  fetch(URL).then(res => {
       if(res.status==200|| res.ok) {
         gyyStatusUpBtn(DST, 'ok', res.status);
       } else {
