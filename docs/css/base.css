@@ -10,7 +10,7 @@ body{
   font-size: 4rem;color: #4a4a4a;
   word-wrap: break-word; hyphens: auto;
 }
-footer{font-size: 4rem;}
+footer{font-size: 3rem;}
 a {text-decoration:none; color:#0080ff;}
 a:active, a:focus {color: #ff511d;outline: none;}
 hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
