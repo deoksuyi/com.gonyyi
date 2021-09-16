@@ -1,81 +1,122 @@
 <!DOCTYPE html> 
 <html lang="en">
-<!-- (c) gon y. yi -->
+<!-- Copyright (C) 2016-2021 Gon/Y/Yi -->
 <head>
   <title>gonyyi</title>
   <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
 
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
+  
   <meta property="og:locale" content="en_US"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://gonyyi.com"/>
+  <meta property="og:site_name" content="gon/y/yi"/>
+  <meta property="og:title" content="Gon Y. Yi Homepage"/>
   <meta property="og:image" content="https://gonyyi.com/img/og-img.png"/>
-  <meta property="og:site_name" content="gonyyi"/>
-  <meta property="og:title" content="The Official Home of Gon Yi"/>
 
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
   <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
   <link rel="alternate icon" href="/favicon.ico"/>
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="any"/>
 
+  <!-- NO CACHING -->
+  <meta http-equiv="pragma" content="no-cache"/>
+  <meta http-equiv="expires" content="-1"/>
+  
   <style>
     /* COMMON DEFINITION */
     html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
     body{
       margin: 3rem; max-width: 160rem;
-      font-family: "Times","Times New Roman",serif,"Georgia","Helvetica","Arial",sans-serif;
+      font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
       font-size: 4rem;color: #4a4a4a;
       word-wrap: break-word; hyphens: auto;
+      text-transform: lowercase;
     }
-    footer{font-size: 3rem;}
-    a {text-decoration:none; color:#0080ff;}
+    footer{font-size: 3rem; margin-bottom: 6rem;}
+    small {
+      display: block; margin-bottom: 3rem; font-size:3rem;color: #7e7e7e;}
+    p small, ul small {
+      padding-left: 5rem; margin-bottom: 0; font-style: italic; color: #9e9e9e;}
+    
+    /* ANCHOR */
+    a {text-decoration:none;color:#0080ff;}
+    a:hover,
+    a:focus {background: #eeeeee; border-radius: 2rem;}
     a:active, a:focus {color: #ff511d;outline: none;}
+    a.bad {color:red;} /* Bad Link */
+
     hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
     
     /* HEADING */
-    h1 {margin: 3rem 0; font-size: 8rem;}
-    h1.hasDesc {margin-bottom: 0;}
-    h1 i,h2 i, h3 i {padding-left: 1rem; color: #cccccc; font-size: 3rem; font-style: normal;}
+    h1 {margin: 3rem 0 1rem 0; font-size: 8rem;}
     h1 a {color:#4a4a4a;}
     h1 a:hover {background: #eeeeee;border-radius: 2rem 0;}
-    h2 {font-weight: lighter; margin: 0 0 1rem 0; font-size: 6rem;}
+    h1 i, h2 i, h3 i {
+      padding-left: 1rem; color: #aaaaaa; font-style: normal;
+      font-weight: lighter; }
+    h2 {margin: 3rem 0 1rem 0; font-size: 6rem; font-weight: lighter;}
     
     /* MAIN MENU */
-    ul.mlink {margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada;}
-    ul.mlink li {list-style-type: none;}
-    ul.mlink li i {padding-left: 1rem; font-size: 3rem;color: #7e7e7e;}
-    ul.mlink li a,ul.mlink li div {display: block; outline: none; padding: 1rem;}
-    ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2rem;}
+    p, ul {
+      margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada; font-size: 3rem;}
+    ul li {list-style-type: none;}
+    ul li i {padding-left: 1rem;color: #7e7e7e;}
+    ul li a, ul li div {display: block; outline: none; padding: 1rem;}
+    
+    div.debug {
+      border-top: 1rem solid orange;
+      text-transform: uppercase; font-size: 2rem; font-family: "Arial"; 
+      background-color:gray; color:white; padding: 1rem; margin-bottom: 2rem;}
+
+    /* INITIALIZE for custom tags*/
+    .init, .init *, .init *::before, .init *::after, 
+    .init *:hover, .init *:focus, .init *:active  {all: initial;}
   </style>
 </head>
 <body>
-  <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
+  <h1><a href="https://localhost">Gon/Y/Yi</a></h1>
+  <small>Welcome to Gon's Home</small>
 
-  <h2>libraries</h2>
-  <ul class="mlink">
+  <!-- H2 TEST: NORMAL-->
+  <h2>Libraries</h2>
+  <ul>
     <li>
-      <a href="https://github.com/gonyyi/alog">alog <i>a high performance and zero allocation JSON logger library written for <u>golang</u></i></a>
+      <a href="https://localhost">alog 
+        <i>a high performance and zero allocation JSON logger library written for <u>golang</u></i>
+      </a>
     </li>
+
     <li>
-      <a href="https://github.com/gonyyi/areq">areq <i>an easy to use http client for <u>golang</u></i></a>
-    </li>    
-    <li>
-      <a href="https://github.com/gonyyi/bash-ztmp">ztmp <i>a <u>bash script</u> managing termporary work directories for Linux and OSX</i></a>
+      <a href="https://localhost">areq 
+        <i>an easy to use http client for <u>golang</u></i>
+      </a>
     </li>
+
     <li>
-      <a href="https://github.com/gonyyi">more... <i>at github.com/gonyyi</i></a>
+      <a href="https://localhost">ztmp 
+        <i>a <u>bash script</u> managing termporary work directories for Linux and OSX</i>
+      </a>
+    </li>
+
+    <li>
+      <a href="https://localhost">more... 
+        <i>at github.com/gonyyi</i>
+      </a>
     </li>
   </ul>
+
+  <!-- H2 TEST: WITHOUT ANCHOR -->
+  <hr/>
 
   <h2>et cetera</h2>
-  <ul class="mlink">
-    <li><a href="https://twitter.com/gonyyi">twitter<i>/gonyyi</i></a></li>
-    <li><a href="https://www.instagram.com/gonyyi">instagram<i>/gonyyi</i></a></li>
-    <li><a href="https://www.linkedin.com/in/gonyyi/">linkedin<i>/gonyyi</i></a></li>
+  <ul>
+    <li><a href="https://localhost">twitter <i>@gonyyi</i></a></li>
+    <li><a href="https://localhost">instagram <i>@gonyyi</i></a></li>
+    <li><a href="https://localhost">linkedin <i>@gonyyi</i></a></li>
   </ul>
-
-  <hr>
-  <footer>&copy; 2016-2021 gon/y/yi</footer>
+  <hr/>
+  <footer>Copyright &copy; 2016-2021 Gon/Y/Yi</footer>
 </body>
 </html>
