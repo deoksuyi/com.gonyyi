@@ -1,0 +1,21 @@
+/* Copyright (C) 2016-2021 Gon/Y/Yi */
+.btn {
+  margin: 5rem 0;
+}
+.contactBtn {
+  border-width: .5rem;
+  border-style: solid;
+  border-color: #2786FF;
+  border-radius: 3rem;
+  margin: 5rem 0;
+  padding: 1rem 2rem;
+  background: #2786FF; color: #ffffff;
+}
+.contactBtn:hover{
+  border-radius: 3rem;
+  border-color: #4d9aff;
+  background: #4d9aff; color: #ffffff;}
+.contactBtn:focus,.contactBtn:active {
+  border-radius: 3rem;
+  border-color: #ff511d; 
+  background: #fff; color: #ff511d;}
