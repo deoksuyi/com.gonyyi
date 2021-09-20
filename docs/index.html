@@ -1,112 +1,57 @@
 <!DOCTYPE html> 
 <html lang="en">
-<!-- Copyright (C) 2016-2021 Gon/Y/Yi -->
-<head>
-  <title>gonyyi</title>
-  <base id="baseTarget" target="gyy" href="https://gonyyi.com"/>
-
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
-  
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://gonyyi.com"/>
-  <meta property="og:site_name" content="gon/y/yi"/>
-  <!--
-  <meta property="og:title" content="gon/y/yi home"/>
-  <meta property="og:image" content="https://gonyyi.com/img/og-img.png"/>
-  -->
-
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
-  <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
-  <link rel="alternate icon" href="/favicon.ico"/>
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="any"/>
-  
-  <style>
-    /* COMMON DEFINITION */
-    html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
-    body{
-      margin: 3rem; max-width: 160rem;
-      font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
-      font-size: 4rem;color: #4a4a4a;
-      word-wrap: break-word; hyphens: auto;
-      text-transform: lowercase;
-    }
-    footer{font-size: 3rem; margin-bottom: 6rem;}
-    h1 {margin: 3rem 0 1rem 0; font-size: 8rem;}
-    h1 a {color:#4a4a4a;}
-    h1 a:hover {background: #eeeeee;border-radius: 2rem 0;}
-    h1 i, h2 i, h3 i {
-      padding-left: 1rem; color: #aaaaaa; font-style: normal;
-      font-weight: lighter; }
-    h2 {margin: 3rem 0 1rem 0; font-size: 6rem; font-weight: lighter;}
-    hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
-    p, ul {
-      margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada; font-size: 3rem;}
-    ul li {list-style-type: none;}
-    ul li i {padding-left: 1rem;color: #7e7e7e;}
-    ul li a, ul li div {display: block; outline: none; padding: 1rem;}
+  <!-- Copyright (C) 2016-2021 Gon/Y/Yi -->
+  <head>
+    <title>gonyyi</title>
+    <base id="baseTarget" target="gyy" href="https://gonyyi.com"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"/>
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
+    <link rel="alternate icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="any"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>  
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://gonyyi.com"/>
+    <meta property="og:site_name" content="gon/y/yi"/>
+    <!--
+    <meta property="og:title" content="gon/y/yi home"/>
+    <meta property="og:image" content="https://gonyyi.com/img/og-img.png"/>
+    -->
+  </head>
+  <body>
+    <h1><a href="https://gonyyi.com">Gon/Y/Yi</a></h1>
+    <small>The Gon House on Network</small>
     
-    /* DESCRIPTION */
-    small {
-      display: block; margin-bottom: 3rem; font-size:3rem;color: #7e7e7e;}
-    p small, ul small {
-      padding-left: 5rem; margin-bottom: 0; font-style: italic; color: #9e9e9e;}
-    
-    /* ANCHOR */
-    a {text-decoration:none;color:#0080ff;}
-    a:hover,
-    a:focus {background: #eeeeee; border-radius: 2rem;}
-    a:active, a:focus {color: #ff511d;outline: none;}
-    a.bad {color:red;} /* Bad Link */
-
-    /* INITIALIZE for custom tags*/
-    .init, .init *, .init *::before, .init *::after, 
-    .init *:hover, .init *:focus, .init *:active  {all: initial;}
-        
-    div.debug {
-      border-top: 1rem solid orange;
-      text-transform: uppercase; font-size: 2rem; font-family: "Arial"; 
-      background-color:gray; color:white; padding: 1rem; margin-bottom: 2rem;}
-  </style>
-</head>
-<body>
-  <h1><a href="https://gonyyi.com">Gon/Y/Yi</a></h1>
-  <small>The Gon House on Network</small>
-
-  <!-- H2 TEST: NORMAL-->
-  <h2>Libraries</h2>
-  <ul>
-    <li>
-      <a href="https://github.com/gonyyi/alog">alog 
+    <!-- LIBRARIES -->
+    <hr/>
+    <h2>Libraries</h2>
+    <ul>
+      <li><a href="https://github.com/gonyyi/alog">alog 
         <i>a high performance and zero allocation JSON logger library written for <u>golang</u></i>
-      </a>
-    </li>
-
-    <li>
-      <a href="https://github.com/gonyyi/areq">areq 
+      </a></li>
+      <li><a href="https://github.com/gonyyi/areq">areq 
         <i>an easy to use http client for <u>golang</u></i>
-      </a>
-    </li>
-
-    <li>
-      <a href="https://github.com/gonyyi/bash-ztmp">ztmp 
+      </a></li>
+      <li><a href="https://github.com/gonyyi/bash-ztmp">ztmp 
         <i>a <u>bash script</u> managing termporary work directories for Linux and OSX</i>
-      </a>
-    </li>
-  </ul>
+      </a></li>
+    </ul>
+    
+    <!-- ET CETERA -->
+    <hr/>
+    <h2>et cetera</h2>
+    <ul>
+      <li><a href="https://github.com/gonyyi">github <i>@gonyyi</i></a></li>
+      <li><a href="https://twitter.com/gonyyi">twitter <i>@gonyyi</i></a></li>
+      <li><a href="https://instagram.com/gonyyi">instagram <i>@gonyyi</i></a></li>
+      <li><a href="https://linkedin.com/in/gonyyi">linkedin <i>@gonyyi</i></a></li>
+    </ul>
 
-  <!-- H2 TEST: WITHOUT ANCHOR -->
-  <hr/>
-
-  <h2>et cetera</h2>
-  <ul>
-    <li><a href="https://github.com/gonyyi">github <i>@gonyyi</i></a></li>
-    <li><a href="https://twitter.com/gonyyi">twitter <i>@gonyyi</i></a></li>
-    <li><a href="https://instagram.com/gonyyi">instagram <i>@gonyyi</i></a></li>
-    <li><a href="https://linkedin.com/in/gonyyi">linkedin <i>@gonyyi</i></a></li>
-  </ul>
-  <hr/>
-  <footer>Copyright &copy; 2016-2021 Gon/Y/Yi</footer>
-</body>
+    <!-- COPYRIGHT -->
+    <hr/>
+    <footer>Copyright &copy; 2016-2021 Gon/Y/Yi. 
+      <div>Last updated: 9/20/2021</div></footer>
+  </body>
 </html>
