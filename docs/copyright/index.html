@@ -1,27 +1,25 @@
 <!DOCTYPE html> 
 <html lang="en">
-<!-- (c) gon y. yi -->
-<head>
-  <title>gonyyi</title>
-  <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
+  <!-- Copyright (C) 2016-2021 Gon/Y/Yi -->
+  <head>
+    <title>gonyyi</title>
+    <base id="baseTarget" target="gyy" href="https://gonyyi.com"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"/>    
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
+    <link rel="alternate icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="any"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>  
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://gonyyi.com"/>
+    <meta property="og:site_name" content="gonyyi"/>
+    <meta property="og:title" content="copyright"/>
+  </head>
 
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://gonyyi.com"/>
-  <meta property="og:image" content="https://gonyyi.com/img/og-img.png"/>
-  <meta property="og:site_name" content="gonyyi"/>
-  <meta property="og:title" content="copyright"/>
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
-  <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
-  <link rel="alternate icon" href="/favicon.ico"/>
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
-  <link rel="stylesheet" type="text/css" href="/css/base.css"/>
-
-  <!--<meta http-equiv="refresh" content="0; url=https://gonyyi.com/copyright.txt"/>-->
   <style>
-    #copyrighttxt {
+    #copyrightfile {
       background-color: #dadada;
       border-radius: 3rem;
       padding: 3rem;
@@ -33,26 +31,25 @@
 <body>
   <h1><a href="/">gon/y/yi</a></h1>
 
-  <h2>copyright disclaimer</h2>
+  <hr/>
+  <h2>copyright notice</h2>
 
-  <ul class="mlink">
-    <li><a download="copyright-gonyyi.txt" href="copyright.txt">copyright.txt <i>download the original</i></a></li>
-    <li><pre id="copyrighttxt"></pre></li>
+  <ul>
+    <li><a download="copyright.txt" href="copyright.txt">copyright.txt <i>download the original</i></a></li>
+    <li><pre id="copyrightfile"></pre></li>
   </ul>
 
-  <script>
-    <!--
+  <script><!--
       try{
         fetch('copyright.txt')
         .then(response => {
           if(response.status=="200") {return response.text();} 
           return "See &lt;https://gonyyi.com/copyright.txt&gt;";})
         .then(text => {
-          document.getElementById("copyrighttxt").innerHTML = text;})
+          document.getElementById("copyrightfile").innerHTML = text;})
       } catch (err) {
-        document.getElementById("copyrighttxt").innerHTML = "oops! try again with a newer version of web browser. GYI-MSG-ERR-0A1";
+        document.getElementById("copyrightfile").innerHTML = "oops! try again with a newer version of web browser. GYI-MSG-ERR-0A1";
       }
-    
     // -->
   </script>
   
