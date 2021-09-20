@@ -1,0 +1,28 @@
+/* 
+  Copyright (C) 2016-2021 Gon/Y/Yi
+  GONYYI Form Definitions
+*/
+input, button {
+  font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
+  border: .5rem solid #dadada;
+  /*border-radius: 2rem;*/
+  margin: .5rem 0;
+  padding: 1rem 1rem;
+  /*font-size: 100%;*/
+}
+input {width: 30rem;}
+button {
+  width: 20rem;
+  background: #DADADA;
+}
+input:hover, input:focus {
+  border: .5rem solid #2786FF;
+  background-color: #EBF5FB;
+  outline: none; /* disable browser's outline */
+}
+button:hover, button:focus {
+  border: .5rem solid #2786FF;
+  background-color: #AED6F1;
+  outline: none; /* disable browser's outline */
+}
+label {font-size: 3rem;}
