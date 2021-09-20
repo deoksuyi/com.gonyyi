@@ -1,176 +1,47 @@
 <!DOCTYPE html> 
 <html lang="en">
-<!-- (c) gon y. yi -->
-<head>
-  <title>gonyyi/404</title>
-  <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
+  <!-- Copyright (C) 2016-2021 Gon/Y/Yi -->
+  <head>
+    <title>gonyyi/404</title>
+    <base id="baseTarget" target="gyy" href="https://gonyyi.com"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"/>
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
+    <link rel="alternate icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="any"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>  
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://gonyyi.com"/>
+    <meta property="og:site_name" content="gon/y/yi"/>
+    
+    <meta property="og:title" content="404 page not found"/>
+  </head>
 
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://gonyyi.com"/>
-  <meta property="og:image" content="https://gonyyi.com/img/og-img.png"/>
-  <meta property="og:site_name" content="gonyyi"/>
-  <meta property="og:title" content="404 page not found"/>
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
-  <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
-  <link rel="alternate icon" href="/favicon.ico"/>
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="any"/>
-  <link rel="stylesheet" type="text/css" href="/css/base.css"/>
-  
   <!-- Start: PAGE SPECIFIC -->
-  <style type="text/css">
+  <!-- <style type="text/css">
     /* MAIN MENU */
     ul.mlink {margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada;}
     ul.mlink li {list-style-type: none;}
     ul.mlink li i {padding-left: 1rem; font-size: 80%;color: #7e7e7e;}
     ul.mlink li a,ul.mlink li div {display: block; outline: none; padding: 1rem;}
     ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2rem;}    
-  </style>
+  </style> -->
+  <script type="text/javascript" src="./js/404-suggest.js"></script>
   <script>
-    console.log("DSYiM Search Keyword - (c) gon/y/yi");
-    //
-    // GLOBAL VARIABLES
-    //
-    var maxRes;
-    var result;
-    var keyword;
-    var sugg;
-    var keys;
-
-    //
-    // MATCH ALGORITHM 
-    //
-    function bigrams(string){
-      var str = string.toLowerCase()
-      var chars = str.split('');
-      for(var i=0; i<chars.length; i++){ chars[i] = str.slice(i, i + 2); }
-      return chars;
-    }
-    function similarity(str1="", str2=""){
-      if(str1.length>0 && str2.length>0){
-        var bgstr1 = bigrams(str1);
-        var bgstr2 = bigrams(str2);
-        var union = bgstr1.length + bgstr2.length;
-        var matches = 0;
-        for(var i=0; i<bgstr1.length; i++){
-          for(var j=0; j<bgstr2.length; j++){
-            if(bgstr1[i]==bgstr2[j]) matches++;
-        }}
-        if(matches>0) return ((2.0 * matches) / union);
-      }
-      return 0.0
-    }
-
-    //
-    // SEARCH
-    //
-    function search() {
-      resultReset();
-      tmpRes = [];
-      keys.forEach(function(k){
-        score=similarity(k.name, keyword);
-        // console.log(k.name, keyword, score);
-        if(score > 0.2) {
-          tmpRes.push( {data:k, score:score} );
-        }
-      })
-      // console.log(tmpRes);
-      if(tmpRes.length>0) {
-        tmpResIdx = Object.keys(tmpRes)
-        .sort(function(item1,item2){
-          if(tmpRes[item1].score > tmpRes[item2].score) return 1;
-          if(tmpRes[item1].score < tmpRes[item2].score) return -1;
-          if(tmpRes[item1].data.name > tmpRes[item2].data.name) return -1;
-          if(tmpRes[item1].data.name < tmpRes[item2].data.name) return 1;
-          return 0;
-          // return tmpRes[item1].score - tmpRes[item2].score
-        }).reverse();
-        // limit how many can print
-        if(maxRes != -1 && tmpResIdx.length > maxRes) {
-          tmpResIdx = tmpResIdx.slice(0, maxRes);
-        }
-
-        // If found a match, 
-        if(tmpResIdx.length > 0) {
-          // Add H2
-          h2 = document.createElement("h2");
-          h2.innerHTML = 'similar to "'+keyword+'"';
-
-          ul = document.createElement("ul");
-          ul.classList.add("mlink");
-
-          result = document.createElement("li");
-          ul.appendChild(result);
-
-          sugg.appendChild(h2);
-          sugg.appendChild(ul);
-
-          tmpResIdx.forEach(function(k){
-            resultAdd(tmpRes[k]);
-          });
-        }
-      } else {
-        resultEmpty();
-      }
-    }
-
-    //
-    // RESULT
-    //
-    function resultEmpty() {
-      if(result!=null) {
-        try{result.innerHTML = '<li>not available</li>';}
-        catch(err){console.log(err);}  
-      }
-    }
-
-    function resultReset() {
-      if(result!=null) {
-        try{result.innerHTML = '';}
-        catch(err){console.log(err);}
-      }
-    }
-
-    function resultAdd(elm) {
-      tmp_score = " (match: "+elm.score.toFixed(2)+")";
-      tmp_li = document.createElement("li");
-      tmp_a = document.createElement('a');
-      tmp_a.setAttribute('href', elm.data.url);
-      tmp_a.innerHTML = elm.data.name + ' '
-      tmp_i = document.createElement('i');
-      tmp_i.innerHTML = elm.data.desc + tmp_score;
-      tmp_a.appendChild(tmp_i);
-      tmp_li.appendChild(tmp_a);
-      result.appendChild(tmp_li);
-    }     
-
-    //
-    // RUN
-    //
-    function run(idSuggestion, maxResult) {
-      // tmpPath = window.location.pathname.split("/");
-      // keyword = tmpPath[tmpPath.length-1].split(".")[0];
-      keyword = window.location.pathname.replaceAll("/", "").trim();      
-      sugg = document.getElementById(idSuggestion);
-      maxRes = maxResult;
-      search();
-    }
-
-    keys = [
-      {name:"contacts",   url: "/contact",     desc:"contact info"}, 
-      {name:"findme",   url: "/contact",     desc:"contact info"}, 
-      {name:"iam",   url: "/contact",     desc:"contact info"}, 
-      {name:"copyright",  url: "/copyright",    desc:"copyright info"},
-      {name:"copyrights",  url: "/copyright",    desc:"copyright info"},
-      {name:"copy",  url: "/copyright",    desc:"copyright info"},
-      {name:"lost",  url: "/lost",    desc:"lost items"},
-      {name:"found",  url: "/lost",    desc:"lost items"},
-      {name:"image",  url: "/img",    desc:"images"},
-      {name:"images",  url: "/img",    desc:"images"},
-      {name:"logo",  url: "/img",    desc:"images"},
-      {name:"icon",  url: "/img",    desc:"images"}
+    var keys = [
+      {url: "/contact",     desc:"contacts"}, 
+      {url: "/contact",     desc:"contact info"}, 
+      {url: "/copyright",    desc:"copyright info"},
+      {url: "/copyright",    desc:"copyrights"},
+      {url: "/copyright",    desc:"c"},
+      {url: "/lost",    desc:"found"},
+      {url: "/lost",    desc:"lost items"},
+      {url: "/lost",    desc:"lost item"},
+      {url: "/img",    desc:"images"},
+      {url: "/img",    desc:"image"},
+      {url: "/img",    desc:"imgs"}
     ];
   </script>
   <!-- End: PAGE SPECIFIC -->
@@ -180,16 +51,14 @@
 
   <h1><a href="/">gon/y/yi</a></h1>
 
+  <hr>
   <h2>404 not found</h2>
-  <ul class="mlink">
-    <li id="errorLink"><div class="gray" id="errorMsg">the page you are trying to open could not be found</div></li>
+  <small>the page you are trying to open could not be found</small>
+  <ul>
     <li><a href='/'>go to main</a></li>
   </ul>
 
-  <div id="suggestion">
-    <!-- <h2>suggestion</h2> -->
-    <!-- <ul id="result" class="mlink"><li><span>not available</span></li></ul> -->
-  </div>
+  <div id="suggestion"></div>
 
   <hr>
   <footer>&copy; 2016-2021 gon/y/yi</footer>
