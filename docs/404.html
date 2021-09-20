@@ -4,11 +4,6 @@
   <head>
     <title>gonyyi/404</title>
     <base id="baseTarget" target="gyy" href="https://gonyyi.com"/>
-    <style type="text/css">
-      /* (c) 2016-2021 gon/y/yi <https://gonyyi.com/copyright> */
-      /* GONYYI base.css */
-      html{padding:0;margin:5px;font-size:5px;background:#fff}body{margin:3rem;max-width:160rem;font-family:Georgia,Times,"Times New Roman",serif,Helvetica,Arial,sans-serif;font-size:4rem;color:#4a4a4a;word-wrap:break-word;hyphens:auto;text-transform:lowercase}footer{font-size:3rem;margin-bottom:6rem}footer div{font-size:3rem;color:#fff}h1{margin:3rem 0 1rem 0;font-size:8rem}h1 a{color:#4a4a4a}h1 a:hover{background:#eee;border-radius:2rem 0}h1 i,h2 i,h3 i{padding-left:1rem;color:#aaa;font-style:normal;font-weight:lighter}h2{margin:3rem 0 1rem 0;font-size:6rem;font-weight:lighter}hr{margin-top:3rem;height:.2rem;border-width:0;background-color:#ccc}p,ul{margin:0 0 2rem 4rem;padding:0 2rem;border-left:1rem solid #dadada;font-size:3rem}ul li{list-style-type:none}ul li i{padding-left:1rem;color:#7e7e7e}ul li a,ul li div{display:block;outline:0;padding:1rem}small{display:block;margin-bottom:3rem;font-size:3rem;color:#7e7e7e}p small,ul small{padding-left:5rem;margin-bottom:0;font-style:italic;color:#9e9e9e}a{text-decoration:none;color:#0080ff}a:focus,a:hover{background:#eee;border-radius:2rem}a:active,a:focus{color:#ff511d;outline:0}a.bad{color:red}.init,.init *,.init ::after,.init ::before,.init :active,.init :focus,.init :hover{all:initial}
-    </style>
     <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
     <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
     <link rel="alternate icon" href="/favicon.ico"/>
@@ -20,41 +15,43 @@
     <meta property="og:url" content="https://gonyyi.com"/>
     <meta property="og:site_name" content="gon/y/yi"/>
     <meta property="og:title" content="404 page not found"/>
+    <style>
+      /* (c) 2016-2021 gon/y/yi <https://gonyyi.com/copyright> */
+      /* GONYYI base.css */
+      html{padding:0;margin:5px;font-size:5px;background:#fff}body{margin:3rem;max-width:160rem;font-family:Georgia,Times,"Times New Roman",serif,Helvetica,Arial,sans-serif;font-size:4rem;color:#4a4a4a;word-wrap:break-word;hyphens:auto;text-transform:lowercase}footer{font-size:3rem;margin-bottom:6rem}footer div{font-size:3rem;color:#fff}h1{margin:3rem 0 1rem 0;font-size:8rem}h1 a{color:#4a4a4a}h1 a:hover{background:#eee;border-radius:2rem 0}h1 i,h2 i,h3 i{padding-left:1rem;color:#aaa;font-style:normal;font-weight:lighter}h2{margin:3rem 0 1rem 0;font-size:6rem;font-weight:lighter}hr{margin-top:3rem;height:.2rem;border-width:0;background-color:#ccc}p,ul{margin:0 0 2rem 4rem;padding:0 2rem;border-left:1rem solid #dadada;font-size:3rem}ul li{list-style-type:none}ul li i{padding-left:1rem;color:#7e7e7e}ul li a,ul li div{display:block;outline:0;padding:1rem}small{display:block;margin-bottom:3rem;font-size:3rem;color:#7e7e7e}p small,ul small{padding-left:5rem;margin-bottom:0;font-style:italic;color:#9e9e9e}a{text-decoration:none;color:#0080ff}a:focus,a:hover{background:#eee;border-radius:2rem}a:active,a:focus{color:#ff511d;outline:0}a.bad{color:red}.init,.init *,.init ::after,.init ::before,.init :active,.init :focus,.init :hover{all:initial}
+    </style>
+    <script>
+      var maxRes,result,keyword,sugg,keys;function bigrams(e){for(var t=e.toLowerCase(),s=t.split(""),l=0;l<s.length;l++)s[l]=t.slice(l,l+2);return s}function similarity(e="",t=""){if(e.length>0&&t.length>0){for(var s=bigrams(e),l=bigrams(t),n=s.length+l.length,r=0,a=0;a<s.length;a++)for(var m=0;m<l.length;m++)s[a]==l[m]&&r++;if(r>0)return 2*r/n}return 0}function search(){resultReset(),tmpRes=[],keys.forEach(function(e){score=similarity(e.desc,keyword),score>.2&&tmpRes.push({data:e,score:score})}),tmpRes.length>0?(tmpResIdx=Object.keys(tmpRes).sort(function(e,t){return tmpRes[e].score>tmpRes[t].score?1:tmpRes[e].score<tmpRes[t].score?-1:tmpRes[e].data.desc>tmpRes[t].data.desc?-1:tmpRes[e].data.desc<tmpRes[t].data.desc?1:0}).reverse(),-1!=maxRes&&tmpResIdx.length>maxRes&&(tmpResIdx=tmpResIdx.slice(0,maxRes)),tmpResIdx.length>0&&(hr=document.createElement("hr"),h2=document.createElement("h2"),h2.innerHTML="suggestions",small=document.createElement("small"),small.innerHTML="based on your requested URI ",ul=document.createElement("ul"),result=document.createElement("li"),ul.appendChild(result),sugg.appendChild(hr),sugg.appendChild(h2),sugg.appendChild(small),sugg.appendChild(ul),tmpResIdx.forEach(function(e){resultAdd(tmpRes[e])}))):resultEmpty()}function resultEmpty(){if(null!=result)try{result.innerHTML="<li>not available</li>"}catch(e){console.log(e)}}function resultReset(){if(null!=result)try{result.innerHTML=""}catch(e){console.log(e)}}function resultAdd(e){tmp_score=" (match: "+e.score.toFixed(2)+")",tmp_li=document.createElement("li"),tmp_a=document.createElement("a"),tmp_a.setAttribute("href",e.data.url),tmp_a.innerHTML=e.data.url+" ",tmp_i=document.createElement("i"),tmp_i.innerHTML=e.data.desc+tmp_score,tmp_a.appendChild(tmp_i),tmp_li.appendChild(tmp_a),result.appendChild(tmp_li)}function run(e,t){keyword=window.location.pathname.replaceAll("/","").trim(),sugg=document.getElementById(e),maxRes=t,search()}console.log("DSYiM Search Keyword - (c) 2021 gon/y/yi");    
+      var keys = [
+        {url: "/contact",     desc:"contacts"}, 
+        {url: "/contact",     desc:"contact info"}, 
+        {url: "/copyright",    desc:"copyright info"},
+        {url: "/copyright",    desc:"copyrights"},
+        {url: "/copyright",    desc:"c"},
+        {url: "/lost",    desc:"found"},
+        {url: "/lost",    desc:"lost items"},
+        {url: "/lost",    desc:"lost item"},
+        {url: "/img",    desc:"images"},
+        {url: "/img",    desc:"image"},
+        {url: "/img",    desc:"imgs"},
+        {url: "/img",    desc:"404.html"}
+      ];
+    </script>
   </head>
-  <script>
-    var maxRes,result,keyword,sugg,keys;function bigrams(e){for(var t=e.toLowerCase(),s=t.split(""),l=0;l<s.length;l++)s[l]=t.slice(l,l+2);return s}function similarity(e="",t=""){if(e.length>0&&t.length>0){for(var s=bigrams(e),l=bigrams(t),n=s.length+l.length,r=0,a=0;a<s.length;a++)for(var m=0;m<l.length;m++)s[a]==l[m]&&r++;if(r>0)return 2*r/n}return 0}function search(){resultReset(),tmpRes=[],keys.forEach(function(e){score=similarity(e.desc,keyword),score>.2&&tmpRes.push({data:e,score:score})}),tmpRes.length>0?(tmpResIdx=Object.keys(tmpRes).sort(function(e,t){return tmpRes[e].score>tmpRes[t].score?1:tmpRes[e].score<tmpRes[t].score?-1:tmpRes[e].data.desc>tmpRes[t].data.desc?-1:tmpRes[e].data.desc<tmpRes[t].data.desc?1:0}).reverse(),-1!=maxRes&&tmpResIdx.length>maxRes&&(tmpResIdx=tmpResIdx.slice(0,maxRes)),tmpResIdx.length>0&&(hr=document.createElement("hr"),h2=document.createElement("h2"),h2.innerHTML="suggestions",small=document.createElement("small"),small.innerHTML="based on your requested URI ",ul=document.createElement("ul"),result=document.createElement("li"),ul.appendChild(result),sugg.appendChild(hr),sugg.appendChild(h2),sugg.appendChild(small),sugg.appendChild(ul),tmpResIdx.forEach(function(e){resultAdd(tmpRes[e])}))):resultEmpty()}function resultEmpty(){if(null!=result)try{result.innerHTML="<li>not available</li>"}catch(e){console.log(e)}}function resultReset(){if(null!=result)try{result.innerHTML=""}catch(e){console.log(e)}}function resultAdd(e){tmp_score=" (match: "+e.score.toFixed(2)+")",tmp_li=document.createElement("li"),tmp_a=document.createElement("a"),tmp_a.setAttribute("href",e.data.url),tmp_a.innerHTML=e.data.url+" ",tmp_i=document.createElement("i"),tmp_i.innerHTML=e.data.desc+tmp_score,tmp_a.appendChild(tmp_i),tmp_li.appendChild(tmp_a),result.appendChild(tmp_li)}function run(e,t){keyword=window.location.pathname.replaceAll("/","").trim(),sugg=document.getElementById(e),maxRes=t,search()}console.log("DSYiM Search Keyword - (c) 2021 gon/y/yi");    
-    var keys = [
-      {url: "/contact",     desc:"contacts"}, 
-      {url: "/contact",     desc:"contact info"}, 
-      {url: "/copyright",    desc:"copyright info"},
-      {url: "/copyright",    desc:"copyrights"},
-      {url: "/copyright",    desc:"c"},
-      {url: "/lost",    desc:"found"},
-      {url: "/lost",    desc:"lost items"},
-      {url: "/lost",    desc:"lost item"},
-      {url: "/img",    desc:"images"},
-      {url: "/img",    desc:"image"},
-      {url: "/img",    desc:"imgs"},
-      {url: "/img",    desc:"404.html"}
-    ];
-  </script>
-  <!-- End: PAGE SPECIFIC -->
+  <body onload="run('suggestion', 10);">
 
-</head>
-<body onload="run('suggestion', 10);">
+    <h1><a href="/">gon/y/yi</a></h1>
 
-  <h1><a href="/">gon/y/yi</a></h1>
+    <hr>
+    <h2>404 not found</h2>
+    <small>the page you are trying to open could not be found</small>
+    <ul>
+      <li><a href='/'>go to main</a></li>
+    </ul>
 
-  <hr>
-  <h2>404 not found</h2>
-  <small>the page you are trying to open could not be found</small>
-  <ul>
-    <li><a href='/'>go to main</a></li>
-  </ul>
+    <div id="suggestion"></div>
 
-  <div id="suggestion"></div>
-
-  <hr>
-  <footer>&copy; 2016-2021 gon/y/yi</footer>
-</body>
+    <hr>
+    <footer>&copy; 2016-2021 gon/y/yi</footer>
+  </body>
 </html>
