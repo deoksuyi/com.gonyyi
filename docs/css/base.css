@@ -1,132 +1,44 @@
-/* (c) Gon Y. Yi <https://gonyyi.com/copyright> */
-
 /* 
+   (c) 2016-2021 gon/y/yi <https://gonyyi.com/copyright>
    GONYYI Common Definitions
 */
 html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
 body{
   margin: 3rem; max-width: 160rem;
-  font-family: "Times","Times New Roman",serif,"Georgia","Helvetica","Arial",sans-serif;
+  font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
   font-size: 4rem;color: #4a4a4a;
   word-wrap: break-word; hyphens: auto;
+  text-transform: lowercase;
 }
-footer{font-size: 3rem;}
-a {text-decoration:none; color:#0080ff;}
-a:active, a:focus {color: #ff511d;outline: none;}
-hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
-
-/* HEADING */
-h1 {margin: 3rem 0; font-size: 8rem;}
-h1.hasDesc {margin-bottom: 0;}
-h1 i,h2 i, h3 i {padding-left: 1rem; color: #cccccc; font-size: 3rem; font-style: normal;}
+footer{font-size: 3rem; margin-bottom: 6rem;}
+footer div {font-size: 3rem;color:#ffffff;} /* INTERNAL MEMO; HIDDEN */
+h1 {margin: 3rem 0 1rem 0; font-size: 8rem;}
 h1 a {color:#4a4a4a;}
 h1 a:hover {background: #eeeeee;border-radius: 2rem 0;}
-h2 {font-weight: lighter; margin: 0 0 1rem 0; font-size: 6rem;}
+h1 i, h2 i, h3 i {
+  padding-left: 1rem; color: #aaaaaa; font-style: normal;
+  font-weight: lighter; }
+h2 {margin: 3rem 0 1rem 0; font-size: 6rem; font-weight: lighter;}
+hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
+p, ul {
+  margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada; font-size: 3rem;}
+ul li {list-style-type: none;}
+ul li i {padding-left: 1rem;color: #7e7e7e;}
+ul li a, ul li div {display: block; outline: none; padding: 1rem;}
 
-/* MAIN MENU */
-ul.mlink {margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada;}
-ul.mlink li {list-style-type: none;}
-ul.mlink li i {padding-left: 1rem; font-size: 3rem;color: #7e7e7e;}
-ul.mlink li a,ul.mlink li div {display: block; outline: none; padding: 1rem;}
-ul.mlink li a:hover,ul.mlink li a:focus {background: #eeeeee; border-radius: 2rem;}
+/* DESCRIPTION */
+small {
+  display: block; margin-bottom: 3rem; font-size:3rem;color: #7e7e7e;}
+p small, ul small {
+  padding-left: 5rem; margin-bottom: 0; font-style: italic; color: #9e9e9e;}
 
-/* COMMON ITEMS */
-.black {color: #4a4a4a;}
-.white {color: #fff;}
-.gray {color: #7e7e7e;}
-.salmon {color: #ff511d;}
-.bg {background: #fff}
-.bgWhite {background: #fff;}
-.bgSalmon {background: #ff511d;}
-.italic {font-style: italic;}
-.ftL {font-size: 4rem;}
-.ftM {font-size: 3rem;}
-.ftS {font-size: 2rem;}
-.marg0 {margin: 0rem;}
-.marg1 {margin: 1rem;}
-.marg2 {margin: 2rem;}
-.padd0 {padding: 0rem;}
-.padd1 {padding: 1rem;}
-.padd2 {padding: 2rem;}
-.margTop0 {margin-top: 0rem;}
-.margTop1 {margin-top: 1rem;}
-.margTop2 {margin-top: 2rem;}
-.margBtm1 {margin-bottom: 1rem;}
-.margBtm2 {margin-bottom: 2rem;}
-.paddTop0 {padding-top: 0rem;}
-.paddTop1 {padding-top: 1rem;}
-.paddTop2 {padding-top: 2rem;}
-.paddBtm0 {padding-bottom: 0rem;}
-.paddBtm1 {padding-bottom: 1rem;}
-.paddBtm2 {padding-bottom: 2rem;}
-.paddLft0 {padding-left: 0rem;}
-.paddLft1 {padding-left: 1rem;}
-.paddLft2 {padding-left: 2rem;}
-.paddLft4 {padding-left: 4rem;}
-.block {display: block;}
-.rounded1 {border-radius: 1rem;}
-.rounded2 {border-radius: 2rem;}
+/* ANCHOR */
+a {text-decoration:none;color:#0080ff;}
+a:hover,
+a:focus {background: #eeeeee; border-radius: 2rem;}
+a:active, a:focus {color: #ff511d;outline: none;}
+a.bad {color:#ff0000;} /* Bad Link */
 
-/* BROWSER */
-.noOutline:focus {outline: none;}
-.overflow {white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
-
-/* A-LINK AS A FORM BUTTON */
-.asButton {
-  border-width: .5rem;
-  border-style: solid;
-  border-color: #2786FF;
-  border-radius: 3rem;
-  margin: 5rem 0;
-  padding: 1rem 2rem;
-  background: #2786FF; color: #ffffff;
-}
-.asButton:hover{
-  border-color: #4d9aff;
-  background: #4d9aff; color: #ffffff;}
-.asButton:focus, .asButton:active {
-  border-color: #ff511d; 
-  background: #fff; color: #ff511d;}
-
-/* 
-   GONYYI Form Definitions
-*/
-input, button {
-  font-family: Georgia, Times, serif, Helvetica, Arial, sans-serif;
-  border: .5rem solid #dadada;
-  /*border-radius: 2rem;*/
-  margin: .5rem 0;
-  padding: 1rem 1rem;
-  /*font-size: 100%;*/
-}
-input {width: 30rem;}
-button {
-  width: 20rem;
-  background: #DADADA;
-}
-input:hover, input:focus {
-  border: .5rem solid #2786FF;
-  background-color: #EBF5FB;
-  outline: none; /* disable browser's outline */
-}
-button:hover, button:focus {
-  border: .5rem solid #2786FF;
-  background-color: #AED6F1;
-  outline: none; /* disable browser's outline */
-}
-label {font-size: 3rem;}
-
-
-/* 
-   GONYYI Print Definitions
-*/
-/* NOT USED FOR NOW */
-/* @media print {body {margin: 50px;}} */
-/* @media (prefers-color-scheme: dark) {
-  body {background-color: #1e1e1e; color:#bababa;}
-  a {color:#81aaff;}
-  a:hover {background-color: #000000;}
-  h1 a {color: #bababa;}
-  ::-moz-selection {color: black; background: white;}
-  ::selection {color: black;background: white;}
-} */
+/* INITIALIZE for custom tags*/
+.init, .init *, .init *::before, .init *::after, 
+.init *:hover, .init *:focus, .init *:active  {all: initial;}
