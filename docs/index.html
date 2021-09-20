@@ -3,7 +3,7 @@
 <!-- Copyright (C) 2016-2021 Gon/Y/Yi -->
 <head>
   <title>gonyyi</title>
-  <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
+  <base id="baseTarget" target="gyy" href="https://gonyyi.com"/>
 
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
@@ -12,8 +12,10 @@
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://gonyyi.com"/>
   <meta property="og:site_name" content="gon/y/yi"/>
-  <meta property="og:title" content="Gon Y. Yi Homepage"/>
+  <!--
+  <meta property="og:title" content="gon/y/yi home"/>
   <meta property="og:image" content="https://gonyyi.com/img/og-img.png"/>
+  -->
 
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg"/>
   <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
@@ -31,6 +33,21 @@
       text-transform: lowercase;
     }
     footer{font-size: 3rem; margin-bottom: 6rem;}
+    h1 {margin: 3rem 0 1rem 0; font-size: 8rem;}
+    h1 a {color:#4a4a4a;}
+    h1 a:hover {background: #eeeeee;border-radius: 2rem 0;}
+    h1 i, h2 i, h3 i {
+      padding-left: 1rem; color: #aaaaaa; font-style: normal;
+      font-weight: lighter; }
+    h2 {margin: 3rem 0 1rem 0; font-size: 6rem; font-weight: lighter;}
+    hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
+    p, ul {
+      margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada; font-size: 3rem;}
+    ul li {list-style-type: none;}
+    ul li i {padding-left: 1rem;color: #7e7e7e;}
+    ul li a, ul li div {display: block; outline: none; padding: 1rem;}
+    
+    /* DESCRIPTION */
     small {
       display: block; margin-bottom: 3rem; font-size:3rem;color: #7e7e7e;}
     p small, ul small {
@@ -43,32 +60,14 @@
     a:active, a:focus {color: #ff511d;outline: none;}
     a.bad {color:red;} /* Bad Link */
 
-    hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
-    
-    /* HEADING */
-    h1 {margin: 3rem 0 1rem 0; font-size: 8rem;}
-    h1 a {color:#4a4a4a;}
-    h1 a:hover {background: #eeeeee;border-radius: 2rem 0;}
-    h1 i, h2 i, h3 i {
-      padding-left: 1rem; color: #aaaaaa; font-style: normal;
-      font-weight: lighter; }
-    h2 {margin: 3rem 0 1rem 0; font-size: 6rem; font-weight: lighter;}
-    
-    /* MAIN MENU */
-    p, ul {
-      margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada; font-size: 3rem;}
-    ul li {list-style-type: none;}
-    ul li i {padding-left: 1rem;color: #7e7e7e;}
-    ul li a, ul li div {display: block; outline: none; padding: 1rem;}
-    
+    /* INITIALIZE for custom tags*/
+    .init, .init *, .init *::before, .init *::after, 
+    .init *:hover, .init *:focus, .init *:active  {all: initial;}
+        
     div.debug {
       border-top: 1rem solid orange;
       text-transform: uppercase; font-size: 2rem; font-family: "Arial"; 
       background-color:gray; color:white; padding: 1rem; margin-bottom: 2rem;}
-
-    /* INITIALIZE for custom tags*/
-    .init, .init *, .init *::before, .init *::after, 
-    .init *:hover, .init *:focus, .init *:active  {all: initial;}
   </style>
 </head>
 <body>
