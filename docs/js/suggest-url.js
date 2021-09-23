@@ -1,12 +1,10 @@
+// Copyright (c) 2021 Gon Y. Yi <https://gonyyi.com/copyright>
 console.log("DSYiM Search Keyword - (c) 2021 gon/y/yi");
+
 //
 // GLOBAL VARIABLES
 //
-var maxRes;
-var result;
-var keyword;
-var sugg;
-var keys;
+var maxRes, result, keyword, sugg, keys;
 
 //
 // MATCH ALGORITHM 
@@ -39,11 +37,17 @@ function search() {
   resultReset();
   tmpRes = [];
   keys.forEach(function(k){
-    score=similarity(k.desc, keyword);
-    // console.log(k.name, keyword, score);
-    if(score > 0.2) {
-      tmpRes.push( {data:k, score:score} );
-    }
+      highestScore = 0;
+      for(i = 0; i < k.keywords.length; i++) {
+          score=similarity(k.keywords[i], keyword);
+          // console.log(k.name, keyword, score);
+          if(score>highestScore) {
+              highestScore = score;
+          }  
+      }
+      if(highestScore > 0.2) {
+          tmpRes.push( {data:k, score:highestScore} );
+      }
   })
   // console.log(tmpRes);
   if(tmpRes.length>0) {
@@ -51,8 +55,8 @@ function search() {
     .sort(function(item1,item2){
       if(tmpRes[item1].score > tmpRes[item2].score) return 1;
       if(tmpRes[item1].score < tmpRes[item2].score) return -1;
-      if(tmpRes[item1].data.desc > tmpRes[item2].data.desc) return -1;
-      if(tmpRes[item1].data.desc < tmpRes[item2].data.desc) return 1;
+      if(tmpRes[item1].data.keywords > tmpRes[item2].data.keywords) return -1;
+      if(tmpRes[item1].data.keywords < tmpRes[item2].data.keywords) return 1;
       return 0;
       // return tmpRes[item1].score - tmpRes[item2].score
     }).reverse();
@@ -108,13 +112,14 @@ function resultReset() {
 }
 
 function resultAdd(elm) {
-  tmp_score = " (match: "+elm.score.toFixed(2)+")";
+  // tmp_score = " (match: "+elm.score.toFixed(2)+")";
   tmp_li = document.createElement("li");
   tmp_a = document.createElement('a');
   tmp_a.setAttribute('href', elm.data.url);
   tmp_a.innerHTML = elm.data.url + ' '
   tmp_i = document.createElement('i');
-  tmp_i.innerHTML = elm.data.desc + tmp_score;
+  // tmp_i.innerHTML = elm.data.keywords + tmp_score;
+  tmp_i.innerHTML = elm.score.toFixed(2)+" pts";
   tmp_a.appendChild(tmp_i);
   tmp_li.appendChild(tmp_a);
   result.appendChild(tmp_li);
@@ -124,9 +129,9 @@ function resultAdd(elm) {
 // RUN
 //
 function run(idSuggestion, maxResult) {
-  // tmpPath = window.location.pathname.split("/");
-  // keyword = tmpPath[tmpPath.length-1].split(".")[0];
-  keyword = window.location.pathname.replaceAll("/", "").trim();      
+  keyword = window.location.pathname.replaceAll("/", " ").trim();      
+  // keyword = window.location.toString().split("?")[1];
+  // console.log("Seach for " + keyword);
   sugg = document.getElementById(idSuggestion);
   maxRes = maxResult;
   search();
