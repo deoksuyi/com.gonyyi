@@ -1,42 +1,71 @@
-<html>
+<!DOCTYPE html> 
+<html lang="en">
   <head>
+    <title>gon/y/yi</title>
+    <link rel="stylesheet" type="text/css" href="https://gonyyi.com/css/base.min.css"/>
+    <style>
+      html {background-color:initial;}
+      h1 {color:initial;}
+      body.dark-mode {
+        color: #FFF;
+        background-color: #333;
+      }
+      body.normal-mode {
+        color: #333;
+        background-color: #FFF;      
+      }
+    </style>
     <script>
+      // On page load set the theme.
+      (function() {
+        let onpageLoad = localStorage.getItem("theme") || "normal-mode";
+        console.log("onpageLoad:"+onpageLoad);
+        let element = document.body;
+        element.classList.add(onpageLoad); // either "dark-mode" or "normal-mode"
+        document.getElementById("theme").textContent =
+          localStorage.getItem("theme") || "normal-mode";
+          // can this be just onpageLoad? 
+      })();
+      
+      function themeToggle() {
+        // element.classList.toggle("dark-mode");
+        let element = document.body;
+        let theme = localStorage.getItem("theme");
+        if (theme && theme === "normal-mode") {
+          localStorage.setItem("theme", "dark-mode");
+        } else {        
+          localStorage.setItem("theme", "normal-mode");
+        }
+        getStatus();
+      }
+      
+      // this reflects screen based on what's current.
+      function getStatus() {
+        let element = document.body;
+        mode = localStorage.getItem("theme");
+        document.getElementById("theme").textContent = mode;
+        if (mode == "dark-mode") {
+          element.classList.remove("normal-mode");          
+          element.classList.add("dark-mode");
+        } else {
+          element.classList.remove("dark-mode");
+          element.classList.add("normal-mode");        
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
 
-// On page load set the theme.
-(function() {
-  let onpageLoad = localStorage.getItem("theme") || "";
-  let element = document.body;
-  element.classList.add(onpageLoad);
-  document.getElementById("theme").textContent =
-    localStorage.getItem("theme") || "light";
-})();
-
-function themeToggle() {
-  let element = document.body;
-  element.classList.toggle("dark-mode");
-
-  let theme = localStorage.getItem("theme");
-  if (theme && theme === "dark-mode") {
-    localStorage.setItem("theme", "white");
-  } else {
-    localStorage.setItem("theme", "dark-mode");
-  }
-
-  document.getElementById("theme").textContent = localStorage.getItem("theme");
-}
-function getStatus() {
-  document.getElementById("theme").textContent = localStorage.getItem("theme");
-}
-
-</script>
-</head>
-<body>
-  <button type="button" onclick="themeToggle()">Theme Toggle</button>
-  <div id="theme"></div>
-  <script>
-    getStatus();
-  </script>
-
-  <footer>Copyright &copy; Gon Y. Yi 2020-2021</footer>
-</body>
+    <hr/>    
+    <h2>Toggle test</h2>
+    <p>
+      <button type="button" onclick="themeToggle();">Theme Toggle</button>
+      <div id="theme"></div>
+      <script>getStatus();</script>
+    </p>
+    
+    <hr/>
+    <footer>Copyright &copy; Gon Y. Yi 2020-2021</footer>
+  </body>
 </html>

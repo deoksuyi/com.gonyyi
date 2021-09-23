@@ -23,7 +23,7 @@ function gyyStatusUpBtn(DST, addClass, content) {
   DST.innerHTML = content; // update content like (Running, Error,...)
 }
 function gyyStatusChk(DST) {
-  URL=DST.getAttribute("url")
+  URL=DST.getAttribute("title")
   if(URL=="") {
     gyyStatusUpBtn(DST, '', "Bad URL");
     return 
