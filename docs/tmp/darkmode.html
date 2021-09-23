@@ -62,16 +62,17 @@
       }
     </script>
   </head>
-  <body>
+  <body onload="getStatus();">
     <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
 
     <hr/>    
     <h2>Toggle test</h2>
     <p>
-      <button type="button" onclick="themeToggle();">Theme Toggle</button>
-      <div id="theme"></div>
-      <script>getStatus();</script>
+      <button type="button" onclick="themeToggle();">Theme Toggle</button>    
     </p>
+    <div>
+      <div id="theme"></div>
+    </div>
     
     <hr/>
     <footer>Copyright &copy; Gon Y. Yi 2020-2021</footer>
