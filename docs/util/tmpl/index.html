@@ -43,26 +43,27 @@
     h2 {margin: 3rem 0 1rem 0; font-size: 6rem; font-weight: lighter;}
     hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
     p, ul {
-      margin: 0 0 2rem 4rem; padding: 0 2rem; border-left: 1rem solid #dadada; font-size: 3rem;}
-    ul li {list-style-type: none;}
+      margin: 0 0 2rem 4rem; padding: 0 2rem; 
+      border-left: 1rem solid #dadada; font-size: 4rem;}
+    ul li {list-style-type: none; margin:0 0 1rem 0;}
     ul li i {padding-left: 1rem;color: #7e7e7e;}
     ul li a, ul li div {display: block; outline: none; padding: 1rem;}
     ul li div {padding-right: 0rem;}
     pre {background-color: #eeeeee;
-      border-radius:2rem; padding:1rem 2rem; white-space:pre-wrap;
+      border-radius:1rem; padding:1rem 2rem; white-space:pre-wrap;
       font-size:2rem; color:#2e2e2e;}
-    li pre {margin-top: 0;}
+    li pre {margin: 0 0 0 1rem;}
     li div pre {margin-left: 4rem;}
 
     /* DESCRIPTION */
     small {
-      display: block; margin-bottom: 1rem; font-size:3rem;color: #7e7e7e;}
+      display: block; margin-bottom: 1rem; font-size:3rem;color: #5e5e5e;}
     p small, ul small {
-      padding-left: 5rem; margin-bottom: 0; color: #9e9e9e;}
+      padding-left: 5rem; margin-bottom: 1rem; color: #5e5e5e;}
 
     /* ANCHOR */
     a {text-decoration:none;color:#0080ff;}
-    a:hover,a:focus {background: #dadada; border-radius: 2rem;}
+    a:hover,a:focus {background: #dadada; border-radius: 1rem;}
     a:active, a:focus {color: #ff511d;outline: none;}
     a.bad {color:#ff0000;} /* Bad Link */
 
@@ -93,13 +94,46 @@
     <li>
       <div>ul.li.div</div>
       <pre>ul.li.pre</pre>
+    </li>
+    <li>
+      <div>
+        ul.li.div
+        <pre>ul.li.div.pre</pre>
+      </div>
+      <small>ul.li.small</small>      
+    </li>    
+  </ul>
+  
+  <h2>h2</h2>
+  <small>small</small>
+  <ul>
+    <li>
+      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
+    </li>
+    <li>
+      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
+    </li>
+    <li>
+      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
+    </li>
+  </ul>
+    
+  <h2>h2</h2>
+  <small>small</small>
+  <ul>
+    <li>
+      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
       <small>ul.li.small</small>
     </li>
     <li>
-      <div>ul.li.div</div>
-      <div><pre>ul.li.div.pre</pre></div>
-    </li>    
-  </ul>
+      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
+      <small>ul.li.small</small>
+    </li>
+    <li>
+      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
+      <small>ul.li.small</small>
+    </li>
+  </ul>        
   
   <hr/>
   <h2>h2</h2>
