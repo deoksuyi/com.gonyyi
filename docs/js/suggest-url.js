@@ -71,7 +71,7 @@ function search() {
       hr = document.createElement("hr");
       h2 = document.createElement("h2");
       // h2.innerHTML = 'similar items found: "'+keyword+'"';
-      h2.innerHTML = 'suggestions';
+      h2.innerHTML = 'how about ...';
       // small = document.createElement("small");
       // small.innerHTML = 'blah blah';
 
