@@ -1,6 +1,6 @@
 // validate.js
 //    (c) Gon Y. Yi 2021 <https://gonyyi.com/copyright.txt>
-// Usage: (using class name defined in body.onload, and it uses url attr)
+// Usage: (using class name defined in body.onload, and it uses title attr)
 //    <body onload="Validate('valhtml',true);">
 //    ...
 //       <li class="valhtml" url="https://gonyyi.com"></li>
@@ -25,7 +25,7 @@ function gyyStatusCls() {
   document.getElementsByTagName('head')[0].appendChild(style);
 }
 function gyyStatusUpBtn(DST, addClass, content) {
-  URL = DST.getAttribute("url");
+  URL = DST.getAttribute("title");
   a = document.createElement('a');
   a.href = "https://validator.w3.org/nu/?doc="+URL;
   a.innerHTML = URL;
@@ -48,7 +48,7 @@ function gyyStatusUpBtn(DST, addClass, content) {
   }
 }
 function gyyStatusChk(DST) {
-  URL=DST.getAttribute("url")
+  URL=DST.getAttribute("title")
   fetch("https://validator.w3.org/nu/?out=json&doc="+URL)
   .then(res=>res.json())
   .then(res=>{
