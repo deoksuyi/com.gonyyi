@@ -14,7 +14,7 @@
     <link rel="alternate icon" type="image/png" href="/img/favicon.png"/>
     <link rel="alternate icon" href="/favicon.ico"/>
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
-    <link rel="stylesheet" type="text/css" href="/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.min.css"/>
   </head>
   
   <body>
@@ -22,19 +22,17 @@
     
     <h2>parse url</h2>
 
-    <ul class="mlink">
+    <ul>
       <li><input id="url" class="longInput" disabled/><label for="url">URL</label></li>
       <li><input id="username" class="longInput" disabled/><label for="username">Username</label></li>
       <li><input id="passwd" class="longInput" disabled/><label for="passwd">Passwd</label></li>
     </ul>
 
     <script>
-      <!--
       const url = new URL(document.URL);
       document.getElementById("url").value = url.href;
       document.getElementById("username").value = url.username;
       document.getElementById("passwd").value = url.password;
-      // -->
     </script>
 
     <hr/>
