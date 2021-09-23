@@ -82,7 +82,7 @@ function search() {
       ul.appendChild(result);
       sugg.appendChild(hr);
       sugg.appendChild(h2);
-      sugg.appendChild(small);
+      // sugg.appendChild(small);
       sugg.appendChild(ul);
 
       tmpResIdx.forEach(function(k){
