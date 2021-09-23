@@ -26,16 +26,27 @@ function gyyStatusCls() {
 }
 function gyyStatusUpBtn(DST, addClass, content) {
   URL = DST.getAttribute("title");
-  a = document.createElement('a');
-  a.href = "https://validator.w3.org/nu/?doc="+URL;
-  a.innerHTML = URL;
-
-  span = document.createElement('span');
-  span.classList.add(gyyStatusC1+"_"+addClass);
-  span.innerHTML = content.length;
-  a.appendChild(span);
-
-  DST.appendChild(a);
+  
+  // first anchor
+  {
+    let a = document.createElement('a');
+    a.href = URL;
+    a.innerHTML = URL;
+    DST.appendChild(a);
+  }
+  
+  {
+    a = document.createElement('a');
+    a.href = "https://validator.w3.org/nu/?doc="+URL;
+    // a.innerHTML = URL;
+    span = document.createElement('span');
+    span.classList.add(gyyStatusC1+"_"+addClass);
+    span.innerHTML = content.length;
+    a.appendChild(span);
+    DST.appendChild(a);
+  }
+  // second anchor
+  
   if( content.length > 0) {
     for(i=0;i<content.length;i++) {
       pre = document.createElement("pre");
