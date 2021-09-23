@@ -1,52 +1,52 @@
-            /* 
-               (c) 2016-2021 gon/y/yi <https://gonyyi.com/copyright>
-               Last updated: 9/23/2021
-            */
-            html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
-            body{
-              margin: 3rem; max-width: 200rem;
-              font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
-              font-size: 4rem; color: #333333;
-              word-wrap: break-word; hyphens: auto;
-              text-transform: lowercase;
-            }
-            footer{font-size: 3rem; margin-bottom: 6rem;}
-            footer div {font-size: 3rem;color:#ffffff;} /* INTERNAL MEMO; HIDDEN */
-            h1 {margin: 3rem 0 1rem 0; font-size: 8rem;}
-            h1 a {color:#333333;}
-            h1 a:hover {background: #eeefff;border-radius: 2rem 0;}
-            h1 i, h2 i, h3 i {
-              padding-left: 1rem; color: #777777; font-style: normal;
-              font-weight: lighter; }
-            h2 {margin: 3rem 0 1rem 0; font-size: 6rem; font-weight: lighter;}
-            hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
-            p, ul {
-              margin: 0 0 2rem 4rem; padding: 0 2rem; 
-              border-left: 1rem solid #dadada; font-size: 4rem;}
-            ul li {list-style-type: none; margin:0 0 1rem 0;}
-            ul li i {padding-left: 1rem;color: #555555;}
-            ul li a, ul li div {display: block; outline: none; padding: 1rem;}
-            ul li div {padding-right: 0rem;}
-            
-            pre {background-color: #eeeeee;
-              border-radius:1rem; 
-              padding:1rem 1rem; 
-              font-size:3rem; color:#777777; white-space:pre-wrap;}
-            li pre {margin: 0 0 0 0rem;}
-            li a pre, li div pre {margin: 0 0 0 4rem;}
+/* 
+   (c) 2016-2021 gon/y/yi <https://gonyyi.com/copyright>
+   Last updated: 9/23/2021
+*/
+html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
+body{
+  margin: 3rem; max-width: 200rem;
+  font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
+  font-size: 4rem; color: #333333;
+  word-wrap: break-word; hyphens: auto;
+  text-transform: lowercase;
+}
+footer{font-size: 3rem; margin-bottom: 6rem;}
+footer div {font-size: 3rem;color:#ffffff;} /* INTERNAL MEMO; HIDDEN */
+h1 {margin: 3rem 0 1rem 0; font-size: 8rem;}
+h1 a {color:#333333;}
+h1 a:hover {background: #eeefff;border-radius: 2rem 0;}
+h1 i, h2 i, h3 i {
+  padding-left: 1rem; color: #777777; font-style: normal;
+  font-weight: lighter; }
+h2 {margin: 3rem 0 1rem 0; font-size: 6rem; font-weight: lighter;}
+hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
+p, ul {
+  margin: 0 0 2rem 4rem; padding: 0 2rem; 
+  border-left: 1rem solid #dadada; font-size: 4rem;}
+ul li {list-style-type: none; margin:0 0 1rem 0;}
+ul li i {padding-left: 1rem;color: #555555;}
+ul li a, ul li div {display: block; outline: none; padding: 1rem;}
+ul li div {padding-right: 0rem;}
 
-            /* DESCRIPTION */
-            small {
-              display: block; margin-bottom: 1rem; font-size:3rem;color: #777777;}
-            p small, ul small {padding-left: 5rem;}
+pre {background-color: #eeeeee;
+  border-radius:1rem; 
+  padding:1rem 1rem; 
+  font-size:3rem; color:#777777; white-space:pre-wrap;}
+li pre {margin: 0 0 0 0rem;}
+li a pre, li div pre {margin: 0 0 0 4rem;}
 
-            /* ANCHOR */
-            a {text-decoration:none;color:#0080ff;}
-            a:hover,a:focus {background: #eeefff; border-radius: 1rem;}
-            a:active, a:focus {color: #ff511d;outline: none;}
-            a.bad {color:#ff0000;} /* Bad Link */
+/* DESCRIPTION */
+small {
+  display: block; margin-bottom: 1rem; font-size:3rem;color: #777777;}
+p small, ul small {padding-left: 5rem;}
 
-            /* OVERRIDES */
-            .initCasing {text-transform:none;}
-            .init, .init *, .init *::before, .init *::after, 
-            .init *:hover, .init *:focus, .init *:active  {all: initial;}
+/* ANCHOR */
+a {text-decoration:none;color:#0080ff;}
+a:hover,a:focus {background: #eeefff; border-radius: 1rem;}
+a:active, a:focus {color: #ff511d;outline: none;}
+a.bad {color:#ff0000;} /* Bad Link */
+
+/* OVERRIDES */
+.initCasing {text-transform:none;}
+.init, .init *, .init *::before, .init *::after, 
+.init *:hover, .init *:focus, .init *:active  {all: initial;}
