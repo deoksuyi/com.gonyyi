@@ -5,6 +5,7 @@
 //    ...
 //       <li class="valhtml" url="https://gonyyi.com"></li>
 var gyyStatusC1 = "";
+var baseURL = "";
 function gyyStatusCls() {
   var style = document.createElement('style');
   style.type = 'text/css';
@@ -26,18 +27,19 @@ function gyyStatusCls() {
 }
 function gyyStatusUpBtn(DST, addClass, content) {
   URL = DST.getAttribute("title");
-  
+  // console.log(`baseURL=${baseURL}; URL=${URL}`);
+
   // first anchor
   {
     let a = document.createElement('a');
-    a.href = URL;
+    a.href = baseURL+URL;
     a.innerHTML = URL;
     DST.appendChild(a);
   }
   
   {
     a = document.createElement('a');
-    a.href = "https://validator.w3.org/nu/?doc="+URL;
+    a.href = `https://validator.w3.org/nu/?doc=${baseURL}${URL}`;
     // a.innerHTML = URL;
     span = document.createElement('span');
     span.classList.add(gyyStatusC1+"_"+addClass);
@@ -60,7 +62,7 @@ function gyyStatusUpBtn(DST, addClass, content) {
 }
 function gyyStatusChk(DST) {
   URL=DST.getAttribute("title")
-  fetch("https://validator.w3.org/nu/?out=json&doc="+URL)
+  fetch(`https://validator.w3.org/nu/?out=json&doc=${baseURL}${URL}`)
   .then(res=>res.json())
   .then(res=>{
     if(res.messages.length > 0) {
@@ -77,8 +79,9 @@ function gyyStatusChk(DST) {
     }
   });
 }
-function Validate(CSSClassName, UseDefaultCSS) {
+function Validate(CSSClassName, UseDefaultCSS, UseBaseURL) {
   console.log("(c) Gon Yi 2021 <https://gonyyi.com/copyright>");
+  baseURL = UseBaseURL;
   gyyStatusC1 = CSSClassName;
   if(UseDefaultCSS==true) {gyyStatusCls();}
   Array.from(document.getElementsByClassName(gyyStatusC1)).forEach(c => gyyStatusChk(c));
