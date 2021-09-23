@@ -47,13 +47,14 @@
     ul li {list-style-type: none;}
     ul li i {padding-left: 1rem;color: #7e7e7e;}
     ul li a, ul li div {display: block; outline: none; padding: 1rem;}
-    pre {background-color: #dadada;border-radius: 2rem;padding: 2rem;white-space: pre-wrap;font-size: 2rem;}
+    pre {background-color: #dadada;border-radius: 2rem;padding: 2rem;white-space: pre-wrap;font-size: 2rem;color: #2e2e2e;}
+    li pre, small pre {margin-top: 0;color: #2e2e2e;}
 
     /* DESCRIPTION */
     small {
-      display: block; margin-bottom: 3rem; font-size:3rem;color: #7e7e7e;}
+      display: block; margin-bottom: 1rem; font-size:3rem;color: #7e7e7e;}
     p small, ul small {
-      padding-left: 5rem; margin-bottom: 0; font-style: italic; color: #9e9e9e;}
+      padding-left: 5rem; margin-bottom: 0; color: #9e9e9e;}
 
     /* ANCHOR */
     a {text-decoration:none;color:#0080ff;}
@@ -80,27 +81,44 @@
       <a href="./">ul.li.a 
         <i>ul.li.a.i <u>ul.li.a.i.u</u></i>
       </a>
+      <small>ul.li.small</small>
     </li>
     <li>
       <div>ul.li.div</div>
+      <small>ul.li.small</small>
     </li>
     <li>
       <div>ul.li.div</div>
       <pre>ul.li.pre</pre>
+      <small>ul.li.small</small>
     </li>
+    <li>
+      <div>ul.li.div</div>
+      <small><pre>ul.li.small.pre</pre></small>
+    </li>    
   </ul>
   
   <hr/>
   <h2>h2</h2>
   <small>small</small>
   <p>p</p>
-  
+
   <hr/>
   <h2>h2</h2>
   <small>small</small>
-  <div>
-    <pre>pre</pre>
-  </div>
+  <ul>
+    <li>
+      <pre>ul.li.pre</pre>
+    </li>
+  </ul>
+    
+  <hr/>
+  <h2>h2</h2>
+  <ul>
+    <li>
+      <pre>ul.li.pre</pre>
+    </li>
+  </ul>
 
   <hr/>
   <footer>footer</footer>
