@@ -16,9 +16,13 @@
     <link rel="alternate icon" type="image/png" href="img/favicon.png"/>
     <link rel="alternate icon" href="favicon.ico"/>
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
-    <link rel="stylesheet" type="text/css" href="css/base.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
     
     <script src="util/val/validate.min.js"></script>
+    <style>
+      /* this prevents entire thing from becoming block */
+      ul li a {display: inline-block;}
+    </style>
    </head>
    <!-- When onLoad run GYYStatus(CLASS_NAME, USE_DEFAULT_CSS); -->
    <body onload="Validate('valhtml',true);">
