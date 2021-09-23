@@ -72,8 +72,8 @@ function search() {
       h2 = document.createElement("h2");
       // h2.innerHTML = 'similar items found: "'+keyword+'"';
       h2.innerHTML = 'suggestions';
-      small = document.createElement("small");
-      small.innerHTML = 'blah blah';
+      // small = document.createElement("small");
+      // small.innerHTML = 'blah blah';
 
       ul = document.createElement("ul");
       // ul.classList.add("mlink");
