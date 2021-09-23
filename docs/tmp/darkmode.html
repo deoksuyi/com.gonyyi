@@ -24,17 +24,6 @@
       }
     </style>
     <script>
-      // On page load set the theme.
-      (function() {
-        let onpageLoad = localStorage.getItem("theme") || "normal-mode";
-        console.log("onpageLoad:"+onpageLoad);
-        let element = document.body;
-        element.classList.add(onpageLoad); // either "dark-mode" or "normal-mode"
-        document.getElementById("theme").textContent =
-          localStorage.getItem("theme") || "normal-mode";
-          // can this be just onpageLoad? 
-      })();
-      
       function themeToggle() {
         // element.classList.toggle("dark-mode");
         let element = document.body;
@@ -47,32 +36,30 @@
         getStatus();
       }
       
-      // this reflects screen based on what's current.
       function getStatus() {
         let element = document.body;
         mode = localStorage.getItem("theme");
-        document.getElementById("theme").textContent = mode;
+        // document.getElementById("theme").innerHTML = mode;
         if (mode == "dark-mode") {
           element.classList.remove("normal-mode");          
           element.classList.add("dark-mode");
+          document.getElementById("theme").innerHTML = "normal-mode";
         } else {
           element.classList.remove("dark-mode");
-          element.classList.add("normal-mode");        
+          element.classList.add("normal-mode");     
+          document.getElementById("theme").innerHTML = "dark-mode";   
         }
       }
     </script>
   </head>
+  
   <body onload="getStatus();">
     <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
-
     <hr/>    
     <h2>Toggle test</h2>
     <p>
-      <button type="button" onclick="themeToggle();">Theme Toggle</button>    
+      <button type="button" onclick="themeToggle();" id="theme">Toggle Mode</button>    
     </p>
-    <div>
-      <div id="theme"></div>
-    </div>
     
     <hr/>
     <footer>Copyright &copy; Gon Y. Yi 2020-2021</footer>
