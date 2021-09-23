@@ -1,6 +1,6 @@
 /* 
    (c) 2016-2021 gon/y/yi <https://gonyyi.com/copyright>
-   GONYYI Common Definitions
+   Last updated: 9/23/2021
 */
 html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
 body{
@@ -40,6 +40,7 @@ a:focus {background: #eeeeee; border-radius: 2rem;}
 a:active, a:focus {color: #ff511d;outline: none;}
 a.bad {color:#ff0000;} /* Bad Link */
 
-/* INITIALIZE for custom tags*/
+/* OVERRIDES */
+.initCasing {text-transform:none;}
 .init, .init *, .init *::before, .init *::after, 
 .init *:hover, .init *:focus, .init *:active  {all: initial;}
