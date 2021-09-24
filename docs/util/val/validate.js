@@ -12,7 +12,7 @@ function gyyStatusCls() {
   style.innerHTML = 
     `.${gyyStatusC1}_fail,.${gyyStatusC1}_ok,.${gyyStatusC1}_unknown 
       {display:inline-block; border:1px solid gray; background-color:gray; 
-        padding:0 .5em; margin: 0 .5em; border-radius: 1em;
+        padding:0 .4em; margin: 0 .2em 0 0; border-radius: 1em;
         text-align: center; font-size: .8em;
         background-color:white; color: gray;}
       .${gyyStatusC1}_fail {border-color: #FF4A31;color:white;background-color: #FF4A31;}
