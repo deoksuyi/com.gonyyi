@@ -29,14 +29,6 @@ function gyyStatusUpBtn(DST, addClass, content) {
   URL = DST.getAttribute("title");
   // console.log(`baseURL=${baseURL}; URL=${URL}`);
 
-  // first anchor
-  {
-    let a = document.createElement('a');
-    a.href = baseURL+URL;
-    a.innerHTML = URL;
-    DST.appendChild(a);
-  }
-  
   {
     a = document.createElement('a');
     a.href = `https://validator.w3.org/nu/?doc=${baseURL}${URL}`;
@@ -47,7 +39,17 @@ function gyyStatusUpBtn(DST, addClass, content) {
     a.appendChild(span);
     DST.appendChild(a);
   }
-  // second anchor
+  
+  
+  // first anchor
+  {
+    let a = document.createElement('a');
+    a.href = baseURL+URL;
+    a.innerHTML = URL;
+    DST.appendChild(a);
+  }
+  
+  
   
   if( content.length > 0) {
     for(i=0;i<content.length;i++) {
