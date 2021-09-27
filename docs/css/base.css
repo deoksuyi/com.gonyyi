@@ -28,7 +28,7 @@ header > h1 > a {
   color: #333;
 }
 section {
-  padding: 2rem 0 4rem 0rem;
+  padding: 1rem 0 2rem 0rem;
   text-transform: lowercase;
 }
 section > p, section > ul, section > div {
