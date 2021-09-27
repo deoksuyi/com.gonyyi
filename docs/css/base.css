@@ -137,7 +137,7 @@ button {background-color: #69e; color: #fff;}
 
 input:hover { border-color: #69e; background-color: #69e; color: #fff; }
 button:hover { border-color: #17f; background-color: #17f; color: #fff; }
-button:focus, button:active, input:focus , input:active { border-color: #17f;  background-color: #17f; color: #fff;}
+button:focus, button:active, input:focus , input:active { border-color: #17f;  background-color: #17f; color: #fff; careet-color: #fff;}
 
 input:focus::placeholder,input:active::placeholder,input:hover::placeholder {color: #fff; opacity: 1;}
 :-ms-input-placeholder {color: #69e;}::-ms-input-placeholder {color: #69e;}
