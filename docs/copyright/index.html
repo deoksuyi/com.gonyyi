@@ -17,32 +17,32 @@
     <link rel="alternate icon" href="favicon.ico"/>
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
   </head>
-<body>
-  <h1><a href="/">gon/y/yi</a></h1>
+  <body>
+    <header>
+      <h1>gon/y/yi</h1>
+    </header>
 
-  <hr/>
-  <h2>copyright notice</h2>
+  	<section>
+      <h2>copyright notice</h2>
+      <div>
+      	<a download="copyright.txt" href="copyright.txt">copyright.txt <i>download the original</i></a>
+      	<pre class="initCasing" id="coprdata"></pre>
+      </div>
+    </section>
 
-  <ul>
-    <li><a download="copyright.txt" href="copyright.txt">copyright.txt <i>download the original</i></a></li>
-    <li><pre class="initCasing" id="coprdata"></pre></li>
-  </ul>
+    <script>
+        try{
+          fetch('https://gonyyi.com/copyright.txt')
+          .then(response => {
+            if(response.status=="200") {return response.text();} 
+            return "See &lt;https://gonyyi.com/copyright.txt&gt;";})
+          .then(text => {
+            document.getElementById("coprdata").innerHTML = text;})
+        } catch (err) {
+          document.getElementById("coprdata").innerHTML = "oops! try again with a newer version of web browser. GYI-MSG-ERR-0A1";
+        }
+    </script>
 
-  <script><!--
-      try{
-        fetch('copyright.txt')
-        .then(response => {
-          if(response.status=="200") {return response.text();} 
-          return "See &lt;https://gonyyi.com/copyright.txt&gt;";})
-        .then(text => {
-          document.getElementById("coprdata").innerHTML = text;})
-      } catch (err) {
-        document.getElementById("coprdata").innerHTML = "oops! try again with a newer version of web browser. GYI-MSG-ERR-0A1";
-      }
-    // -->
-  </script>
-  
-  <hr/>
-  <footer>Copyright &copy; Gon Y. Yi 2016-2021</footer>
+    <footer>&copy; Gon Y. Yi 2016-2021</footer>
 </body>
 </html>
