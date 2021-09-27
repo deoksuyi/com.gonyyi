@@ -19,44 +19,46 @@
     <link rel="stylesheet" type="text/css" href="util/dsyim/dsyim.css"/>
   </head>
   <body>
-    <h1><a href="/">gon/y/yi</a></h1>
+    <header>
+      <h1>gon/y/yi</h1>
+    </header>    
 
-    <hr/>
-    <h2>dsyim maker</h2>
-    <ul>
-      <li>
-        <input type="text" id="inSize" placeholder="size" autofocus>
-        <label for="inSize">size</label><br/>
-        
-        <input type="text" id="inBgColor" placeholder="bgColor">
-        <label for="inBgColor">bgColor</label><br/>
+    <section>
+      <h2>dsyim maker</h2>
+      <ul>
+        <li>
+          <input type="text" id="inSize" placeholder="size" autofocus>
+          <label for="inSize">size</label><br/>
 
-        <input type="text" id="inColor" placeholder="lineColor">
-        <label for="inColor">lineColor</label><br/>
+          <input type="text" id="inBgColor" placeholder="bgColor">
+          <label for="inBgColor">bgColor</label><br/>
 
-        <input type="text" id="inLine1" placeholder="line1">
-        <label for="inLine1">line1size</label><br/>
+          <input type="text" id="inColor" placeholder="lineColor">
+          <label for="inColor">lineColor</label><br/>
 
-        <input type="text" id="inLine2" placeholder="line2">
-        <label for="inLine2">line2size</label><br/>
+          <input type="text" id="inLine1" placeholder="line1">
+          <label for="inLine1">line1size</label><br/>
 
-        <button id="dn">Save</button>
-        <br/>
-      </li>
-      <li class="paddTop2">
-        <div>
-          <svg id="DSYI" width="100" height="100" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <title>DeoksuYi v50</title><desc>(C) Gon Y. Yi</desc><g id="DSYIM" fill="transparent" stroke="#777" stroke-width="4"><path id="M" d="M30,3C36,3 43,3 50,10C50,10 57,3 64,3H97V30C97,37 97,43 90,50C90,50 97,57 97,64V97H70C64,97 57,97 50,90C50,90 43,97 37,97H3V70C3,64 3,57 10,50C10,50 3,43 3,37V3H30"/>
-            <circle id="S" cx="50" cy="50" r="30"/><path id="Y" d="M30,50H70M43,50V37M57,50V37"/><path id="G" d="M40,63L60,63M50,57V69"/></g>
-          </svg>
-          <canvas id="canvas" width="100" height="100"></canvas>
-        </div>
-      </li>
-    </ul>
+          <input type="text" id="inLine2" placeholder="line2">
+          <label for="inLine2">line2size</label><br/>
 
+          <button id="dn">Save</button>
+          <br/>
+        </li>
+        <li class="paddTop2">
+          <div>
+            <svg id="DSYI" width="100" height="100" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <title>DeoksuYi v50</title><desc>(C) Gon Y. Yi</desc><g id="DSYIM" fill="transparent" stroke="#777" stroke-width="4"><path id="M" d="M30,3C36,3 43,3 50,10C50,10 57,3 64,3H97V30C97,37 97,43 90,50C90,50 97,57 97,64V97H70C64,97 57,97 50,90C50,90 43,97 37,97H3V70C3,64 3,57 10,50C10,50 3,43 3,37V3H30"/>
+              <circle id="S" cx="50" cy="50" r="30"/><path id="Y" d="M30,50H70M43,50V37M57,50V37"/><path id="G" d="M40,63L60,63M50,57V69"/></g>
+            </svg>
+            <canvas id="canvas" width="100" height="100"></canvas>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
     <script src="/dsyim/dsyim.js"></script>
 
-    <hr>
-    <footer>Copyright &copy; Gon Y. Yi 2016-2021</footer>
+    <footer>&copy; Gon Y. Yi 2016-2021</footer>
   </body>
 </html>
