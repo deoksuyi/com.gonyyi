@@ -135,8 +135,9 @@ button, input {
 input  {background-color: #fff; color: #69e;}
 button {background-color: #69e; color: #fff;}
 
-button:focus, button:active, button:hover, input:hover { background-color: #17f; border-color: #17f; color: #fff;}
-input:focus , input:active { border-color: #69e; background: #69e; color: #fff; }
+button:focus, button:active, input:focus , input:active { border-color: #17f;  background-color: #17f; color: #fff;}
+button:hover, input:hover { border-color: #69e; background-color: #69e; color: #fff; }
+
 input:focus::placeholder,input:active::placeholder,input:hover::placeholder {color: #fff; opacity: 1;}
 :-ms-input-placeholder {color: #69e;}::-ms-input-placeholder {color: #69e;}
 ::placeholder {color: #69e; opacity: 1;}
