@@ -141,6 +141,7 @@ button:active, button:hover { border-color: #69e; background: #69e; color: #fff;
 */
 .altFont {font-family:sans-serif;}
 .indent {margin-left: 7rem;}
+.noCasing {text-transform:none;}
 .upper {text-transform:uppercase;}
 .lower {text-transform:lowercase;}
 .init, .init *, .init *::before, .init *::after, 
