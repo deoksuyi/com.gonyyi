@@ -127,7 +127,7 @@ function getDefaultValues() {
     oLine1.value = dsyim.getAttribute("stroke-width"); // dsyim.style.strokeWidth;
   }
   if (oLine2.value == "") {
-    oLine2.value = document.getElementById("G").getAttribute("stroke-width"); // dsyim.style.strokeWidth;
+    oLine2.value = dsyim.getAttribute("stroke-width"); // dsyim.style.strokeWidth;
   }
 }
 
