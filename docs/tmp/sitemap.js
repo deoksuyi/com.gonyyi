@@ -4,7 +4,9 @@
 var maxRes;
 var keyword;
 var result;
-var keys;
+var keys = [];
+var hasError = false;
+var jsonURL = "";
 
 //
 // MATCH ALGORITHM 
@@ -34,6 +36,12 @@ function similarity(str1, str2){
 // SEARCH
 //
 function search(elm) {
+	if(elm != null && hasError == true) {
+		return;
+	}
+	if(hasError == true) {
+		loadJSON();
+	}
 	// if search button is clicked or user entered from text box,
 	// if(event.key == 'Enter' || event.key == null) {
 	if(keyword.value == '') {
@@ -42,7 +50,9 @@ function search(elm) {
 		resultReset();
 		tmpRes = [];
 		keys.forEach(function(k){
-			score=similarity(k.name, keyword.value);
+			score1=similarity(k.desc, keyword.value);
+			score2=similarity(k.name, keyword.value);
+			score = score1>score2 ? score1 : score2;
 			if(score != 0) {
 				tmpRes.push( {data:k, score:score} );
 			}
@@ -82,24 +92,39 @@ function resultReset() {
 	result.innerHTML = '';
 }
 function resultAdd(elm) {
-	tmp_score = " (match: "+elm.score.toFixed(2)+")";
 	tmp_li = document.createElement("li");
 	tmp_a = document.createElement('a');
+
+	span = document.createElement('span');
+	span.innerHTML = ` ${elm.data.desc} (${parseInt(elm.score*100)})`
+	
 	tmp_a.setAttribute('href', elm.data.url);
-	tmp_a.innerHTML = elm.data.name + ' '
-	tmp_i = document.createElement('i');
-	tmp_i.innerHTML = elm.data.desc + tmp_score;
-	tmp_a.appendChild(tmp_i);
+	tmp_a.innerHTML = elm.data.name
+	
 	tmp_li.appendChild(tmp_a);
+	tmp_li.appendChild(span);
 	result.appendChild(tmp_li);
 }			
-
+function loadJSON() {
+	hasError = false; 
+	fetch(jsonURL)
+  	.then(response => response.json())
+    .then(json => {keys = json;})
+    .catch(err => {
+      result.innerHTML = err;
+      lookupBtn = document.getElementById("lookup");
+      hasError = true; 
+      // console.log(`hasError=${hasError}`);
+    });
+}
 //
 // RUN
 //
-function run(idKeyword, idResult, maxResult) {
+function run(jsonSrc, idKeyword, idResult, maxResult) {
 	keyword = document.getElementById(idKeyword);
 	result = document.getElementById(idResult);
 	maxRes = maxResult;
 	resultEmpty();
+	jsonURL = jsonSrc;
+	loadJSON();
 }
