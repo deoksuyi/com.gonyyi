@@ -4,56 +4,63 @@
     <title>gon/y/yi</title>
     <link rel="stylesheet" type="text/css" href="https://gonyyi.com/css/base.min.css"/>
     <style>
-      html {background-color:initial;}
-      h1 a{color:inherit;}
+      /* Testing */
       body.dark-mode {
-        color: #FFF;
-        background-color: #333;
-      }
-      body.normal-mode {
-        color: #333;
-        background-color: #FFF;      
-      }
-      button {
-        border-width: 0;
-        border-radius: 2rem;
-        border-color:  #999;
-        background-color: #999;
+        background: #000;
         color: #fff;
-        padding: 1rem;
       }
+      a.dark-mode {
+        color: #49f;
+      }
+
+      pre.dark-mode {
+        background: #555;
+        color: #fff;
+      }
+      a.dark-mode:active {color: #f51;}
+      a.dark-mode:hover, a.dark-mode:focus {color: #f60;}
+      a.dark-mode.bad {text-decoration: line-through;} /* Bad Link */     
     </style>
     <script>
-      function themeToggle() {
-        // element.classList.toggle("dark-mode");
-        let element = document.body;
-        let theme = localStorage.getItem("theme");
-        if (theme && theme === "normal-mode") {
-          localStorage.setItem("theme", "dark-mode");
-        } else {        
-          localStorage.setItem("theme", "normal-mode");
-        }
-        getStatus();
-      }
-      
-      function getStatus() {
-        let element = document.body;
-        mode = localStorage.getItem("theme");
-        // document.getElementById("theme").innerHTML = mode;
-        if (mode == "dark-mode") {
-          element.classList.remove("normal-mode");          
-          element.classList.add("dark-mode");
-          document.getElementById("theme").innerHTML = "normal-mode";
+      function setMode(mode) {
+        if ( mode!=null && mode == "1" ) {
+          localStorage.setItem("darkmode", "1");
+          // document.body.classList.add("dark-mode");
+
+          anchors = document.querySelectorAll("*");
+          for (let i = 0; i < anchors.length; i++) {
+            anchors[i].classList.add("dark-mode");
+          }
+
         } else {
-          element.classList.remove("dark-mode");
-          element.classList.add("normal-mode");     
-          document.getElementById("theme").innerHTML = "dark-mode";   
+          localStorage.setItem("darkmode", "0");
+          // document.body.classList.remove("dark-mode");
+
+          anchors = document.querySelectorAll("*");
+          for (let i = 0; i < anchors.length; i++) {
+            anchors[i].classList.remove("dark-mode");
+          }
+
         }
+      }
+      function toggleMode() {
+        mode = localStorage.getItem("darkmode");
+        mode = mode != null ? mode : "0";
+        mode = mode == "1" ? "0" : "1";
+        setMode( mode );
+      }
+      function clearMode() {
+        localStorage.removeItem("darkmode");
+      }
+      function applyMode() {
+        mode = localStorage.getItem("darkmode")
+        mode = mode == null ? "0" : mode;
+        setMode( mode );
       }
     </script>
   </head>
   
-  <body onload="getStatus();">
+  <body onload="applyMode();">
     <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
     <hr/>    
     <h2>Toggle test</h2>
@@ -62,6 +69,6 @@
     </p>
     
     <hr/>
-    <footer>Copyright &copy; Gon Y. Yi 2020-2021</footer>
+    <footer>&copy; Gon Y. Yi 2020-2021</footer>
   </body>
 </html>
