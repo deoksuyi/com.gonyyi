@@ -11,7 +11,7 @@ body {
   font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
   font-size: 4rem; color: #333;
   word-wrap: break-word; hyphens: auto;
-  /*text-transform: lowercase;*/
+  text-transform: lowercase;
 }
 
 header, section, footer {
