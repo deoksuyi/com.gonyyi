@@ -2,7 +2,7 @@
 <html lang="en">
   <!-- Copyright (c) Gon Y. Yi 2016-2021 <https://gonyyi.com/copyright> -->
   <head>
-    <title>gon/y/yi</title>
+    <title>gonyyi</title>
     <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
@@ -19,51 +19,52 @@
     <link rel="stylesheet" type="text/css" href="css/base.css"/>
     
     <script src="util/val/validate.js"></script>
-    <!-- <script src="validate.js"></script> -->
     <style>
       /* this prevents entire thing from becoming block */
-      ul li a {display: inline-block;}
+      section > ul > li > a {display: inline-block;}
     </style>
-   </head>
-   <!-- When onLoad run GYYStatus(CLASS_NAME, USE_DEFAULT_CSS); -->
-   <body onload="Validate('valhtml',true,'https://gonyyi.com');">
-
-    <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
-    <small>Validations using <a href="https://www.w3.org">w3.org</a>'s <a href="https://validator.w3.org/nu/">Nu HTML Checker</a></small>
+  </head>
+  <!-- When onLoad run GYYStatus(CLASS_NAME, USE_DEFAULT_CSS); -->
+  <body onload="Validate('valhtml',true,'https://gonyyi.com');">
+    <header>
+      <h1>gon/y/yi</h1>
+      <small>Validations using <a href="https://www.w3.org">w3.org</a>'s <a href="https://validator.w3.org/nu/">Nu HTML Checker</a></small>
+    </header>
     
+    <section>
+      <h2>essential</h2>
+      <ul>
+        <li class="valhtml" title="/index.html"></li>
+        <li class="valhtml" title="/404.html"></li>
+        <li class="valhtml" title="/copyright/index.html"></li>
+        <li class="valhtml" title="/contact/index.html"></li>
+        <li class="valhtml" title="/lost/index.html"></li>
+        <li class="valhtml" title="/img/index.html"></li>
+      </ul>
+    </section>
     
-    <hr/>
-    <h2>essential</h2>
-    <ul>
-      <li class="valhtml" title="/index.html"></li>
-      <li class="valhtml" title="/404.html"></li>
-      <li class="valhtml" title="/copyright/index.html"></li>
-      <li class="valhtml" title="/contact/index.html"></li>
-      <li class="valhtml" title="/lost/index.html"></li>
-      <li class="valhtml" title="/img/index.html"></li>
-    </ul>
-
-    <hr/>
-    <h2>utility</h2>
-     <small>testpage can have numerous errors as it will dynamically load headers</small>
-    <ul>
-      <li class="valhtml" title="/util/dsyim/index.html"></li>
-      <li class="valhtml" title="/util/tmpl/index.html"></li>
-      <li class="valhtml" title="/util/val/index.html"></li>
-      <li class="valhtml" title="/util/pagen/index.html"></li>
-    </ul>
-
-    <hr/>
-    <h2>temporary</h2>
-    <ul>
-      <li class="valhtml" title="/tmp/darkmode.html"></li>
-      <li class="valhtml" title="/tmp/sitemap.html"></li>
-      <li class="valhtml" title="/tmp/status.html"></li>
-      <li class="valhtml" title="/tmp/tooltip.html"></li>
-      <li class="valhtml" title="/tmp/url.html"></li>
-    </ul>
-
-    <hr/>
-    <footer>Copyright &copy; Gon Y. Yi 2016-2021</footer>
+    <section>
+      <h2>utility</h2>
+      <small>testpage can have numerous errors as it will dynamically load headers</small>
+      <ul>
+        <li class="valhtml" title="/util/dsyim/index.html"></li>
+        <li class="valhtml" title="/util/tmpl/index.html"></li>
+        <li class="valhtml" title="/util/val/index.html"></li>
+        <li class="valhtml" title="/util/pagen/index.html"></li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>temporary</h2>
+      <ul>
+        <li class="valhtml" title="/tmp/darkmode.html"></li>
+        <li class="valhtml" title="/tmp/sitemap.html"></li>
+        <li class="valhtml" title="/tmp/status.html"></li>
+        <li class="valhtml" title="/tmp/tooltip.html"></li>
+        <li class="valhtml" title="/tmp/url.html"></li>
+      </ul>
+    </section>
+    
+    <footer>&copy; Gon Y. Yi 2016-2021</footer>
   </body>
 </html>
