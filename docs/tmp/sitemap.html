@@ -21,7 +21,7 @@
   <link rel="stylesheet" type="text/css" href="css/base.min.css"/>
 
   <!-- START: PAGE SPECIFIC -->
-  <script src="/tmp/sitemap.js"></script>
+  <script src="tmp/sitemap.js"></script>
   <script>
     keys = [
       {name:"alog",   url: "abc.com",     desc:"blahblah"}, 
@@ -37,18 +37,20 @@
   <!-- END: PAGE SPECIFIC -->
 
 </head>
-<body onload="run('keyword', 'result', -1);">
-  <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
-
-  <h2>lookup</h2>
-  <p>
-    <input id="keyword" placeholder="search" onkeyup="search(this);" />
-    <button type="button" onclick="search();">Lookup</button>
-  </p>
+<body>
+  <header>
+    <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
+  </header>
   
-  <ul id="result"></ul>
-
-  <hr>
-  <footer>Copyright &copy; Gon Y. Yi 2020-2021</footer>
+  <section>
+    <h2>lookup</h2>
+    <p>
+      <input id="keyword" placeholder="search" onkeyup="search(this);"/>
+      <button type="button" onclick="search();">Lookup</button>
+    </p>
+    <ul id="result"></ul>
+  </section>
+  
+  <footer>&copy; gon/y/yi 2020-2021</footer>
 </body>
 </html>
