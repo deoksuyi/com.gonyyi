@@ -1,178 +1,71 @@
 <!DOCTYPE html> 
 <html lang="en">
-<!-- Copyright (C) 2016-2021 Gon/Y/Yi -->
-<head>
-  <title>title</title>
-  <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
+<!-- Copyright (c) Gon Y. Yi 2016-2021. -->
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://gonyyi.com"/>
+    <meta property="og:site_name" content="gonyyi"/>
+    <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg"/>
+    <link rel="alternate icon" type="image/png" href="img/favicon.png"/>
+    <link rel="alternate icon" href="favicon.ico"/>
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
+    <link rel="stylesheet" href="base.css"/>
+    <title>gonyyi</title>
+    <!-- <meta property="og:title" content="home"/> -->
+    <!-- <meta property="og:image" content="img/og-image.png"/> -->
+  </head>
+  <body>
+    <header>
+      <h1>gon/y/yi</h1>
+    </header>
 
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://gonyyi.com"/>
-  <meta property="og:site_name" content="gon/y/yi"/>
-  <meta property="og:title" content="Gon Y. Yi Homepage"/>
-  <meta property="og:image" content="img/og-img.png"/>
+    <section>
+      <h2>Libraries</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/gonyyi/alog"><div>
+            alog <i>a high performance logger for <u>golang</u></i>
+          </div></a>
+        </li>
+        <li>
+          <a href="https://github.com/gonyyi/areq"><div>
+            areq <i>an easy to use http client written for <u>golang</u></i>
+          </div></a>
+        </li>
+      </ul>
+    </section>
 
-  <link rel="icon" type="image/svg+xml" href="img/favicon.svg"/>
-  <link rel="alternate icon" type="image/png" href="img/favicon.png"/>
-  <link rel="alternate icon" href="favicon.ico"/>
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
-  
-  <style>
-    /* 
-       (c) 2016-2021 gon/y/yi <https://gonyyi.com/copyright>
-       Last updated: 9/23/2021
-    */
-    html{padding:0px;margin:5px;font-size:5px;background:#ffffff;}
-    body{
-      margin: 3rem; max-width: 200rem;
-      font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
-      font-size: 4rem; color: #333333;
-      word-wrap: break-word; hyphens: auto;
-      text-transform: lowercase;
-    }
-    footer{font-size: 3rem; margin-bottom: 6rem;}
-    footer div {font-size: 3rem;color:#ffffff;} /* INTERNAL MEMO; HIDDEN */
-    h1 {margin: 3rem 0 1rem 0; font-size: 8rem;}
-    h1 a {color:#333333;}
-    h1 a:hover {background: #eeefff;border-radius: 2rem 0;}
-    h1 i, h2 i, h3 i {
-      padding-left: 1rem; color: #777777; font-style: normal;
-      font-weight: lighter; }
-    h2 {margin: 3rem 0 1rem 0; font-size: 6rem; font-weight: lighter;}
-    hr {margin-top: 3rem; height: .2rem; border-width: 0; background-color: #cccccc;}
-    p, ul {
-      margin: 0 0 2rem 4rem; padding: 0 2rem; 
-      border-left: 1rem solid #dadada; font-size: 4rem;}
-    ul li {list-style-type: none; margin:0 0 1rem 0;}
-    ul li i {padding-left: 1rem;color: #555555;}
-    ul li a, ul li div {display: block; outline: none; padding: 1rem;}
-    ul li div {padding-right: 0rem;}
-    
-    pre {background-color: #eeeeee;
-      border-radius:1rem; 
-      padding:1rem 1rem; 
-      font-size:3rem; color:#777777; white-space:pre-wrap;}
-    li pre {margin: 0 0 0 0rem;}
-    li a pre, li div pre {margin: 0 0 0 4rem;}
+    <section>
+      <h2>Applications</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/gonyyi/ztmp"><div>
+            ztmp <i>a <u>bash script</u> managing temporary work directory</i>
+          </div></a>
+        </li>
+      </ul>
+    </section>
 
-    /* DESCRIPTION */
-    small {
-      display: block; margin-bottom: 1rem; font-size:3rem;color: #777777;}
-    p small, ul small {padding-left: 5rem;}
+    <section>
+      <h2>Et cetera</h2>
+      <ul>
+        <li><a href="https://github.com/gonyyi"><div>github<i>@gonyyi</i></div></a></li>
+        <li><a href="https://twitter.com/gonyyi"><div>twitter<i>@gonyyi</i></div></a></li>
+        <li><a href="https://instagram.com/gonyyi"><div>instagram<i>@gonyyi</i></div></a></li>
+        <li><a href="https://linkedin.com/in/gonyyi"><div>linkedin<i>@gonyyi</i></div></a></li>
+      </ul>
+    </section>
 
-    /* ANCHOR */
-    a {text-decoration:none;color:#0080ff;}
-    a:hover,a:focus {background: #eeefff; border-radius: 1rem;}
-    a:active, a:focus {color: #ff511d;outline: none;}
-    a.bad {color:#ff0000;} /* Bad Link */
-
-    /* OVERRIDES */
-    .initCasing {text-transform:none;}
-    .init, .init *, .init *::before, .init *::after, 
-    .init *:hover, .init *:focus, .init *:active  {all: initial;}
-  </style>
-</head>
-<body>
-  <h1><a href="./">style</a><i>v5.5.0</i></h1>
-  <small>small</small>
-
-  <!-- H2 TEST: NORMAL-->
-  <h2>h2</h2>
-  <small>small</small>
-  <ul>
-    <li>
-      <a href="./">ul.li.a 
-        <i>ul.li.a.i <u>ul.li.a.i.u</u></i>
-      </a>
-      <small>ul.li.small</small>
-    </li>
-    <li>
-      <div>ul.li.div</div>
-      <small>ul.li.small</small>
-    </li>
-    <li>
-      <div>ul.li.div</div>
-      <pre>ul.li.pre</pre>
-    </li>
-    <li>
-      <a href="./">
-        ul.li.div
-        <small>ul.li.small</small>
-        <pre>ul.li.div.pre</pre>
-      </a>
-    </li>
-    <li>
-      <div>
-        ul.li.div
-        <small>ul.li.small</small>
-        <pre>ul.li.div.pre</pre>
-      </div>
-    </li>    
-    <li>
-      <div>
-        ul.li.div
-        <pre>ul.li.div.pre</pre>
-      </div>
-      <small>ul.li.small</small>      
-    </li>    
-  </ul>
-  
-  <h2>h2</h2>
-  <small>small</small>
-  <ul>
-    <li>
-      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
-    </li>
-    <li>
-      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
-    </li>
-    <li>
-      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
-    </li>
-  </ul>
-    
-  <h2>h2</h2>
-  <small>small</small>
-  <ul>
-    <li>
-      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
-      <small>ul.li.small</small>
-    </li>
-    <li>
-      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
-      <small>ul.li.small</small>
-    </li>
-    <li>
-      <a href="./">ul.li.a <i>ul.li.a.i <u>ul.li.a.i.u</u></i></a>
-      <small>ul.li.small</small>
-    </li>
-  </ul>        
-  
-  <hr/>
-  <h2>h2</h2>
-  <small>small</small>
-  <p>p</p>
-
-  <hr/>
-  <h2>h2</h2>
-  <small>small</small>
-  <ul>
-    <li>
-      <pre>ul.li.pre</pre>
-    </li>
-  </ul>
-    
-  <hr/>
-  <h2>h2</h2>
-  <ul>
-    <li>
-      <pre>ul.li.pre</pre>
-    </li>
-  </ul>
-
-  <hr/>
-  <footer>footer</footer>
-</body>
+    <footer>
+      &copy; Gon Y. Yi 2021
+      <ul>
+        <li><a href="copyright.html">Terms</a></li>
+      </ul>
+      <div>Last Updated: 2021/09/21 12:34</div>
+    </footer>
+  </body>
 </html>
