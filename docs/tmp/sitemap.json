@@ -1,10 +1,19 @@
 [
-  {"name":"alog",   "url": "abc.com",     "desc":"blahblah"}, 
-  {"name":"ztmp1",  "url": "def.com1",    "desc":"dahdah1"},
-  {"name":"ztmp2",  "url": "def.com1",    "desc":"dahdah2"},
-  {"name":"ztmp3",  "url": "def.com1",    "desc":"dahdah3"},
-  {"name":"ztmp4",  "url": "def.com1",    "desc":"dahdah4"},
-  {"name":"ztmp5",  "url": "def.com1",    "desc":"dahdah5"},
-  {"name":"ztmp50", "url": "def.com1",    "desc":"dahdah50"},
-  {"name":"zp",     "url": "def.com2",    "desc":"dahdah0"}
+  {"name":"home",   "url": "https://gonyyi.com",  "desc":"main page"}, 
+  {"name":"404",    "url": "https://gonyyi.com/404.html",    "desc":"404 error page"},
+  {"name":"contact",  "url": "https://gonyyi.com/contact/",    "desc":"contact info"},
+  {"name":"copyright",  "url": "https://gonyyi.com/copyright/",    "desc":"copyright info"},
+  {"name":"image",  "url": "https://gonyyi.com/img/",    "desc":"images used"},
+  {"name":"lost", "url": "https://gonyyi.com/lost/",    "desc":"lost and found page"},
+
+  {"name":"dsyim",     "url": "https://gonyyi.com/util/dsyim",    "desc":"dsyim logo maker util"},
+  {"name":"pagen",     "url": "https://gonyyi.com/util/pagen",    "desc":"page generator util"},
+  {"name":"tmpl",     "url": "https://gonyyi.com/util/tmpl",    "desc":"template util"},
+  {"name":"val",     "url": "https://gonyyi.com/util/val",    "desc":"html validation util"},
+
+  {"name":"dark mode",     "url": "https://gonyyi.com/tmp/darkmode",    "desc":"dark mode test"},
+  {"name":"sitemap",     "url": "https://gonyyi.com/tmp/sitemap",    "desc":"sitemap test"},
+  {"name":"status",     "url": "https://gonyyi.com/tmp/status",    "desc":"status test"},
+  {"name":"tooltip",     "url": "https://gonyyi.com/tmp/tooltip",    "desc":"tooltip test"},
+  {"name":"url",     "url": "https://gonyyi.com/tmp/url",    "desc":"url parse test"}
 ]
