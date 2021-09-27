@@ -19,16 +19,28 @@
   </head>
   
   <body>
-    <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
+    <header>
+      <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
+    </header>
     
-    <h2>parse url</h2>
-
-    <ul>
-      <li><input id="url" class="longInput" disabled/><label for="url">URL</label></li>
-      <li><input id="username" class="longInput" disabled/><label for="username">Username</label></li>
-      <li><input id="passwd" class="longInput" disabled/><label for="passwd">Passwd</label></li>
-    </ul>
-
+    <section>
+      <h2>parse url</h2>
+      <ul>
+        <li>
+          <input id="url" class="longInput" /> 
+          <label for="url">URL</label>
+        </li>
+        <li>
+          <input id="username" class="longInput" /> 
+          <label for="username">Username</label>
+        </li>
+        <li>
+          <input id="passwd" class="longInput" /> 
+          <label for="passwd">Passwd</label>
+        </li>
+      </ul>
+    </section>
+    
     <script>
       const url = new URL(document.URL);
       document.getElementById("url").value = url.href;
@@ -36,7 +48,6 @@
       document.getElementById("passwd").value = url.password;
     </script>
 
-    <hr/>
-    <footer>Copyright &copy; Gon Y. Yi 2020-2021</footer>
+    <footer>&copy; gon/y/yi 2020-2021</footer>
   </body>
 </html>
