@@ -85,11 +85,13 @@ function resultAdd(elm) {
   tmp_a = document.createElement('a');
   tmp_a.setAttribute('href', elm.data.url);
   tmp_a.innerHTML = elm.data.url
-  tmp_li.appendChild(tmp_a);
+  
   tmp_i = document.createElement('i');
   // tmp_i.innerHTML = elm.data.keywords + tmp_score;
   tmp_i.innerHTML = ` (${elm.score.toFixed(2)})`;
-  tmp_li.appendChild(tmp_i);
+
+  tmp_a.appendChild(tmp_i);
+  tmp_li.appendChild(tmp_a);
   sugg.appendChild(tmp_li);
 }     
 
