@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="https://gonyyi.com/css/base.min.css"/>
     <style>
       /* Testing */
+      header>h1>a.dark-mode { color: #fff;}
       body.dark-mode {
         background: #000;
         color: #fff;
@@ -12,7 +13,6 @@
       a.dark-mode {
         color: #49f;
       }
-
       pre.dark-mode {
         background: #555;
         color: #fff;
@@ -24,16 +24,15 @@
     <script>
       function setMode(mode) {
         if ( mode!=null && mode == "1" ) {
-          localStorage.setItem("darkmode", "1");
+          localStorage.setItem("dark-mode", "1");
           // document.body.classList.add("dark-mode");
-
           anchors = document.querySelectorAll("*");
           for (let i = 0; i < anchors.length; i++) {
             anchors[i].classList.add("dark-mode");
           }
 
         } else {
-          localStorage.setItem("darkmode", "0");
+          localStorage.setItem("dark-mode", "0");
           // document.body.classList.remove("dark-mode");
 
           anchors = document.querySelectorAll("*");
@@ -44,16 +43,16 @@
         }
       }
       function toggleMode() {
-        mode = localStorage.getItem("darkmode");
+        mode = localStorage.getItem("dark-mode");
         mode = mode != null ? mode : "0";
         mode = mode == "1" ? "0" : "1";
         setMode( mode );
       }
       function clearMode() {
-        localStorage.removeItem("darkmode");
+        localStorage.removeItem("dark-mode");
       }
       function applyMode() {
-        mode = localStorage.getItem("darkmode")
+        mode = localStorage.getItem("dark-mode")
         mode = mode == null ? "0" : mode;
         setMode( mode );
       }
@@ -61,14 +60,17 @@
   </head>
   
   <body onload="applyMode();">
-    <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
-    <hr/>    
-    <h2>Toggle test</h2>
-    <p>
-      <button type="button" onclick="themeToggle();" id="theme">Toggle Mode</button>    
-    </p>
+    <header>
+      <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
+    </header> 
+
+    <section>
+      <h2>Toggle test</h2>
+      <p>
+        <button type="button" onclick="toggleMode();" id="theme">Toggle Mode</button>    
+      </p>
+    </section>
     
-    <hr/>
     <footer>&copy; Gon Y. Yi 2020-2021</footer>
   </body>
 </html>
