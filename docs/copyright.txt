@@ -3,7 +3,7 @@ Copyright Notice
 
 Copyright (C) 2016-2021 Gon Y. Yi. All rights reserved. 
 
-Unless otherwise stated, this will serve as a generic copyright notice for any software or artwork created by Gon Y. Yi.
+Unless otherwise stated, this will serve as a general copyright notice for any software or artwork created by Gon Y. Yi.
 
 1.  The software and derivatives may be used for commercial purposes with the author's permission. 
 2.  This software may be modified. 
