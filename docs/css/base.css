@@ -24,6 +24,7 @@ header {
   border-bottom: 1px solid #ccc;
   font-size: 3rem;
 }
+header > h1 > a {color: #333;}
 
 section {
   padding: 2rem 0 4rem 0rem;
