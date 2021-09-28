@@ -70,12 +70,15 @@ header > ul, footer > ul {
 }
 ul li {color: #888;}
 
-/* 
-  LIST: top and bottom menus 
-*/ 
+/* LIST: top and bottom menus */
 header > ul > li, footer > ul > li {display: inline-block;}
 header > ul > li:before{ content: " / "; }
 footer > ul > li:before { content: " | "; }
+/* LIST: pipeList and slashList class */
+ul.pipeList, ul.slashList {display: inline-block; list-style-type: none; margin: 1rem 0; padding: 0; font-size: 3rem;}
+ul.pipeList>li, ul.slashList>li {display: inline-block;}
+ul.pipeList>li:before {content:" | ";}
+ul.slashList>li:before {content:" / ";}
 
 /* 
   SMALL 
@@ -151,6 +154,7 @@ label {font-size: 3rem;}
   OVERRIDE
 */
 .altFont {font-family:sans-serif;}
+.fixedFont{font-family:monospace;}
 .indent {margin-left: 7rem;}
 .noCasing {text-transform:none;}
 .upper {text-transform:uppercase;}
