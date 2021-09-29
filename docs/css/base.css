@@ -1,4 +1,4 @@
-/* (c) Gon Y. Yi 2016-2021 <https://gonyyi.com/copyright> Updated: 9/27/2021 */
+/* (c) Gon Y. Yi 2016-2021 <https://gonyyi.com/copyright> Updated: 9/28/2021 */
 html {
   font-size: 5px;
   padding: 0; margin: 0;
@@ -35,6 +35,9 @@ section > p, section > ul, section > div {
   margin: 1rem 0 0rem 4rem;
   padding: 0 0 0 2rem;
   border-left: 1rem solid #ddd; font-size: 4rem;
+}
+section > div > div {
+  margin: 1rem 0;
 }
 section > p {
   padding-bottom: 1rem;
@@ -130,30 +133,39 @@ pre {
 /* 
   FORM 
 */
-button, input, .button {
+label {font-size: 3rem; color: #555;}
+
+.btn, button, input {
   border-radius: 1rem; border: .5rem solid #69e;
   font-size: 3rem; 
-  padding: 1rem; margin: 1rem 0; outline: none;
+  padding: 1rem; outline: none;
   font-family: sans-serif;
 }
-input  {background-color: #fff; color: #69e;}
-button,.button {background-color: #69e; color: #fff; display: inline-block;}
+.btn, button {background-color: #69e; color: #fff; display: inline-block;}
+.btn:hover, .btn:focus, .btn:active, button:hover, button:focus, button:active {border-color: #17f; background-color: #17f;color: #fff;}
 
-input:hover { border-color: #69e; background-color: #69e; color: #fff; }
-button:hover, .button:hover { border-color: #17f; background-color: #17f; color: #fff; }
-button:focus, button:active, .button:focus, .button:active, input:focus , input:active { border-color: #17f;  background-color: #17f; color: #fff; caret-color: #fff;}
+.btnRed {border-color: #f55; background-color: #f55;}
+.btnRed:hover, .btnRed:focus, .btnRed:active {border-color: #f00; background-color: #f00;}
+.btnOrange {border-color: #f94; background-color: #f94;}
+.btnOrange:hover, .btnOrange:focus, .btnOrange:active {border-color: #f72; background-color: #f72;}      
+.btnGray {border-color: #aaa; background-color: #aaa;}
+.btnGray:hover, .btnGray:focus, .btnGray:active {border-color: #777; background-color: #777;}
 
-input:focus::placeholder,input:active::placeholder,input:hover::placeholder {color: #fff; opacity: 1;}
-:-ms-input-placeholder {color: #69e;}::-ms-input-placeholder {color: #69e;}
-::placeholder {color: #69e; opacity: 1;}
-label {font-size: 3rem;}
-.width20 {width: 20rem;}
-.width40 {width: 40rem;}
-.width100 {width: 100rem;}
+input  {background-color: #fff; color: #555;}
+input:hover { border-color: #17f; background-color: #eef; color: #69e; }
+input:focus , input:active { border-color: #17f;  background-color: #17f; color: #fff; caret-color: #fff;}
+/*input:focus::placeholder,input:active::placeholder,input:hover::placeholder {color: #8af; opacity: 1;}*/
+:-ms-input-placeholder {color: #8af;}::-ms-input-placeholder {color: #69e;}
+::placeholder {color: #8af; opacity: 1;}
+
 
 /*
   OVERRIDE
 */
+.width-20   {width: 20rem;}
+.width-40   {width: 40rem;}
+.width-100  {width: 100rem;}
+
 .altFont {font-family:sans-serif;}
 .fixedFont{font-family:monospace;}
 .indent {margin-left: 7rem;}
