@@ -2,233 +2,44 @@
 <html lang="en">
 <!-- Copyright (c) Gon Y. Yi 2016-2021. -->
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0"/>
-    <meta name="theme-color" content="#37e"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://gonyyi.com"/>
-    <meta property="og:site_name" content="gonyyi"/>
-    <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
-    <link rel="icon" type="image/svg+xml" href="img/favicon.svg"/>
-    <link rel="alternate icon" type="image/png" href="img/favicon.png"/>
-    <link rel="alternate icon" href="favicon.ico"/>
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
-    <title>style 5.6.1</title>
-    <meta property="og:title" content="template v5.6.0"/>
-    <style>
-      
-      /* (c) Gon Y. Yi 2016-2021 <https://gonyyi.com/copyright> Updated: 9/27/2021 */
-      html {
-        font-size: 5px;
-        padding: 0; margin: 0;
-        /*background-color: #eee;*/
-      }
-
-      body {
-        background: #fff;
-        padding: 0; margin: 0;
-        font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
-        font-size: 4rem; color: #333;
-        word-wrap: break-word; hyphens: auto;
-        text-transform: lowercase;
-      }
-
-      header, section, footer {
-        margin: 0 3rem;
-        max-width: 200rem;
-      }
-
-      header {
-        padding: 4rem 0 2rem 0rem;
-        border-bottom: 1px solid #ccc;
-        font-size: 3rem;
-      }
-      header > h1 > a {
-        color: #333;
-      }
-      section {
-        padding: 1rem 0 2rem 0rem;
-        text-transform: lowercase;
-      }
-      section > p, section > ul, section > div {
-        margin: 1rem 0 0rem 4rem;
-        padding: 0 0 0 2rem;
-        border-left: 1rem solid #ddd; font-size: 4rem;
-      }
-      section > p {
-        padding-bottom: 1rem;
-        padding-top: 1rem;
-      }
-      section > ul > li {
-        list-style-type: none;
-        padding: 1rem 0;
-      }
-
-      footer {
-        padding: 2rem 0 4rem 0rem;
-        border-top: 1px solid #ccc;
-        font-size: 3rem; 
-        margin-bottom: 3rem;
-        padding-bottom: 3rem;
-      }
-      /* INTERNAL MEMO; HIDDEN */
-      footer > div { 
-        font-size: 2rem; 
-        margin-top: 1rem;
-        color: transparent;
-      } 
-
-      /* 
-        LIST 
-      */
-      header > ul, footer > ul {
-        display: inline-block;
-        list-style-type: none; 
-        margin: 1rem 0; padding: 0;
-        font-size: 3rem;
-      }
-      ul li {color: #888;}
-
-      /* 
-        LIST: top and bottom menus 
-      */ 
-      header > ul > li, footer > ul > li {display: inline-block;}
-      header > ul > li:before{ content: " / "; }
-      footer > ul > li:before { content: " | "; }
-
-      /* 
-        SMALL 
-      */
-      small {
-        padding: 0;
-        margin: 0 0 0rem 0;
-        display: block; 
-        font-size:3rem; 
-        color: #888;
-      }
-      div > small, p > small, ul > small {
-        padding-left: 5rem;
-      }
-
-      /* 
-        ANCHOR 
-      */
-      a {text-decoration: none; color: #06f; padding: 0; outline: none;}
-      a:active {color: #f51;}
-      a:hover, a:focus {color: #f60;}
-      a.bad {text-decoration: line-through;} /* Bad Link */      
-      a i {color: #888; padding-left: 1rem; font-size: 3rem;}
-      a > div > small {display: inline; font-size: inherit; padding-left: 2rem;}
-
-      h1,h2,h3 {margin: 0; padding: 1rem 0;}
-      h1 {font-size: 8rem;}
-      h2 {font-size: 7rem; font-weight: lighter;}
-      h3 {font-size: 6rem; font-weight: lighter;}
-
-      hr {
-        margin-top: 3rem;
-        height: 0px; border-width: 0px; 
-        border-top: 1px solid #999;
-      }
-
-      i {color: #888;}
-
-      pre {
-        display: block;
-        background-color: #eeeeee;
-        border-radius:1rem; 
-        padding:1rem 1rem;
-        font-size:3rem; 
-        color: #555; 
-        white-space: pre-wrap;
-      }
-
-      /* 
-        FORM 
-      */
-      button, input {
-        border-radius: 1rem; border: .5rem solid #69e;
-        font-size: 3rem; 
-        padding: 1rem; margin: 1rem 0; outline: none;
-      }
-      input  {background-color: #fff; color: #69e;}
-      button {background-color: #69e; color: #fff;}
-
-      input:hover { border-color: #69e; background-color: #69e; color: #fff; }
-      button:hover { border-color: #17f; background-color: #17f; color: #fff; }
-      button:focus, button:active, input:focus , input:active { border-color: #17f;  background-color: #17f; color: #fff; caret-color: #fff;}
-
-      input:focus::placeholder,input:active::placeholder,input:hover::placeholder {color: #fff; opacity: 1;}
-      :-ms-input-placeholder {color: #69e;}::-ms-input-placeholder {color: #69e;}
-      ::placeholder {color: #69e; opacity: 1;}
-      label {font-size: 3rem;}
-      .width20 {width: 20rem;}
-      .width40 {width: 40rem;}
-      .width100 {width: 100rem;}
-
-      /*
-        OVERRIDE
-      */
-      .altFont {font-family:sans-serif;}
-      .indent {margin-left: 7rem;}
-      .noCasing {text-transform:none;}
-      .upper {text-transform:uppercase;}
-      .lower {text-transform:lowercase;}
-      .init, .init *, .init *::before, .init *::after, 
-      .init *:hover, .init *:focus, .init *:active  {all: initial;}
-    
-    </style>
-
+    <title>Standard Template</title>      
   </head>
+  
   <body>
-    <header>
-      <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
-    </header>
-
+  
     <section>
-      <h2>Libraries</h2>
+      <h2>section-h2</h2>
       <ul>
         <li>
-          <a href="https://github.com/gonyyi/alog"><div>
-            alog <i>a high performance logger for <u>golang</u></i>
+          <a href="."><div>
+            section-ul-li-a-div <i>section-ul-li-a-div-i <u>section-ul-li-a-div-i-u</u></i>
           </div></a>
         </li>
         <li>
-          <a href="https://github.com/gonyyi/areq"><div>
-            areq <i>an easy to use http client written for <u>golang</u></i>
-          </div></a>
+          section-ul-li
+          <a href=".">section-ul-li-a</a> 
+          section-ul-li
+          <a href=".">section-ul-li-a</a>
         </li>
       </ul>
     </section>
 
     <section>
-      <h2>Applications</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/gonyyi/ztmp"><div>
-            ztmp <i>a <u>bash script</u> managing temporary work directory</i>
-          </div></a>
-        </li>
-      </ul>
+      <h2>section-h2</h2>
+      <pre>section-pre</pre>
+      <div>
+        <pre>section-div-pre</pre>
+      </div>
     </section>
 
     <section>
-      <h2>Et cetera</h2>
+      <h2>section-h2</h2>
       <ul>
-        <li><a href="https://github.com/gonyyi"><div>github<i>@gonyyi</i></div></a></li>
-        <li><a href="https://twitter.com/gonyyi"><div>twitter<i>@gonyyi</i></div></a></li>
-        <li><a href="https://instagram.com/gonyyi"><div>instagram<i>@gonyyi</i></div></a></li>
-        <li><a href="https://linkedin.com/in/gonyyi"><div>linkedin<i>@gonyyi</i></div></a></li>
+        <li><button>section-ul-li-button</button></li>
+        <li><a href="." class="aButton">section-ul-li-a:aButton</a></li>
       </ul>
     </section>
 
-    <footer>
-      &copy; gon/y/yi 2016-2021
-      <ul>
-        <li><a href="copyright.html">Terms</a></li>
-      </ul>
-      <div>Last Updated: 2021/09/21 12:34</div>
-    </footer>
+    <script src="https://gonyyi.com/js/pagen.js"></script>
   </body>
 </html>

@@ -130,17 +130,17 @@ pre {
 /* 
   FORM 
 */
-button, input {
+button, input, .aButton {
   border-radius: 1rem; border: .5rem solid #69e;
   font-size: 3rem; 
   padding: 1rem; margin: 1rem 0; outline: none;
 }
 input  {background-color: #fff; color: #69e;}
-button {background-color: #69e; color: #fff;}
+button,.aButton {background-color: #69e; color: #fff;}
 
 input:hover { border-color: #69e; background-color: #69e; color: #fff; }
-button:hover { border-color: #17f; background-color: #17f; color: #fff; }
-button:focus, button:active, input:focus , input:active { border-color: #17f;  background-color: #17f; color: #fff; caret-color: #fff;}
+button:hover, .aButton:hover { border-color: #17f; background-color: #17f; color: #fff; }
+button:focus, button:active, .aButton:focus, .aButton:active, input:focus , input:active { border-color: #17f;  background-color: #17f; color: #fff; caret-color: #fff;}
 
 input:focus::placeholder,input:active::placeholder,input:hover::placeholder {color: #fff; opacity: 1;}
 :-ms-input-placeholder {color: #69e;}::-ms-input-placeholder {color: #69e;}
