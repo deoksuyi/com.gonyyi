@@ -90,7 +90,9 @@ function fillFooter() {
 function fillMeta() {
   addHeadIfNE("meta", "charset", "charset", "utf-8");
   addHeadIfNE("meta", 'name="viewport"', "name", "viewport", "content", 
-    "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0");
+    "width=device-width,initial-scale=1.0,maximum-scale=1.0");
+  addHeadIfNE("meta", 'name="theme-color"', 
+    "name", "theme-color", "content", "#37e");
   addHeadIfNE("meta", 'property="og:locale"', 
     "property", "og:locale", "content", "en_US");
   addHeadIfNE("meta", 'property="og:type"', 
