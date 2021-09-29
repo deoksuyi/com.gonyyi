@@ -136,6 +136,7 @@ pre {
 label {font-size: 3rem; color: #555;}
 
 .btn, button, input {
+  margin:0;
   border-radius: 1rem; border: .5rem solid #69e;
   font-size: 3rem; 
   padding: 1rem; outline: none;
