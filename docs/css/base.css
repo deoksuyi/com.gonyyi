@@ -134,6 +134,7 @@ button, input, .button {
   border-radius: 1rem; border: .5rem solid #69e;
   font-size: 3rem; 
   padding: 1rem; margin: 1rem 0; outline: none;
+  font-family: sans-serif;
 }
 input  {background-color: #fff; color: #69e;}
 button,.button {background-color: #69e; color: #fff; display: inline-block;}
