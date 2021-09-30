@@ -3,29 +3,14 @@
   <!-- Copyright (c) Gon Y. Yi 2016-2021 <https://gonyyi.com/copyright> -->
   <head>
     <title>gonyyi</title>
-    <base id="baseTarget" target="_self" href="https://gonyyi.com"/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0"/>
-    <meta name="theme-color" content="#37e"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://gonyyi.com"/>
-    <meta property="og:image" content="img/og-img.png"/>
-    <meta property="og:site_name" content="gonyyi"/>
-    <meta property="og:title" content="validator"/>
-    <link rel="icon" type="image/svg+xml" href="img/favicon.svg"/>
-    <link rel="alternate icon" type="image/png" href="img/favicon.png"/>
-    <link rel="alternate icon" href="favicon.ico"/>
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
-    <link rel="stylesheet" type="text/css" href="css/base.css"/>
-    
-    <script src="util/val/validate.js"></script>
+    <script src="https://gonyyi.com/js/pagen.min.js"></script>
+    <script src="https://gonyyi.com/util/val/validate.js"></script>
     <style>
-      /* this prevents entire thing from becoming block */
+      /* Override style  */
       section > ul > li > a {display: inline-block;}
     </style>
   </head>
-  <!-- When onLoad run GYYStatus(CLASS_NAME, USE_DEFAULT_CSS); -->
+
   <body onload="Validate('valhtml',true,'https://gonyyi.com');">
     <header>
       <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
