@@ -12,7 +12,14 @@ function Phone(){
   
   browser = document.getElementById("browser");
   browser.innerHTML = navigator.userAgent;
+
+  resolution = document.getElementById("resolution");
+  resolution.innerHTML = window.screen.availWidth + " x " +
+window.screen.availHeight + " px";
+
+
 }
+
 // this to run at the end
 document.addEventListener('DOMContentLoaded', function() {
   Phone();
@@ -33,8 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
   <section>
   <h2>Phone: Info</h2>
   <ul>
-    <li>Browser: <span id="browser">N/A</span></li>
     <li>Platform: <span id="platform">N/A</span></li>
+    <li>Browser: <span id="browser">N/A</span></li>
+    <li>Resolution: <span id="resolution">N/A</span></li>
+
   </ul>
   </section>
   
