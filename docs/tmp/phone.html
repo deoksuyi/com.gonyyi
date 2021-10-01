@@ -3,7 +3,7 @@
 <script src="https://gonyyi.com/js/pagen.js"></script>
 <title>Phone Test</title>
 <script>
-function getMobileOperatingSystem() {
+function phoneInfo() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     // Windows Phone must come first because its UA also contains "Android"
@@ -16,12 +16,31 @@ function getMobileOperatingSystem() {
     }
 
     // iOS detection from: http://stackoverflow.com/a/9039885/177710
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return "iOS";
+    if (/iPad/.test(userAgent) && !window.MSStream) {
+        return "iPad";
+    }
+    if (/iPhone/.test(userAgent) && !window.MSStream) {
+        return "iPhone";
+    }
+    if (/iPod/.test(userAgent) && !window.MSStream) {
+        return "iPod";
     }
 
     return "unknown";
 }
+function Phone(){
+  info = phoneInfo();
+  t = document.getElementById("type");
+  t.innerHTML=info;
+  
+  platform = document.getElementById("platform");
+  platform.innerHTML = navigator.platform;
+}
+// this to run at the end
+document.addEventListener('DOMContentLoaded', function() {
+  Phone();
+}, false);
+
 </script>
 <body>
 
@@ -31,6 +50,14 @@ function getMobileOperatingSystem() {
     <li><a class="btn" href="tel:5012345678">make a call</a></li>
     <li><a class="btn" href="sms:5012345678&body=I&nbsp;love&nbsp;you&nbsp;Gon!!">make a text msg</a></li>
     <li><a class="btn" href="mailto:aaa@abc.com?subject=Feedback&nbsp;for&nbspGon&body=You&nbsp;are&nbsp;lovely,&nbsp;Gon!">email me</a></li>
+  </ul>
+  </section>
+  
+  <section>
+  <h2>Phone: Info</h2>
+  <ul>
+    <li>Type: <span id="type">N/A</span></li>
+    <li>Platform: <span id="platform">N/A</span></li>
   </ul>
   </section>
   
