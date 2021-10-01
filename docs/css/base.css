@@ -1,4 +1,4 @@
-/* (c) Gon Y. Yi 2016-2021 <https://gonyyi.com/copyright> Updated: 9/28/2021 */
+/* (c) Gon Y. Yi 2016-2021 <https://gonyyi.com/copyright> Updated: 9/30/2021 */
 html {
   font-size: 5px;
   padding: 0; margin: 0;
@@ -9,7 +9,7 @@ body {
   background: #fff;
   padding: 0; margin: 0;
   font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
-  font-size: 4rem; color: #333;
+  font-size: 3rem; color: #333;
   word-wrap: break-word; hyphens: auto;
   text-transform: lowercase;
 }
@@ -20,7 +20,7 @@ header, section, footer {
 }
 
 header {
-  padding: 4rem 0 2rem 0rem;
+  padding: 3rem 0 2rem 0rem;
   border-bottom: 1px solid #ccc;
   font-size: 3rem;
 }
@@ -32,12 +32,16 @@ section {
   text-transform: lowercase;
 }
 section > p, section > ul, section > div {
-  margin: 1rem 0 0rem 4rem;
+  margin: 1rem 0 0rem 3rem;
   padding: 0 0 0 2rem;
-  border-left: 1rem solid #ddd; font-size: 4rem;
+  border-left: 1rem solid #ddd; font-size: 3rem;
+}
+section > p:hover, section>ul:hover, section>div:hover {
+  border-color: #bbb;
 }
 section > div > div {
-  margin: 1rem 0;
+  margin: 0;
+  padding: .6rem 0;
 }
 section > p {
   padding-bottom: 1rem;
@@ -45,11 +49,12 @@ section > p {
 }
 section > ul > li {
   list-style-type: none;
-  padding: 1rem 0;
+  margin: 0;
+  padding: .6rem 0;
 }
 
 footer {
-  padding: 2rem 0 4rem 0rem;
+  padding: 2rem 0 3rem 0rem;
   border-top: 1px solid #ccc;
   font-size: 3rem; 
   margin-bottom: 3rem;
@@ -65,23 +70,26 @@ footer > div {
 /* 
   LIST 
 */
-header > ul, footer > ul {
-  display: inline-block;
-  list-style-type: none; 
-  margin: 1rem 0; padding: 0;
-  font-size: 3rem;
-}
-ul li {color: #888;}
+ul li {color: #555;}
 
-/* LIST: top and bottom menus */
-header > ul > li, footer > ul > li {display: inline-block;}
-header > ul > li:before{ content: " / "; }
-footer > ul > li:before { content: " | "; }
 /* LIST: pipeList and slashList class */
-ul.pipeList, ul.slashList {display: inline-block; list-style-type: none; margin: 1rem 0; padding: 0; font-size: 3rem;}
+ul.pipeList, ul.slashList {display: inline-block; list-style-type: none; margin: 1rem 0; padding: 0 .4rem 0 0; font-size: 3rem;}
 ul.pipeList>li, ul.slashList>li {display: inline-block;}
 ul.pipeList>li:before {content:" | ";}
 ul.slashList>li:before {content:" / ";}
+
+/* LIST: header and footer menu */
+header > ul, footer > ul {
+  display: inline-block;
+  list-style-type: none; 
+  margin: .4rem 0; padding: 0;
+  font-size: 3rem;
+}
+/* LIST: top and bottom menus */
+header > ul > li, footer > ul > li {display: inline-block; padding: 0 .6rem 0 0;}
+header > ul > li:before{ content: "/"; }
+footer > ul > li:before { content: "|"; }
+
 
 /* 
   SMALL 
@@ -90,7 +98,7 @@ small {
   padding: 0;
   margin: 0 0 0rem 0;
   display: block; 
-  font-size:3rem; 
+  font-size:2.6rem; 
   color: #888;
 }
 div > small, p > small, ul > small {
@@ -104,13 +112,13 @@ a {text-decoration: none; color: #06f; padding: 0; outline: none;}
 a:active {color: #f51;}
 a:hover, a:focus {color: #f60;}
 a.bad {text-decoration: line-through;} /* Bad Link */      
-a i {color: #888; padding-left: 1rem; font-size: 3rem;}
-a > div > small {display: inline; font-size: inherit; padding-left: 2rem;}
+a i {color: #555; padding-left: 1rem; font-size: 2.6rem;}
+a > div > small {display: block; font-weight:100 ;font-size: 2.6rem; padding-left: 2rem;}
 
-h1,h2,h3 {margin: 0; padding: 1rem 0;}
-h1 {font-size: 8rem;}
-h2 {font-size: 7rem; font-weight: lighter;}
-h3 {font-size: 6rem; font-weight: lighter;}
+h1,h2,h3 {margin: 0; padding: 1rem 0 .4rem 0;}
+h1 {font-size: 7rem; font-weight: 600;}
+h2 {font-size: 5rem; font-weight: 400;}
+h3 {font-size: 4rem; font-weight: 400;}
 
 hr {
   margin-top: 3rem;
@@ -118,7 +126,8 @@ hr {
   border-top: 1px solid #999;
 }
 
-i {color: #888;}
+i {color: #555;}
+i > u {font-style: normal;}
 
 pre {
   display: block;
@@ -133,11 +142,11 @@ pre {
 /* 
   FORM 
 */
-label {font-size: 3rem; color: #555;}
+label {font-size: 2.6rem; color: #555;}
 
 .btn, button, input {
   margin:0;
-  border-radius: 1rem; border: .5rem solid #69e;
+  border-radius: 1rem; border: .4rem solid #69e;
   font-size: 3rem; 
   padding: 1rem; outline: none;
   font-family: sans-serif;
