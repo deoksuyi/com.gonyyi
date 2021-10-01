@@ -170,7 +170,7 @@ var PAGEN_FOOTER = PAGEN_FOOTER ? PAGEN_FOOTER : "&copy; gon/y/yi 2016-2021";
 
 function pagen(onlyOnce=true) {
   if(onlyOnce && pagenRun==0){
-    console.log("Pagen [INFO] Start Pagen v1.1.0 (c) Gon Y. Yi 2021");
+    console.log("Pagen [INFO] Start Pagen v1.2.1 (c) Gon Y. Yi 2021");
     fillHeader();   // ADD HEADER
     fillFooter();   // ADD FOOTER
     fillMeta();     // ADD META
