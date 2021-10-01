@@ -1,5 +1,5 @@
 /* 
-  Pagen v1.2.0 - (c) Gon Y. Yi 2021 
+  Pagen v1.2.1 - (c) Gon Y. Yi 2021 
   
   USAGE: add below code to anywhere in the head.
     <script src="https://gonyyi.com/js/pagen.js"></script>
@@ -51,14 +51,15 @@ function addHead(type, ...keyValues) {
 function addHeadIfNE(type, condition, ...keyValues) {
   m = document.querySelector(`${type}[${condition}]`);
   if(m!=null) {
-    for(i=0;i<(keyValues.length - keyValues.length%2);i+=2) {
-      m.setAttribute(keyValues[i], keyValues[i+1]);
-      // console.log(keyValues[i], keyValues[i+1]);
-    }
-    return 
-  }
-  // if not exist, then add it
-  addHead(type, ...keyValues)
+    // BELOW WILL UPDATE WHEN FOUND SAME VALUE
+    // for(i=0;i<(keyValues.length - keyValues.length%2);i+=2) {
+    //   m.setAttribute(keyValues[i], keyValues[i+1]);
+    // }
+    // return 
+  } else {
+    // if not exist, then add it
+    addHead(type, ...keyValues)
+  }  
 }
 
 // ADD DOCUMENT LANGUAGE IF MISSING
