@@ -27,7 +27,11 @@ header {
 header > h1 > a {
   color: #333;
 }
-section, aside {
+aside{
+  padding:2rem 0;
+  text-transform:lowercase
+}
+section {
   padding: 1rem 0 2rem 0rem;
   text-transform: lowercase;
 }
