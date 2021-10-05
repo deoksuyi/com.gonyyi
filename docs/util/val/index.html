@@ -4,7 +4,8 @@
   <head>
     <title>gonyyi</title>
     <script src="https://gonyyi.com/js/pagen.min.js"></script>
-    <script src="https://gonyyi.com/util/val/validate.js"></script>
+    <!-- <script src="https://gonyyi.com/util/val/validate.js"></script> -->
+    <script src="./validate.js"></script>
     <style>
       /* Override style  */
       section > ul > li > a {display: inline-block;}
@@ -14,8 +15,15 @@
   <body onload="Validate('valhtml',true,'https://gonyyi.com');">
     <header>
       <h1><a href="https://gonyyi.com">gon/y/yi</a></h1>
-      <small>Validations using <a href="https://www.w3.org">w3.org</a>'s <a href="https://validator.w3.org/nu/">Nu HTML Checker</a></small>
     </header>
+
+    <aside>
+      <div>
+        Validations using <a href="https://www.w3.org">w3.org</a>'s 
+        <a href="https://validator.w3.org/nu/">Nu HTML Checker</a>.<br/>
+        Status `err` represents a connection issue to validator API. 
+      </div>
+    </aside>
     
     <section>
       <h2>essential</h2>
