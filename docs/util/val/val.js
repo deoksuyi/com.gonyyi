@@ -1,7 +1,7 @@
-// validate.js
+// val.js
 //    (c) Gon Y. Yi 2021 <https://gonyyi.com/copyright.txt>
 // Usage: (using class name defined in body.onload, and it uses title attr)
-//    <body onload="Validate('valhtml',true);">
+//    <body onload="VAL('valhtml',true);">
 //    ...
 //       <li class="valhtml" url="https://gonyyi.com"></li>
 var gyyStatusC1 = "";
@@ -95,8 +95,8 @@ function gyyStatusDraw(DST, ID) {
   gyyStatusUpBtn(DST, ID, 'pending');
 }
 
-function Validate(CSSClassName, UseDefaultCSS, UseBaseURL) {
-  console.log("(c) Gon Y. Yi 2021 <https://gonyyi.com/copyright>");
+function VAL(CSSClassName, UseDefaultCSS, UseBaseURL) {
+  console.log("Val 1.0.0 - (c) Gon Y. Yi 2021 <https://gonyyi.com/copyright>");
   baseURL = UseBaseURL;
   gyyStatusC1 = CSSClassName;
   if(UseDefaultCSS==true) {gyyStatusCls();}
