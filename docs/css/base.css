@@ -14,7 +14,7 @@ body {
   text-transform: lowercase;
 }
 
-header, section, footer {
+header, section, footer, aside {
   margin: 0 3rem;
   max-width: 200rem;
 }
@@ -27,7 +27,7 @@ header {
 header > h1 > a {
   color: #333;
 }
-section {
+section, aside {
   padding: 1rem 0 2rem 0rem;
   text-transform: lowercase;
 }
