@@ -79,7 +79,9 @@ function gyyStatusUpBtn(DST, ID, addClass) {
 function gyyStatusCheck(DST, ID) {
   URL=DST.getAttribute("title")
   a = document.getElementById(`gyy_status_${ID}`);
-  fetch(`https://validator.w3.org/nu/?out=json&doc=${baseURL}${URL}`)
+  validatorURL = "https://validator.nu/";
+  // validatorURL = "https://validator.w3.org/nu/";
+  fetch(`${validatorURL}?out=json&doc=${baseURL}${URL}`)
   .then(res=>res.json())
   .then(res=>gyyStatusUpBtnUpdate(ID, 'ok', res.messages))
   .catch(err => {
