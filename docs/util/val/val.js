@@ -79,7 +79,7 @@ function gyyStatusUpBtn(DST, ID, addClass) {
 function gyyStatusCheck(DST, ID) {
   URL=DST.getAttribute("title")
   a = document.getElementById(`gyy_status_${ID}`);
-  validatorURL = "https://validator.nu/";
+  validatorURL = "https://html5.validator.nu/";
   // validatorURL = "https://validator.w3.org/nu/";
   fetch(`${validatorURL}?out=json&doc=${baseURL}${URL}`)
   .then(res=>res.json())
