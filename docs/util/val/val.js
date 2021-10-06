@@ -4,45 +4,66 @@
 //    <body onload="VAL('valhtml',true);">
 //    ...
 //       <li class="valhtml" url="https://gonyyi.com"></li>
-var gyyStatusC1 = "";
-var baseURL = "";
+let gyy_status_css_class_prefix = "";
+let gyy_status_base_url = "";
+let gyy_status_validator_url = "https://html5.validator.nu"; // https://validator.w3.org/nu, https://html5.validator.nu
+const gyy_status_copyright = "Val 1.0.0 - (c) Gon Y. Yi 2021 <https://gonyyi.com/copyright>";
 
-function gyyStatusCls() {
-  var style = document.createElement('style');
-  style.type = 'text/css';
-  style.innerHTML = 
-    `.${gyyStatusC1}_fail,.${gyyStatusC1}_pending,.${gyyStatusC1}_ok,.${gyyStatusC1}_unknown 
-      {display:inline-block; border:1px solid gray; 
-        padding:0 .4em; margin: 0 .2em 0 0; border-radius: 1em;
-        text-align: center; font-size: .8em;
-        width: 6rem; font-family:"Helvetica","Arial",sans-serif;
+function log(logType, logMsg) {
+  console.log(`Val [${logType}] ${logMsg}`);
+}
+
+function gyy_status_url(URL) {
+  if( !(URL.startsWith("http://") || URL.startsWith("https://"))) {
+    return `${gyy_status_base_url}${URL}`;
+  }
+  return URL;
+}
+
+function gyy_status_set_css() {
+  let style = document.createElement('style');
+  style.setAttribute("type", "text/css")
+  style.innerHTML =
+    `.${gyy_status_css_class_prefix}_fail,.${gyy_status_css_class_prefix}_pending,.${gyy_status_css_class_prefix}_ok,.${gyy_status_css_class_prefix}_unknown 
+      { display:inline-block; border:1px solid gray; 
+        padding:0 1rem; margin: 0 1rem 0 0; border-radius: 1rem;
+        text-align: center; font-size: 2rem;
+        width: 4rem; font-family:"Helvetica","Arial",sans-serif;
         background-color:#999; color: #fff; border-color: #999;}
-      .${gyyStatusC1}_pending {border-color: #ddd;color:white;background-color: #ddd;}
-      .${gyyStatusC1}_fail {border-color: #FF4A31;color:white;background-color: #FF4A31;}
-      .${gyyStatusC1}_ok {border-color: #397EFF;color:white;background-color:#397EFF;}
-      .msg {padding: .1em .5em; margin: 0 0 0 2em; border-radius:0; 
-        border: .2em solid #999; border-width: 0 0 0 .4em; 
-        background-color:transparent; font-size:.8em; text-transform:none;}
-      .res_error {border-color:#ff0000;} 
-      .res_io {border-color:#ff9000;}
-      .res_warning {border-color:#ffdd00;}`;
+      .${gyy_status_css_class_prefix}_pending {border-color: #ddd;color:white;background-color: #ddd;}
+      .${gyy_status_css_class_prefix}_fail {border-color: #FF4A31;color:white;background-color: #FF4A31;}
+      .${gyy_status_css_class_prefix}_ok {border-color: #397EFF;color:white;background-color:#397EFF;}
+      .msg {padding: 1rem 1em; margin: 0 0 0 8rem; border-radius:0; 
+        border: 1rem solid #999; border-width: 0 0 0 1rem; 
+        background-color:transparent; font-size:2.4rem; text-transform:none;}
+      .res_error {border-color:#F39C12;} 
+      .res_io {border-color:#E74C3C;}
+      .res_warning {border-color:#F1C40F;}`;
   document.getElementsByTagName('head')[0].appendChild(style);
 }
-function gyyStatusUpBtnUpdate(ID, addClass, content) {
-  a = document.getElementById(`gyy_status_${ID}`);
-  // a.className = `${gyyStatusC1}_${addClass}`;
-  a.classList.remove(`${gyyStatusC1}_ok`);
-  a.classList.remove(`${gyyStatusC1}_fail`);
-  a.classList.remove(`${gyyStatusC1}_pending`);
-  a.classList.remove(`${gyyStatusC1}_unknown`);
-  a.classList.add(`${gyyStatusC1}_${addClass}`);
-  if(addClass == "unknown") {
-    a.innerHTML = "err";
+
+function gyy_status_button_clear_init(ID) {
+  let span = document.getElementById(`gyy_status_${ID}`);
+  span.classList.remove(`${gyy_status_css_class_prefix}_ok`);
+  span.classList.remove(`${gyy_status_css_class_prefix}_fail`);
+  span.classList.remove(`${gyy_status_css_class_prefix}_pending`);
+  span.classList.remove(`${gyy_status_css_class_prefix}_unknown`);
+  return span
+}
+
+function gyy_status_button_update(DST, ID, addClass, content) {
+  let span = gyy_status_button_clear_init(ID); // clear all the class
+  span.classList.add(`${gyy_status_css_class_prefix}_${addClass}`); // add a new class
+  if(addClass === "unknown") {
+    span.innerHTML = "err";
+  } else {
+    span.innerHTML = content.length;
   }
+
   if( content.length > 0) {
-    for(i=0;i<content.length;i++) {
-      pre = document.createElement("pre");
-      errType = (content[i].subType ? content[i].subType : content[i].type);
+    for(let i=0; i<content.length; i++) {
+      let pre = document.createElement("pre");
+      let errType = content[i]["subType"] || content[i]["type"];
       pre.classList.add("msg", `res_${errType}`);
       pre.innerHTML = i+". [" + errType.toUpperCase() +"] ";
       pre.innerHTML += content[i].message;
@@ -51,61 +72,79 @@ function gyyStatusUpBtnUpdate(ID, addClass, content) {
   }
 }
 
-function gyyStatusUpBtn(DST, ID, addClass) {
+function gyy_status_button(DST, ID, addClass) {
   URL = DST.getAttribute("title");
-  // console.log(`baseURL=${baseURL}; URL=${URL}`);
 
+  // BUBBLE LINK
   {
-    a = document.createElement('a');
-    a.href = `https://validator.w3.org/nu/?doc=${baseURL}${URL}`;
-    // a.innerHTML = URL;
-    span = document.createElement('span');
-    span.id = `gyy_status_${ID}`; 
-    span.classList.add(gyyStatusC1+"_"+addClass);
+    let a = document.createElement('a');
+    a.href = `${gyy_status_validator_url}/?doc=${gyy_status_url(URL)}`;
+
+    let span = document.createElement('span');
+    span.id = `gyy_status_${ID}`;
+    span.classList.add(gyy_status_css_class_prefix+"_"+addClass);
     span.innerHTML = "-";
+
     a.appendChild(span);
     DST.appendChild(a);
   }
-  
-  
-  // first anchor
+
+  // URL LINK
   {
     let a = document.createElement('a');
-    a.href = baseURL+URL;
-    a.innerHTML = URL;
+    a.href = gyy_status_url(URL);
+    
+    // When base URL's used, append ~.
+    if(URL.startsWith("/")) {URL = "~" + URL;}
+
+    a.innerHTML = URL.replace(/\/index.html$/, '/'); // remove trailing '/index.html'
     DST.appendChild(a);
   }
 }
-function gyyStatusCheck(DST, ID) {
-  URL=DST.getAttribute("title")
-  a = document.getElementById(`gyy_status_${ID}`);
-  validatorURL = "https://html5.validator.nu/";
-  // validatorURL = "https://validator.w3.org/nu/";
-  fetch(`${validatorURL}?out=json&doc=${baseURL}${URL}`)
-  .then(res=>res.json())
-  .then(res=>gyyStatusUpBtnUpdate(ID, 'ok', res.messages))
-  .catch(err => {
-    if (err instanceof TypeError) {
-      gyyStatusUpBtnUpdate(ID, 'unknown', []); // 503 unreachable
+
+
+function gyy_status_update(DST, ID) {
+  if(!DST) {
+    gyy_status_button_update(DST, ID, 'fail', []);
+    return;
+  }
+  let URL = DST.getAttribute("title")
+
+  // if URL has a full path, do not append base URL
+  URL = gyy_status_url(URL);
+
+  fetch(`${gyy_status_validator_url}?out=json&doc=${URL}`)
+  .then(res=>res.json()).then(res=>{
+    if(res.messages.length >0) {
+      gyy_status_button_update(DST, ID, 'fail', res.messages)
     } else {
-      console.error(`WARN: fetch(${baseURL}${URL}) ==> ${err}`);
+      gyy_status_button_update(DST, ID, 'ok', res.messages)
+    }
+  }).catch(err => {
+    if (err instanceof TypeError) {
+      gyy_status_button_update(DST, ID, 'unknown', []); // 503 unreachable
+    } else {
+      console.error(`WARN: fetch(${URL}) ==> ${err}`);
     }
   });
 }
-function gyyStatusDraw(DST, ID) {
-  //URL=DST.getAttribute("title")
-  gyyStatusUpBtn(DST, ID, 'pending');
-}
 
 function VAL(CSSClassName, UseDefaultCSS, UseBaseURL) {
-  console.log("Val 1.0.0 - (c) Gon Y. Yi 2021 <https://gonyyi.com/copyright>");
-  baseURL = UseBaseURL;
-  gyyStatusC1 = CSSClassName;
-  if(UseDefaultCSS==true) {gyyStatusCls();}
-  var i=0;
-  Array.from(document.getElementsByClassName(gyyStatusC1)).forEach(c => {
-    gyyStatusDraw(c, i)
-    gyyStatusCheck(c, i)
-    i+=1; 
+  log("INFO", gyy_status_copyright);
+  log("INFO", `validator_url = ${gyy_status_validator_url}`);
+
+  gyy_status_base_url = UseBaseURL;
+  gyy_status_css_class_prefix = CSSClassName; // Set classPrefix
+
+  log("INFO", `css_class_prefix = ${gyy_status_css_class_prefix}`);
+  log("INFO", `base_url = ${gyy_status_base_url}`);
+  log("INFO", `UseDefaultCSS = ${UseDefaultCSS}`);
+  
+  if(UseDefaultCSS==true) {gyy_status_set_css();}
+  let i = 0;
+  Array.from(document.getElementsByClassName(gyy_status_css_class_prefix)).forEach(c => {
+    gyy_status_button(c, i, 'pending');
+    gyy_status_update(c, i);
+    i+=1;
   });
 }
