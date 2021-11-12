@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>encr - gonyyi</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,minimum-scale=1.0"/>
     <script src="https://gonyyi.com/js/pagen.min.js"></script>
     <script src="wasm_exec.js"></script>
     <script>
@@ -14,11 +14,12 @@
 <body>
 
 <section>
-    <h2>AES-256-CBC + MD5 Key Digest + Base64 Test</h2>
+    <h2>AES-256-CBC</h2>
+    <i>Compatible with the OpenSSL AES-256-CBC MD5-Key Base64</i>
     <ul>
         <li>
-            <input type="text" class="width-40" style="-webkit-text-security: disc;" id="key" autocomplete="off" placeholder="passphrase" autofocus>
-            <label for="key">Passphrase</label>
+            <input type="text" class="width-40" style="-webkit-text-security: disc;" id="pphrase" autocomplete="off" placeholder="passphrase" autofocus>
+            <label for="pphrase">Passphrase</label>
         </li>
         <li>
             <input type="text" id="data" class="width-40" placeholder="data">
@@ -35,7 +36,7 @@
 
 <script>
     var result = document.getElementById('result');
-    var boxKey = document.getElementById('key');
+    var boxKey = document.getElementById('pphrase');
     var boxData = document.getElementById('data');
     var btnEnc = document.getElementById('btnEnc');
     var btnDec = document.getElementById('btnDec');
