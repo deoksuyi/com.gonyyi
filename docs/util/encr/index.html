@@ -6,7 +6,7 @@
     <script src="wasm_exec.js"></script>
     <script>
         const go = new Go();
-        WebAssembly.instantiateStreaming(fetch("goAes256cbc.wasm"), go.importObject).then((result) => {
+        WebAssembly.instantiateStreaming(fetch("./goAes256cbc.wasm"), go.importObject).then((result) => {
             go.run(result.instance);
         });
     </script>
@@ -43,8 +43,6 @@
     // When the encrypt button is clicked
     btnEnc.addEventListener('click', function () {
         var out = gonEnc(boxData.value, boxKey.value);
-        // console.info("Key:    [" + boxKey.value + "]");
-        // console.info("- Data: [" + boxData.value + "]");
         console.info("- Encr: [" + out + "]");
         result.innerHTML = out;
     });
@@ -52,8 +50,6 @@
     // When the encrypt button is clicked
     btnDec.addEventListener('click', function () {
         var out = gonDec(boxData.value, boxKey.value);
-        // console.info("Key:    [" + boxKey.value + "]");
-        // console.info("- Data: [" + boxData.value + "]");
         console.info("- Decr: [" + out + "]");
         result.innerHTML = out;
     });
