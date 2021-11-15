@@ -15,29 +15,24 @@
 
 <section>
     <h2>AES-256-CBC</h2>
-    <i>Compatible with OpenSSL AES-256-CBC</i>
+    <i>Compatible with OpenSSL</i>
     <ul>
         <li>
             <input type="password" id="key" class="width-40" placeholder="key" autocomplete="one-time-code" >
             <label for="key">Key</label>
         </li>
         <li>
-            <input type="text" id="data" class="width-40" placeholder="encrypted or plain" autocomplete="one-time-code">
-            <label for="data">Data</label>
+            <textarea type="text" id="data" rows="5" cols="50" placeholder="encrypted or plain" autocomplete="one-time-code"></textarea>
         </li>
         <li>
             <button id="btnEnc">Encrypt</button>
             <button id="btnDec">Decrypt</button>        
-        </li>
-        <li>
-            <pre id="result" class="noCasing" style="user-select: all;"></pre>
         </li>
     </ul>
 </section>
 
 
 <script>
-    var result = document.getElementById('result');
     var boxKey = document.getElementById('key');
     var boxData = document.getElementById('data');
     var btnEnc = document.getElementById('btnEnc');
@@ -46,16 +41,19 @@
     // When the encrypt button is clicked
     btnEnc.addEventListener('click', function () {
         var out = gonEnc(boxData.value, boxKey.value);
-        console.info("- Encr: [" + out + "]");
-        result.innerHTML = out;
+        // console.info("- Encr: [" + out + "]");
+        boxData.innerHTML = out;
+        boxData.select();
     });
 
     // When the decrypt button is clicked
     btnDec.addEventListener('click', function () {
         var out = gonDec(boxData.value.replace(/[\n\s]+/ig,""), boxKey.value);
-        console.info("- Decr: [" + out + "]");
-        result.innerHTML = out;
+        // console.info("- Decr: [" + out + "]");
+        boxData.innerHTML = out;
+        boxData.select();
     });
 </script>
 </body>
 </html>
+
