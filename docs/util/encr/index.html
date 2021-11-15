@@ -42,7 +42,7 @@
     btnEnc.addEventListener('click', function () {
         var out = gonEnc(boxData.value, boxKey.value);
         // console.info("- Encr: [" + out + "]");
-        boxData.innerHTML = out;
+        boxData.value = out;
         boxData.select();
     });
 
@@ -50,7 +50,7 @@
     btnDec.addEventListener('click', function () {
         var out = gonDec(boxData.value.replace(/[\n\s]+/ig,""), boxKey.value);
         // console.info("- Decr: [" + out + "]");
-        boxData.innerHTML = out;
+        boxData.value = out;
         boxData.select();
     });
 </script>
