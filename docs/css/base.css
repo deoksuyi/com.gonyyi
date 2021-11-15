@@ -40,9 +40,11 @@ section > p, section > ul, section > div {
   padding: 0 0 0 2rem;
   border-left: 1rem solid #ddd; font-size: 3rem;
 }
+/*
 section > p:hover, section>ul:hover, section>div:hover {
   border-color: #bbb;
-}
+} 
+*/
 section > div > div {
   margin: 0;
   padding: .6rem 0;
@@ -148,7 +150,7 @@ pre {
 */
 label {font-size: 2.6rem; color: #555;}
 
-.btn, button, input {
+.btn, button, input, textarea {
   margin:0;
   border-radius: 1rem; border: .4rem solid #69e;
   font-size: 3rem; 
