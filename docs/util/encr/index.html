@@ -27,7 +27,9 @@
         </li>
         <li>
             <button id="btnEnc">Encrypt</button>
-            <button id="btnDec">Decrypt</button>
+            <button id="btnDec">Decrypt</button>        
+        </li>
+        <li>
             <span id="result" class="noCasing" style="user-select: all;"></span>
         </li>
     </ul>
@@ -48,9 +50,9 @@
         result.innerHTML = out;
     });
 
-    // When the encrypt button is clicked
+    // When the decrypt button is clicked
     btnDec.addEventListener('click', function () {
-        var out = gonDec(boxData.value, boxKey.value);
+        var out = gonDec(boxData.value.replace(/\n[\s]+/ig,""), boxKey.value);
         console.info("- Decr: [" + out + "]");
         result.innerHTML = out;
     });
