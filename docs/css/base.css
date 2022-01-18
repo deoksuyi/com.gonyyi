@@ -8,7 +8,7 @@ html {
 body {
   background: #fff;
   padding: 0; margin: 0;
-  font-family: "Georgia","Times","Times New Roman",serif,"Helvetica","Arial",sans-serif;
+  font-family: "Times","Times New Roman","Georgia",serif,"Helvetica","Arial",sans-serif;
   font-size: 3rem; color: #333;
   word-wrap: break-word; hyphens: auto;
   text-transform: lowercase;
